@@ -1,4 +1,3 @@
-//these variables determine whether specified dlcs are loaded
 private _hasWs = "ws" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
 private _hasTanks = "tank" in A3A_enabledDLC;
@@ -356,19 +355,56 @@ _sfLoadoutData set ["slRifles", [
     ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_1p87",       ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhsusf_acc_grip2"]
 ]];
 _sfLoadoutData set ["rifles", [
-    ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_ICO",  ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhs_grip_ffg2"]
+    ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_ICO",         ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhs_grip_ffg2"],
+    ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_ICO",         ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhs_grip_rk6"],
+    ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_1p87",        ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhs_grip_rk2"],
+    ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_1p87",        ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhs_grip_rk6"],
+    ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_1p87",        ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhs_grip_ffg2"],
+    ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "rhs_acc_okp7_picatinny",  ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhs_grip_rk2"],
+    ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "rhs_acc_okp7_picatinny",  ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhs_grip_rk2"],
+    ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_ICO",         ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhs_grip_rk6"],
+    ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "optic_Aco",               ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhs_grip_ffg2"]
 ]];
 _sfLoadoutData set ["carbines", [
-    []
+    ["arifle_AK12U_F", "rhs_acc_tgpa", "rhs_acc_perst1ik_ris", "Aegis_optic_1p87",       ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "bipod_02_F_blk"],
+    ["arifle_AK12U_F", "rhs_acc_tgpa", "rhs_acc_perst1ik_ris", "optic_Aco",              ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "bipod_02_F_blk"],
+    ["arifle_AK12U_F", "rhs_acc_tgpa", "rhs_acc_perst1ik_ris", "rhs_acc_rakursPM",       ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "bipod_02_F_blk"],
+    ["arifle_AK12U_F", "rhs_acc_tgpa", "rhs_acc_perst1ik_ris", "rhs_acc_okp7_picatinny", ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "bipod_02_F_blk"],
+    ["arifle_AK12U_F", "rhs_acc_tgpa", "rhs_acc_perst1ik_ris", "rhs_acc_ekp8_18",        ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "bipod_02_F_blk"],
+    ["arifle_AK12U_F", "rhs_acc_tgpa", "rhs_acc_perst1ik_ris", "optic_Aco",              ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "bipod_02_F_blk"],
+    ["arifle_AK12U_F", "rhs_acc_tgpa", "rhs_acc_perst1ik_ris", "Aegis_optic_1p87",       ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "bipod_02_F_blk"],
+    ["arifle_AK12U_F", "rhs_acc_tgpa", "rhs_acc_perst1ik_ris", "rhs_acc_okp7_picatinny", ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "bipod_02_F_blk"]
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
-    []
+    ["MMM_weap_AK12_GP34", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_ICO",         ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], ["rhs_VOG25P", "rhs_VG40MD", "rhs_GDM40", "rhs_VG40OP_white", "rhs_GRD40_Red"], "rhs_grip_ffg2"],
+    ["MMM_weap_AK12_GP34", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_ICO",         ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], ["rhs_VOG25P", "rhs_VG40MD", "rhs_GDM40", "rhs_VG40OP_white", "rhs_GRD40_Red"], "rhs_grip_rk6"],
+    ["MMM_weap_AK12_GP34", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_1p87",        ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], ["rhs_VOG25P", "rhs_VG40MD", "rhs_GDM40", "rhs_VG40OP_white", "rhs_GRD40_Red"], "rhs_grip_rk2"],
+    ["MMM_weap_AK12_GP34", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_1p87",        ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], ["rhs_VOG25P", "rhs_VG40MD", "rhs_GDM40", "rhs_VG40OP_white", "rhs_GRD40_Red"], "rhs_grip_rk6"],
+    ["MMM_weap_AK12_GP34", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_1p87",        ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], ["rhs_VOG25P", "rhs_VG40MD", "rhs_GDM40", "rhs_VG40OP_white", "rhs_GRD40_Red"], "rhs_grip_ffg2"],
+    ["MMM_weap_AK12_GP34", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "rhs_acc_okp7_picatinny",  ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], ["rhs_VOG25P", "rhs_VG40MD", "rhs_GDM40", "rhs_VG40OP_white", "rhs_GRD40_Red"], "rhs_grip_rk2"],
+    ["MMM_weap_AK12_GP34", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "rhs_acc_okp7_picatinny",  ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], ["rhs_VOG25P", "rhs_VG40MD", "rhs_GDM40", "rhs_VG40OP_white", "rhs_GRD40_Red"], "rhs_grip_rk2"],
+    ["MMM_weap_AK12_GP34", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "Aegis_optic_ICO",         ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], ["rhs_VOG25P", "rhs_VG40MD", "rhs_GDM40", "rhs_VG40OP_white", "rhs_GRD40_Red"], "rhs_grip_rk6"],
+    ["MMM_weap_AK12_GP34", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "optic_Aco",               ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], ["rhs_VOG25P", "rhs_VG40MD", "rhs_GDM40", "rhs_VG40OP_white", "rhs_GRD40_Red"], "rhs_grip_ffg2"]
 ]];
 _sfLoadoutData set ["SMGs", [
-    []
+    ["KA_Vityaz", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "Aegis_optic_1p87", ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
+    ["KA_Vityaz", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "Aegis_optic_1p87", ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
+    ["KA_Vityaz", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "optic_Aco_smg",    ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
+    ["KA_Vityaz", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "optic_Aco_smg",    ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
+    ["KA_Vityaz", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "optic_Aco_smg",    ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
+    ["KA_Vityaz", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "rhs_acc_rakursPM", ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
+    ["KA_Vityaz", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "rhs_acc_ekp8_18",  ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
+    ["KA_Vityaz", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "rhs_acc_ekp8_18",  ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
+    ["KA_Vityaz", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "Aegis_optic_ICO",  ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""]
 ]];
 _sfLoadoutData set ["machineGuns", [
-    []
+    ["LMG_min_rf_6p69", "", "", "optic_MRCO",             ["150Rnd_762x54_Box"], [], ""],
+    ["LMG_min_rf_6p69", "", "", "optic_MRCO",             ["150Rnd_762x54_Box"], [], ""],
+    ["LMG_min_rf_6p69", "", "", "Aegis_optic_ICO",        ["150Rnd_762x54_Box"], [], ""],
+    ["LMG_min_rf_6p69", "", "", "Aegis_optic_ICO",        ["150Rnd_762x54_Box"], [], ""],
+    ["LMG_min_rf_6p69", "", "", "rhsusf_acc_su230a_mrds", ["150Rnd_762x54_Box"], [], ""],
+    ["LMG_min_rf_6p69", "", "", "rhsusf_acc_su230a_mrds", ["150Rnd_762x54_Box"], [], ""],
+    ["LMG_min_rf_6p69", "", "", "Aegis_optic_1p87",       ["150Rnd_762x54_Box"], [], ""]
 ]];
 _sfLoadoutData set ["marksmanRifles", [
     ["srifle_min_rf_vs_121", "muzzle_min_rf_pbs_1", "rhs_acc_perst1ik_ris", "optic_DMS", ["10Rnd_762x54_Mag"], [], "rhs_acc_harris_swivel"]
