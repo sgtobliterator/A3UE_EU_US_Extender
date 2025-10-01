@@ -20,9 +20,9 @@ private _hasEF = "ef" in A3A_enabledDLC;
 
 ["name", "YLF"] call _fnc_saveToTemplate;
 
-["flag", ""] call _fnc_saveToTemplate;
-["flagTexture", ""] call _fnc_saveToTemplate;
-["flagMarkerType", ""] call _fnc_saveToTemplate;
+["flag", "Flag_AAF_F"] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Templates\Yulakia\flag_ylf_co.paa)] call _fnc_saveToTemplate;
+["flagMarkerType", "ylf_flag"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", []] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", []] call _fnc_saveToTemplate;
@@ -50,11 +50,11 @@ private _hasEF = "ef" in A3A_enabledDLC;
 ["staticMortarMagHE", ""] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", ""] call _fnc_saveToTemplate;
 
-["minesAT", []] call _fnc_saveToTemplate;
-["minesAPERS", []] call _fnc_saveToTemplate;
+["minesAT", ["ATMine"]] call _fnc_saveToTemplate;
+["minesAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
 
-["breachingExplosivesAPC", []] call _fnc_saveToTemplate;
-["breachingExplosivesTank", []] call _fnc_saveToTemplate;
+["breachingExplosivesAPC", ["SatchelCharge_Remote_Mag", "rhsusf_m112x4_mag", "rhsusf_m112_mag", "rhs_charge_M2tet_x2_mag", "rhssaf_tm500_mag", "rhs_ec400_sand_mag", "rhs_ec400_mag", "rhssaf_tm200_mag", "rhs_ec200_mag", "rhs_ec200_sand_mag"]] call _fnc_saveToTemplate;
+["breachingExplosivesTank", ["SatchelCharge_Remote_Mag", "rhsusf_m112x4_mag", "rhsusf_m112_mag", "rhs_charge_M2tet_x2_mag", "rhssaf_tm500_mag", "rhs_ec400_sand_mag", "rhs_ec400_mag"]] call _fnc_saveToTemplate;
 
 //////////////////////////////////////
 //       Antistasi Plus Stuff       //
@@ -109,7 +109,7 @@ if (_hasApex) then {_dlcUniforms append [];
 
 //Faces and Voices given to Rebell AI
 ["faces", []] call _fnc_saveToTemplate;
-["voices", []] call _fnc_saveToTemplate;
+["voices", ["RHS_Male01CZ", "RHS_Male02CZ", "RHS_Male03CZ", "RHS_Male04CZ", "RHS_Male05CZ"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //
