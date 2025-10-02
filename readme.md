@@ -1,5 +1,4 @@
-# Explanation
-## A3UE
+# A3UE
 This is an extender of [Antistasi Ultimate](https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate) based on the map [Yulakia](https://steamcommunity.com/sharedfiles/filedetails/?id=2950257727&searchtext=yulakia). I wanted to make an A3UE about this map as soon as I saw it, as I believe it has wonderful terrain and a lovely camoflauge for its faction. Inside this A3UE are four different factions: the invading "Russian Forces", the occupying "Yulakian Provisional Government", the rebel "Yulakian Liberation Front", and the rival "Spetsnaz". There are no modifications to the Yulakian map or the already-made Antistasi Ultimate scenario for Yulakia. This is created primarily by one developer, and I appreciate good and thorough work. I try to make this mod as in-depth as possible with as many features as I can figure out how to implement.
 
 # Worldbuilding
