@@ -188,19 +188,7 @@ if (_hasContact) then {
 
 ["faces", _characters] call _fnc_saveToTemplate;
 
-
-private _languages = [
-    "RHS_Male01RUS",
-    "RHS_Male02RUS",
-    "RHS_Male03RUS",
-    "RHS_Male04RUS",
-    "RHS_Male05RUS"
-];
-if (_hasContact) then {
-    _languages append ["Male01RUS", "Male02RUS", "Male03RUS"];
-};
-
-["voices", _languages] call _fnc_saveToTemplate;
+["voices", ["RHS_Male01CZ", "RHS_Male02CZ", "RHS_Male03CZ", "RHS_Male04CZ", "RHS_Male05CZ"]] call _fnc_saveToTemplate;
 
 ["insignia", []] call _fnc_saveToTemplate;
 
