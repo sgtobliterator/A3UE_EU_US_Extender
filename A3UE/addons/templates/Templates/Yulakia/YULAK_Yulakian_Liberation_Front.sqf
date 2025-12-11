@@ -89,25 +89,128 @@ if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment app
 _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"];
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
-private _rebUniforms = [];          //Uniforms given to Normal Rebels
+// uniforms used by AI rebels
+private _rebUniforms = [
+    "Civie_V1_Olv",
+    "Civie_V1_Blk",
+    "Civic_V2_Blk",
+    "Civic_V2_Olv",
+    "Civie_V3_Blk",
+    "Civie_V3_Olv",
+    "AAF_PMC_SOLDIER",
+    "Rebel_BOKO_Tee",
+    "U_BG_Guerrilla_6_1",
+    "U_I_G_resistanceLeader_F",
+    "U_BG_Guerilla1_1",
+    "U_BG_Guerilla2_2",
+    "U_BG_Guerilla2_3",
+    "U_BG_Guerilla3_1",
+    "U_C_HunterBody_grn"
+];
 
-private _dlcUniforms = [];          //Uniforms given if DLCs are enabled, only given to the Arsenal not Rebels
+// uniforms not used by AI rebels
+private _civUniforms = [
+    "U_C_Poloshirt_blue",
+    "U_C_Poloshirt_burgundy",
+    "U_C_Poloshirt_salmon",
+    "U_C_Poloshirt_stripped",
+    "U_C_Poloshirt_tricolour",
+    "U_C_Poloshirt_redwhite",
+    "U_BG_Guerilla2_1",
+    "U_Marshal",
+    "U_C_Man_casual_7_F",
+    "U_C_Man_casual_8_F",
+    "U_C_Man_casual_9_F"
+];
 
-if (_hasContact) then {_dlcUniforms append [];
+// cloth headgear
+private _unarmoredHeadgear = [
+    "FP_Bandana_Black",
+    "FP_Bandana_Coyote",
+    "FP_Boonie_Green",
+    "FP_CapHs_Black",
+    "FP_CapHs_Green",
+    "USHANKA_BLACK",
+    "H_Bandanna_gry",
+    "H_Bandanna_blu",
+    "H_Bandanna_cbr",
+    "H_Bandanna_khk",
+    "H_Bandanna_sgg",
+    "H_Bandanna_sand",
+    "H_Watchcap_blk",
+    "H_Watchcap_cbr",
+    "H_Watchcap_camo",
+    "H_Watchcap_khk",
+    "H_Booniehat_khk",
+    "H_Booniehat_oli",
+    "H_Booniehat_tan",
+    "H_Cap_blk",
+    "H_Cap_grn",
+    "H_Cap_oli",
+    "H_Cap_tan",
+    "H_Booniehat_blk",
+    "rhs_beanie_green",
+    "rhssaf_bandana_smb"
+];
+
+if (_hasContact) then {
+    _rebUniforms append [
+        "U_C_E_LooterJacket_01_F"
+    ];
+    _civUniforms append [
+        "U_C_Uniform_Farmer_01_F"
+    ];
+    _unarmoredHeadgear append [
+        "H_Booniehat_mgrn"
+    ];
+};
+if (_hasApex) then {
+    _rebUniforms append [
+        "U_I_C_Soldier_Bandit_1_F",
+        "U_I_C_Soldier_Bandit_3_F",
+        "U_I_C_Soldier_Para_5_F"
+    ];
+    _civUniforms append [
+        "U_C_Man_casual_3_F",
+        "U_C_Man_casual_6_F",
+        "U_C_Man_casual_4_F",
+        "U_C_Man_casual_5_F"
+    ];
+};
+if(_hasRF) then {
+    _rebUniforms append [
+        "U_BG_Guerrilla_RF",
+        "U_C_PilotJacket_black_RF",
+        "U_C_PilotJacket_open_black_RF",
+        "U_C_PilotJacket_brown_RF",
+        "U_C_PilotJacket_open_brown_RF",
+        "U_C_PilotJacket_lbrown_RF",
+        "U_C_PilotJacket_open_lbrown_RF"
+    ];
+};
+if(_hasWs) then {
+    _rebUniforms append [
+        "U_lxWS_ION_Casual_4"
+    ];
+    _civUniforms append [
+        "U_lxWS_ION_Casual_3"
+    ];
+};
+if(_hasLawsOfWar) then {
+    _unarmoredHeadgear append [
+        "H_Hat_Safari_olive_F"
+    ];
 };
 
-if (_hasApex) then {_dlcUniforms append [];
-};
+["uniforms", _rebUniforms + _civUniforms] call _fnc_saveToTemplate; // add uniforms to arsenal
 
-["uniforms", _rebUniforms + _dlcUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
-
-["headgear", []] call _fnc_saveToTemplate;          //Headgear used by Rebell Ai until you have Armored Headgear.
+["headgear", _unarmoredHeadgear] call _fnc_saveToTemplate;          // headgear used by rebels prior to getting armored helmets
 
 /////////////////////
 ///  Identities   ///
 /////////////////////
 
-//Faces and Voices given to Rebell AI
+// Faces given to rebel AI
 private _characters = [
     "WhiteHead_02",
     "WhiteHead_18",
@@ -138,22 +241,56 @@ private _characters = [
     "Vissim"
 ];
 
+// Voices given to rebel AI
+// Uses Czech as a 'Yulakian' language
+private _voices = [
+    "RHS_Male01CZ",
+    "RHS_Male02CZ",
+    "RHS_Male03CZ",
+    "RHS_Male04CZ",
+    "RHS_Male05CZ"
+];
+
 if (_hasWS) then {
-    _characters append ["lxWS_Gustavo_Head", "lxWS_Journalist_Head"];
+    _characters append [
+        "lxWS_Gustavo_Head",
+        "lxWS_Journalist_Head"
+    ];
 };
 if (_hasLawsOfWar) then {
-    _characters append ["WhiteHead_23"];
+    _characters append [
+        "WhiteHead_23"
+    ];
 };
 if (_hasContact) then {
-    _characters append ["WhiteHead_24", "RussianHead_4", "LivonianHead_5", "WhiteHead_25", "LivonianHead_2", "RussianHead_1", "WhiteHead_27", "WhiteHead_28", "LivonianHead_3", "RussianHead_3", "RussianHead_2", "LivonianHead_10", "WhiteHead_32", "WhiteHead_30", "LivonianHead_8", "LivonianHead_4", "LivonianHead_9"];
+    _characters append [
+        "WhiteHead_24",
+        "RussianHead_4",
+        "LivonianHead_5",
+        "WhiteHead_25",
+        "LivonianHead_2",
+        "RussianHead_1",
+        "WhiteHead_27",
+        "WhiteHead_28",
+        "LivonianHead_3",
+        "RussianHead_3",
+        "RussianHead_2",
+        "LivonianHead_10",
+        "WhiteHead_32",
+        "WhiteHead_30",
+        "LivonianHead_8",
+        "LivonianHead_4",
+        "LivonianHead_9"
+    ];
 };
 
-["faces", _characters] call _fnc_saveToTemplate;
-["voices", ["RHS_Male01CZ", "RHS_Male02CZ", "RHS_Male03CZ", "RHS_Male04CZ", "RHS_Male05CZ"]] call _fnc_saveToTemplate;
+["faces",  _characters] call _fnc_saveToTemplate;
+["voices", _voices]     call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //
 //////////////////////////
+
 private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];

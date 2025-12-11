@@ -294,38 +294,38 @@ private          _crewItems = [];
 private       _unarmedItems = [];
 
 if (A3A_hasACE) then {
-    _squadLeaderItems append   ["ACE_Flashlight_XL50", "ACE_EntrenchingTool", "ACE_IR_Strobe_Item", "ACE_Clacker"];
-    _riflemanItems append      ["ACE_Flashlight_XL50"];
-    _medicItems append         ["ACE_Flashlight_XL50", "ACE_bloodIV_500", "ACE_bloodIV_500", "ACE_personalAidKit", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot"];
-    _grenadierItems append     ["ACE_Flashlight_XL50", "ACE_Clacker"];
-    _demoItems append          ["ACE_Flashlight_XL50", "ACE_DefusalKit", "ACE_M26_Clacker"];
-    _engineerItems append      ["ACE_Flashlight_XL50", "ACE_EntrenchingTool", "ACE_DefusalKit"];
+      _squadLeaderItems append ["ACE_Flashlight_XL50", "ACE_EntrenchingTool", "ACE_IR_Strobe_Item", "ACE_Clacker"];
+         _riflemanItems append ["ACE_Flashlight_XL50"];
+            _medicItems append ["ACE_Flashlight_XL50", "ACE_bloodIV_500", "ACE_bloodIV_500", "ACE_personalAidKit", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot"];
+        _grenadierItems append ["ACE_Flashlight_XL50", "ACE_Clacker"];
+             _demoItems append ["ACE_Flashlight_XL50", "ACE_DefusalKit", "ACE_M26_Clacker"];
+         _engineerItems append ["ACE_Flashlight_XL50", "ACE_EntrenchingTool", "ACE_DefusalKit"];
     _lightAntiTankItems append ["ACE_Flashlight_XL50"];
-    _antiTankItems append      ["ACE_Flashlight_XL50"];
-    _antiAirItems append       ["ACE_Flashlight_XL50"];
+         _antiTankItems append ["ACE_Flashlight_XL50"];
+          _antiAirItems append ["ACE_Flashlight_XL50"];
     _machineGunnerItems append ["ACE_Flashlight_XL50", "ACE_SpareBarrel", "ACE_Tripod"];
-    _marksmanItems append      ["ACE_Flashlight_XL50"];
-    _sniperItems append        ["ACE_Flashlight_XL50", "ACE_ATragMX", "ACE_SpottingScope", "ACE_Kestrel4500"];
-    _policeItems append        ["ACE_Flashlight_XL50"];
-    _crewItems append          ["ACE_IR_Strobe_Item"];
-    _unarmedItems append       [];
+         _marksmanItems append ["ACE_Flashlight_XL50"];
+           _sniperItems append ["ACE_Flashlight_XL50", "ACE_ATragMX", "ACE_SpottingScope", "ACE_Kestrel4500"];
+           _policeItems append ["ACE_Flashlight_XL50"];
+             _crewItems append ["ACE_IR_Strobe_Item"];
+          _unarmedItems append [];
 };
 
-_loadoutData set ["items_squadLeader_extras",      _squadLeaderItems];
-_loadoutData set ["items_rifleman_extras",         _riflemanItems];
-_loadoutData set ["items_medic_extras",            _medicItems];
-_loadoutData set ["items_grenadier_extras",        _grenadierItems];
-_loadoutData set ["items_explosivesExpert_extras", _demoItems];
-_loadoutData set ["items_engineer_extras",         _engineerItems];
+_loadoutData set ["items_squadLeader_extras",      _squadLeaderItems  ];
+_loadoutData set ["items_rifleman_extras",         _riflemanItems     ];
+_loadoutData set ["items_medic_extras",            _medicItems        ];
+_loadoutData set ["items_grenadier_extras",        _grenadierItems    ];
+_loadoutData set ["items_explosivesExpert_extras", _demoItems         ];
+_loadoutData set ["items_engineer_extras",         _engineerItems     ];
 _loadoutData set ["items_lat_extras",              _lightAntiTankItems];
-_loadoutData set ["items_at_extras",               _antiTankItems];
-_loadoutData set ["items_aa_extras",               _antiAirItems];
+_loadoutData set ["items_at_extras",               _antiTankItems     ];
+_loadoutData set ["items_aa_extras",               _antiAirItems      ];
 _loadoutData set ["items_machineGunner_extras",    _machineGunnerItems];
-_loadoutData set ["items_marksman_extras",         _marksmanItems];
-_loadoutData set ["items_sniper_extras",           _sniperItems];
-_loadoutData set ["items_police_extras",           _policeItems];
-_loadoutData set ["items_crew_extras",             _crewItems];
-_loadoutData set ["items_unarmed_extras",          _unarmedItems];
+_loadoutData set ["items_marksman_extras",         _marksmanItems     ];
+_loadoutData set ["items_sniper_extras",           _sniperItems       ];
+_loadoutData set ["items_police_extras",           _policeItems       ];
+_loadoutData set ["items_crew_extras",             _crewItems         ];
+_loadoutData set ["items_unarmed_extras",          _unarmedItems      ];
 
 //TODO - ACE overrides for misc essentials, medical and engineer gear
 
