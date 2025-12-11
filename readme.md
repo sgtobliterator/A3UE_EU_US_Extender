@@ -25,7 +25,7 @@ This A3UE currently relies on the following mods and DLC:
 - [Orion UAV](https://steamcommunity.com/sharedfiles/filedetails/?id=3093850989)
 - [Yulakia](https://steamcommunity.com/sharedfiles/filedetails/?id=2950257727&searchtext=yulakia)
 ### Compatability
-Additionally, I wish to include support for all the remaining Arma III DLC and the following mods, where applicable:
+Additionally, I wish to include support for all the remaining Arma III DLC and the following mods, where applicable. This support would likely come in the form of Arms Dealer weapons, however I may find a way to also integrate them into the factions.
 - [NIArms](https://steamcommunity.com/sharedfiles/filedetails/?id=2595680138&searchtext=niarms)
 - JointCom Armory
   - [Infantry Arsenal](https://steamcommunity.com/sharedfiles/filedetails/?id=3333302397)
@@ -36,7 +36,6 @@ Additionally, I wish to include support for all the remaining Arma III DLC and t
 - [Project M](https://steamcommunity.com/sharedfiles/filedetails/?id=3615039550)
 - [Dagger](https://steamcommunity.com/sharedfiles/filedetails/?id=1105446708)
 - [Shotguns (Repack)](https://steamcommunity.com/sharedfiles/filedetails/?id=1527031418)
-This support would likely come in the form of Arms Dealer weapons, however I may find a way to also integrate them into the factions.
 ### Concerns
 The mod `RHS Vehicle Expansion Pack` has been repeatedly removed from the Steam Workshop and Nexus Mods. I currently possess a file that I am working from, but it seems untenable to keep its assets in this A3UE. I will likely have to remove it and its vehicles unless I can safely integrate them directly into this A3UE. Removing its data would be a significant let-down for me, as I have really enjoyed the T-80BVM and three Kurganets IFVs it adds to Arma. If anybody has any information on the mod or can find another mod that contains similar vehicles, I will be extremely thankful. Feel free to fork this to add it if I do not reply.
 
