@@ -155,13 +155,36 @@ private _characters = [
 ];
 
 if (_hasWS) then {
-    _characters append ["lxWS_Gustavo_Head", "lxWS_Journalist_Head"];
+    _characters append [
+        "lxWS_Gustavo_Head",
+        "lxWS_Journalist_Head"
+    ];
 };
 if (_hasLawsOfWar) then {
-    _characters append ["WhiteHead_23"];
+    _characters append [
+        "WhiteHead_23"
+    ];
 };
 if (_hasContact) then {
-    _characters append ["WhiteHead_24", "RussianHead_4", "LivonianHead_5", "WhiteHead_25", "LivonianHead_2", "RussianHead_1", "WhiteHead_27", "WhiteHead_28", "LivonianHead_3", "RussianHead_3", "RussianHead_2", "LivonianHead_10", "WhiteHead_32", "WhiteHead_30", "LivonianHead_8", "LivonianHead_4", "LivonianHead_9"];
+    _characters append [
+        "WhiteHead_24",
+        "RussianHead_4",
+        "LivonianHead_5",
+        "WhiteHead_25",
+        "LivonianHead_2",
+        "RussianHead_1",
+        "WhiteHead_27",
+        "WhiteHead_28",
+        "LivonianHead_3",
+        "RussianHead_3",
+        "RussianHead_2",
+        "LivonianHead_10",
+        "WhiteHead_32",
+        "WhiteHead_30",
+        "LivonianHead_8",
+        "LivonianHead_4",
+        "LivonianHead_9"
+    ];
 };
 
 ["faces", _characters] call _fnc_saveToTemplate;
@@ -174,7 +197,11 @@ private _languages = [
     "RHS_Male05RUS"
 ];
 if (_hasContact) then {
-    _languages append ["Male01RUS", "Male02RUS", "Male03RUS"];
+    _languages append [
+        "Male01RUS",
+        "Male02RUS",
+        "Male03RUS"
+    ];
 };
 
 ["voices", _languages] call _fnc_saveToTemplate;
