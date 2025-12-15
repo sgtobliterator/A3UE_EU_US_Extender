@@ -26,31 +26,67 @@ private _hasEF = "ef" in A3A_enabledDLC;
 ["flagTexture", QPATHTOFOLDER(Templates\Yulakia\flag_ylf_co.paa)] call _fnc_saveToTemplate;
 ["flagMarkerType", "ylf_flag"] call _fnc_saveToTemplate;
 
-["vehiclesBasic", []] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", []] call _fnc_saveToTemplate;
-["vehiclesLightArmed", []] call _fnc_saveToTemplate;
-["vehiclesTruck", []] call _fnc_saveToTemplate;
-["vehiclesAT", []] call _fnc_saveToTemplate;
-["vehiclesAA", []] call _fnc_saveToTemplate;
+["vehiclesBasic", ["B_G_Quadbike_01_F"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["B_G_Offroad_01_F"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["I_G_Offroad_01_armed_F"]] call _fnc_saveToTemplate;
+["vehiclesTruck", ["rhsgref_ins_g_ural", "rhsgref_ins_g_gaz66o"]] call _fnc_saveToTemplate;
 
-["vehiclesBoat", []] call _fnc_saveToTemplate;
+private _atVehicles = [
+    "I_G_Offroad_01_AT_F"
+];
+private _aaVehicles = [
+    "Aegis_O_R_Truck_02_aa_F"
+];
+private _planes = [
+    "RHS_AN2_B"
+];
 
-["vehiclesPlane", []] call _fnc_saveToTemplate;
-["vehiclesMedical", []] call _fnc_saveToTemplate;
+if (_hasWs) then {
+    _atVehicles append [
+        "I_G_Offroad_01_armor_AT_lxWS",
+        "I_G_Offroad_01_armor_armed_lxWS"
+    ];
+    _aaVehicles append [
+        "I_A_Truck_02_aa_lxWS",
+        "I_G_Offroad_AA_lxWS",
+        "I_Tura_Offroad_armor_AA_lxWS"
+    ];
+};
+if (_hasApex) then {
+    _planes append [
+        "C_Plane_Civil_01_F"
+    ];
+};
 
-["vehiclesCivCar", []] call _fnc_saveToTemplate;
-["vehiclesCivTruck", []] call _fnc_saveToTemplate;
-["vehiclesCivHeli", []] call _fnc_saveToTemplate;
-["vehiclesCivBoat", []] call _fnc_saveToTemplate;
-["vehiclesCivPlane", []] call _fnc_saveToTemplate;
-["vehiclesCivSupply", []] call _fnc_saveToTemplate;
+["vehiclesAT", _atVehicles] call _fnc_saveToTemplate;
+["vehiclesAA", _aaVehicles] call _fnc_saveToTemplate;
+["vehiclesPlane", _planes] call _fnc_saveToTemplate;
 
-["staticMGs", []] call _fnc_saveToTemplate;
-["staticAT", []] call _fnc_saveToTemplate;
-["staticAA", []] call _fnc_saveToTemplate;
-["staticMortars", []] call _fnc_saveToTemplate;
-["staticMortarMagHE", ""] call _fnc_saveToTemplate;
-["staticMortarMagSmoke", ""] call _fnc_saveToTemplate;
+["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
+
+private _civCars = [
+    "C_Offroad_01_F",
+    "a3a_Van_02_black_transport_F",
+    "C_Hatchback_01_F"
+];
+if (_hasContact) then {
+    _civCars append [
+        "C_Tractor_01_F"
+    ];
+};
+
+["vehiclesCivCar", _civCars] call _fnc_saveToTemplate;
+["vehiclesCivTruck", ["C_Van_01_transport_F", "RHS_Ural_Civ_01"]] call _fnc_saveToTemplate;
+["vehiclesCivHeli", ["C_Heli_Light_02_civil_F"]] call _fnc_saveToTemplate;
+["vehiclesCivBoat", ["rhsgref_civ_canoe", "C_Boat_Civil_01_F"]] call _fnc_saveToTemplate;
+["vehiclesCivSupply", ["C_Van_01_box_F"]] call _fnc_saveToTemplate;
+
+["staticMGs", ["I_G_HMG_02_high_F"]] call _fnc_saveToTemplate;
+["staticAT", ["rhsgref_ins_g_SPG9"]] call _fnc_saveToTemplate;
+["staticAA", ["rhsgref_ins_g_ZU23"]] call _fnc_saveToTemplate;
+["staticMortars", ["I_G_Mortar_01_F"]] call _fnc_saveToTemplate;
+["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
+["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 
 ["minesAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minesAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
@@ -408,10 +444,31 @@ _loadoutData set ["uniforms", _rebUniforms];
 
 _loadoutData set ["facewear", _facewear + _facewear + _balaclavas]; // increase chance of non-balaclava facewear
 
-_loadoutData set ["items_medical_basic",    ["BASIC"]    call A3A_fnc_itemset_medicalSupplies];
-_loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];
-_loadoutData set ["items_medical_medic",    ["MEDIC"]    call A3A_fnc_itemset_medicalSupplies];
-_loadoutData set ["items_miscEssentials",   []           call A3A_fnc_itemset_miscEssentials];
+if(A3A_hasACE) then {
+    /*
+    Basic Medical:      2 Bandages
+    Standard Medical:   3 Bandages, 1 Tourniquet
+    Squad Lead Medical: 6 Bandages, 2 Tourniquets
+    Doctor Medical:     9 Bandages, 4 Tourniquets, 1 Splint, 2 Morphine
+    */
+    _loadoutData set ["items_medical_basic",    ["ACE_fieldDressing", "ACE_fieldDressing"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_standard", ["ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_tourniquet"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_leader",   ["ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_packingBandage", "ACE_packingBandage", "ACE_tourniquet", "ACE_tourniquet"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_medic",    ["ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_morphine", "ACE_morphine"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_miscEssentials",   [] call A3A_fnc_itemset_miscEssentials];
+} else {
+    /*
+    Basic Medical:      1 FAK
+    Standard Medical:   2 FAKs
+    Squad Lead Medical: 3 FAKs
+    Doctor Medical:     1 Medikit
+    */
+    _loadoutData set ["items_medical_basic",    ["FirstAidKit"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_standard", ["FirstAidKit", "FirstAidKit"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_leader",   ["FirstAidKit", "FirstAidKit", "FirstAidKit"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_medic",    ["Medikit"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_miscEssentials",   [] call A3A_fnc_itemset_miscEssentials];
+};
 
 ////////////////////////
 //  Rebel Unit Types  //

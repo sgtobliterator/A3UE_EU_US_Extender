@@ -205,9 +205,9 @@ if (_hasContact) then {
 ["voices", _languages] call _fnc_saveToTemplate;
 
 if (_hasContact) then {
-    private _insignia = ["EAF_5thRegiment"]
+    private _insignia = ["EAF_5thRegiment"];
 } else {
-    private _insignia = ["Spetsnaz545thRegiment"]
+    private _insignia = ["Spetsnaz545thRegiment"];
 };
 
 ["insignia", _insignia] call _fnc_saveToTemplate;
@@ -298,10 +298,10 @@ _loadoutData set ["covering", _balaclavas]; // TODO
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
 if(A3A_hasACE) then {
     /*
-    Basic Medical: 3 Bandages
-    Standard Medical: 5 Bandages, 2 Tourniquets
-    Squad Lead Medical: 6 Bandages, 4 Tourniquets, 1 Splint
-    Doctor Medical: 12 Bandages, 2 Tourniquets, 2 Splints, 4 Morphine, 2 Epinephrine, 1 PAK
+    Basic Medical:       3 Bandages
+    Standard Medical:    5 Bandages, 2 Tourniquets
+    Squad Lead Medical:  6 Bandages, 4 Tourniquets, 1 Splint
+    Doctor Medical:     12 Bandages, 2 Tourniquets, 2 Splints, 4 Morphine, 2 Epinephrine, 1 PAK
     */
     _loadoutData set ["items_medical_basic",    ["ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing"]                                                                                                                                                                                                                                                                                                                                                                                     call A3A_fnc_itemset_medicalSupplies];
     _loadoutData set ["items_medical_standard", ["ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_tourniquet", "ACE_tourniquet"]                                                                                                                                                                                                                                                                                                  call A3A_fnc_itemset_medicalSupplies];
@@ -310,13 +310,16 @@ if(A3A_hasACE) then {
     _loadoutData set ["items_miscEssentials",   ["ACE_IR_Strobe_Item", "ACE_EntrenchingTool", "ACE_Flashlight_XL50"]                                                                                                                                                                                                                                                                                                                                                                                                       call A3A_fnc_itemset_miscEssentials ];
 } else {
     /*
-    TODO
+    Basic Medical:      1 FAK
+    Standard Medical:   3 FAKs
+    Squad Lead Medical: 5 FAKs
+    Doctor Medical:     1 Medikit
     */
-    _loadoutData set ["items_medical_basic",    ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
-    _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];
-    _loadoutData set ["items_medical_leader",   [""] call A3A_fnc_itemset_medicalSupplies];
-    _loadoutData set ["items_medical_medic",    ["MEDIC"] call A3A_fnc_itemset_medicalSupplies];
-    _loadoutData set ["items_miscEssentials",   [""] call A3A_fnc_itemset_miscEssentials];
+    _loadoutData set ["items_medical_basic",    ["FirstAidKit"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_standard", ["FirstAidKit", "FirstAidKit", "FirstAidKit"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_leader",   ["FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit", "FirstAidKit"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_medic",    ["Medikit"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_miscEssentials",   [] call A3A_fnc_itemset_miscEssentials];
 };
 
 // No single item should exist in every single array. Use "items_miscEssentials" for those.
