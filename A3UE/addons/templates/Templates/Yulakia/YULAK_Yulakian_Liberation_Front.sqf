@@ -14,6 +14,8 @@ private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
 private _hasEF = "ef" in A3A_enabledDLC;
 
+#include "..\..\script_component.hpp"
+
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
@@ -82,7 +84,6 @@ private _initialMagazines = [
     "rhsgref_5Rnd_762x54_m38",
     "rhs_18rnd_9x21mm_7N28",
     "rhs_18rnd_9x21mm_7N29"
-    
 ];
 private _initialVests = [
     "min_rf_combat_belt_green",
@@ -103,13 +104,13 @@ private _initialBackpacks = [
     "B_AssaultPack_blk",
     "B_AssaultPack_rgr",
     "B_AssaultPack_khk",
-    "B_AssaultPack_sgg",
+    "B_AssaultPack_sgg"
 ];
 private _initialInventoryItems = [
     "Chemlight_blue",
     "Chemlight_green",
     "Chemlight_red",
-    "Chemlight_yellow",
+    "Chemlight_yellow"
 ];
 
 if (_hasContact) then {
@@ -140,7 +141,7 @@ if (has_LawsOfWar) then {
         "V_Pocketed_olive_F"
     ];
 };
-if (A3A_hasACE){
+if (A3A_hasACE) then {
     _initialInventoryItems append [
         "ACE_Cellphone",
         "ACE_Flashlight_XL50",
@@ -153,7 +154,7 @@ if (A3A_hasACE){
         "ACE_fieldDressing",
         "ACE_wirecutter"
     ];
-}
+};
 
 // all equipment in the arsenal at game start
 private _initialRebelEquipment = _initialPrimaryWeapons + _initialSecondaryWeapons + _initialMagazines + _initialVests + _initialBackpacks + _initialInventoryItems;

@@ -14,6 +14,8 @@ private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
 private _hasEF = "ef" in A3A_enabledDLC;
 
+#include "..\..\script_component.hpp"
+
 ////////////////////////////
 //   Rivals Information   //
 ///////////////////////////
@@ -91,7 +93,7 @@ private _gls = [
 private _mgs = [
 	["", "", "", "", [], [], ""]
 ];
-private _marksmanRifle= [
+private _marksmanRifles = [
 	["", "", "", "", [], [], ""]
 ];
 private _lightATLaunchers = [
