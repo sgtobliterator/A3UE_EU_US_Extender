@@ -31,7 +31,7 @@ class Templates
         flagTexture = QPATHTOFOLDER(Templates\Yulakia\flag_ypg_co.paa);                                 // Path to an icon to be displayed in the select menu.
         name = "YPG";                                                                                   // Name shown in the select menu.
         file = "YULAK_Yulakian_Provisional_Government";                                                 // The template file name - .sqf, that gets appended automatically.
-        maps[] = {"Antistasi_yulakia.yulakia"};                                                         // If this template should be prioritized on any maps (case sensitive to worldName)
+        maps[] = {"yulakia"};                                                                           // If this template should be prioritized on any maps (case sensitive to worldName)
         climate[] = {"temperate"};                                                                      // The climate that the template can be selected on.
         description = "Yulakian Provisional Government (YPG)\nThe authoritarian ruling government of Yulakia.";                                // If this isn't included, no description will show (unless inherited from the base class.)
     };
@@ -43,7 +43,7 @@ class Templates
         flagTexture = QPATHTOFOLDER(Templates\Yulakia\flag_ru_co.paa);                                  // Path to an icon to be displayed in the select menu.
         name = "Russian Forces";                                                                        // Name shown in the select menu.
         file = "YULAK_Russian_Forces";                                                                  // The template file name - .sqf, that gets appended automatically.
-        maps[] = {"Antistasi_yulakia.yulakia"};                                                         // If this template should be prioritized on any maps (case sensitive to worldName)
+        maps[] = {"yulakia"};                                                                           // If this template should be prioritized on any maps (case sensitive to worldName)
         climate[] = {"temperate"};                                                                      // The climate that the template can be selected on.
         description = "The invasion force dispatched to conquer Yulakia.";                              // If this isn't included, no description will show (unless inherited from the base class.)
     };
@@ -55,7 +55,7 @@ class Templates
         flagTexture = QPATHTOFOLDER(Templates\Yulakia\flag_spz_co.paa);                                 // Path to an icon to be displayed in the select menu.
         name = "Spetsnaz";                                                                              // Name shown in the select menu.
         file = "YULAK_Spetsnaz";                                                                        // The template file name - .sqf, that gets appended automatically.
-        maps[] = {"Antistasi_yulakia.yulakia"};                                                         // If this template should be prioritized on any maps (case sensitive to worldName)
+        maps[] = {"yulakia"};                                                                           // If this template should be prioritized on any maps (case sensitive to worldName)
         climate[] = {"temperate"};                                                                      // The climate that the template can be selected on.
         description = "Russian Special Forces deployed to disrupt resistance in Yulakia.";              // If this isn't included, no description will show (unless inherited from the base class.)
     };
@@ -67,7 +67,7 @@ class Templates
         flagTexture = QPATHTOFOLDER(Templates\Yulakia\flag_ylf_co.paa);                                 // Path to an icon to be displayed in the select menu.
         name = "YLF";                                                                                   // Name shown in the select menu.
         file = "YULAK_Yulakian_Liberation_Front";                                                       // The template file name - .sqf, that gets appended automatically.
-        maps[] = {"Antistasi_yulakia.yulakia"};                                                         // If this template should be prioritized on any maps (case sensitive to worldName)
+        maps[] = {"yulakia"};                                                                           // If this template should be prioritized on any maps (case sensitive to worldName)
         climate[] = {"temperate"};                                                                      // The climate that the template can be selected on.
         description = "Yulakian Liberation Front (YLF)\nPro-Western rebels fighting in Yulakia.";                                        // If this isn't included, no description will show (unless inherited from the base class.)
     };
