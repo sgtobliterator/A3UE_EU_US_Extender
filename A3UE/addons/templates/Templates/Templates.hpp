@@ -28,7 +28,8 @@ class Templates
     {
         basepath = QPATHTOFOLDER(Templates\Yulakia);                                                    // The path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
         side = "Occ";                                                                                   // Inv, Occ, Reb, Riv, Civ
-        flagTexture = QPATHTOFOLDER(Templates\Yulakia\flag_ypg_co.paa);                                 // Path to an icon to be displayed in the select menu.
+        flagTexture = QPATHTOFOLDER(Pictures\flag_ypg_co.paa);                                 // Path to an icon to be displayed in the select menu.
+        logo = QPATHTOFOLDER(Pictures\a3ue_logo.paa);
         name = "YPG";                                                                                   // Name shown in the select menu.
         file = "YULAK_Yulakian_Provisional_Government";                                                 // The template file name - .sqf, that gets appended automatically.
         maps[] = {"yulakia"};                                                                           // If this template should be prioritized on any maps (case sensitive to worldName)
@@ -40,7 +41,8 @@ class Templates
     {
         basepath = QPATHTOFOLDER(Templates\Yulakia);                                                    // The path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
         side = "Inv";                                                                                   // Inv, Occ, Reb, Riv, Civ
-        flagTexture = QPATHTOFOLDER(Templates\Yulakia\flag_ru_co.paa);                                  // Path to an icon to be displayed in the select menu.
+        flagTexture = QPATHTOFOLDER(Pictures\flag_ru_co.paa);                                  // Path to an icon to be displayed in the select menu.
+        logo = QPATHTOFOLDER(Pictures\a3ue_logo.paa);
         name = "Russian Forces";                                                                        // Name shown in the select menu.
         file = "YULAK_Russian_Forces";                                                                  // The template file name - .sqf, that gets appended automatically.
         maps[] = {"yulakia"};                                                                           // If this template should be prioritized on any maps (case sensitive to worldName)
@@ -52,7 +54,8 @@ class Templates
     {
         basepath = QPATHTOFOLDER(Templates\Yulakia);                                                    // The path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
         side = "Riv";                                                                                   // Inv, Occ, Reb, Riv, Civ
-        flagTexture = QPATHTOFOLDER(Templates\Yulakia\flag_spz_co.paa);                                 // Path to an icon to be displayed in the select menu.
+        flagTexture = QPATHTOFOLDER(Pictures\flag_spz_co.paa);                                 // Path to an icon to be displayed in the select menu.
+        logo = QPATHTOFOLDER(Pictures\a3ue_logo.paa);
         name = "Spetsnaz";                                                                              // Name shown in the select menu.
         file = "YULAK_Spetsnaz";                                                                        // The template file name - .sqf, that gets appended automatically.
         maps[] = {"yulakia"};                                                                           // If this template should be prioritized on any maps (case sensitive to worldName)
@@ -64,7 +67,8 @@ class Templates
     {
         basepath = QPATHTOFOLDER(Templates\Yulakia);                                                    // The path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
         side = "Reb";                                                                                   // Inv, Occ, Reb, Riv, Civ
-        flagTexture = QPATHTOFOLDER(Templates\Yulakia\flag_ylf_co.paa);                                 // Path to an icon to be displayed in the select menu.
+        flagTexture = QPATHTOFOLDER(Pictures\flag_ylf_co.paa);                                 // Path to an icon to be displayed in the select menu.
+        logo = QPATHTOFOLDER(Pictures\a3ue_logo.paa);
         name = "YLF";                                                                                   // Name shown in the select menu.
         file = "YULAK_Yulakian_Liberation_Front";                                                       // The template file name - .sqf, that gets appended automatically.
         maps[] = {"yulakia"};                                                                           // If this template should be prioritized on any maps (case sensitive to worldName)
