@@ -23,7 +23,7 @@ private _hasEF = "ef" in A3A_enabledDLC;
 ["name", "YLF"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_AAF_F"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Templates\Yulakia\flag_ylf_co.paa)] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Pictures\flag_ylf_co.paa)] call _fnc_saveToTemplate;
 ["flagMarkerType", "ylf_flag"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["B_G_Quadbike_01_F"]] call _fnc_saveToTemplate;

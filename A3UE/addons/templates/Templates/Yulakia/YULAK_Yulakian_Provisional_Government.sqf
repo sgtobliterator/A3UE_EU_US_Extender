@@ -24,7 +24,7 @@ private _hasEF = "ef" in A3A_enabledDLC;
 ["spawnMarkerName", "Yulakian Support Corridor"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_AAF_F"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Templates\Yulakia\flag_ypg_co.paa)] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Pictures\flag_ypg_co.paa)] call _fnc_saveToTemplate;
 ["flagMarkerType", "ypg_flag"] call _fnc_saveToTemplate;
 
 //////////////////////////
