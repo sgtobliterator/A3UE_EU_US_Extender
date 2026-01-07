@@ -22,29 +22,150 @@ private _hasEF = "ef" in A3A_enabledDLC;
 
 ["name", "YLF"] call _fnc_saveToTemplate;
 
-["flag", "Flag_AAF_F"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Pictures\flag_ylf_co.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "ylf_flag"] call _fnc_saveToTemplate;
+private _basicVehicles = [
+    "B_G_Quadbike_01_F"
+];
 
-["vehiclesBasic", ["B_G_Quadbike_01_F"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["B_G_Offroad_01_F"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["I_G_Offroad_01_armed_F"]] call _fnc_saveToTemplate;
-["vehiclesTruck", ["rhsgref_ins_g_ural", "rhsgref_ins_g_gaz66o"]] call _fnc_saveToTemplate;
+private _lightUnarmedVehicles = [
+    "B_G_Offroad_01_F"
+];
+
+private _lightArmedVehicles = [
+    "B_G_Offroad_01_armed_F"
+];
+
+private _truckVehicles = [];
+
+private _boats = [
+    "I_G_Boat_Transport_01_F"
+];
 
 private _atVehicles = [
     "I_G_Offroad_01_AT_F"
 ];
 private _aaVehicles = [
-    "Aegis_O_R_Truck_02_aa_F"
+    "Aegis_O_R_Truck_02_aa_F",
+    "RHS_Ural_Zu23_MSV_01"
 ];
 private _planes = [
     "RHS_AN2_B"
 ];
 
+private _civCars = [
+    "C_Offroad_01_F",
+    "a3a_Van_02_black_transport_F"
+];
+
+private _civTrucks = [];
+
+private _civHelis = [
+    "Aegis_C_Heli_Light_01_Civil_F_malden"
+];
+
+private _civBoats = [
+    "rhsgref_civ_canoe",
+    "Aegis_C_Boat_Transport_02_F_Malden",
+    "C_Boat_Civil_01_F"
+];
+
+private _staticMG = [
+    "I_G_HMG_02_high_F"
+];
+
+private _staticAT = [];
+
+private _staticAA = [
+    "rhsgref_ins_g_ZU23"
+];
+
+if (_hasGM) then {
+    _basicVehicles append [
+        "gm_ge_army_k125"
+    ];
+    _lightUnarmedVehicles append [
+        "gm_dk_army_typ247_cargo",
+        "gm_ge_army_w123_cargo",
+        "gm_ge_civ_u1300l"
+    ];
+    _truckVehicles append [
+        "gm_gc_army_ural4320_cargo_noinsignia"
+    ];
+    _civCars append [
+        "gm_ge_civ_typ247",
+        "gm_ge_civ_typ253",
+        "gm_ge_civ_typ251",
+        "gm_ge_civ_w123"
+    ];
+    _civTrucks append [
+        "gm_ge_civ_u1300l",
+        "gm_gc_civ_ural375d_cargo"
+    ];
+    _civHelis append [
+        "gm_gc_civ_mi2p"
+    ];
+    _staticAT append [
+        "gm_gc_army_spg9_tripod"
+    ];
+    _staticMG append [
+        "gm_gc_army_dshkm_aatripid",
+        "gm_ge_army_mg3_aatripod_csw"
+    ];
+} else {
+    _truckVehicles append [
+        "rhsgref_ins_g_ural"
+    ];
+    _civTrucks append [
+        "C_Van_01_Transport_F",
+        "RHS_Ural_Civ_01"
+    ];
+    _civHelis append [
+        "C_Heli_Light_02_civil_F"
+    ];
+    _staticAT append [
+        "rhsgref_ins_SPG9"
+    ];
+    _staticMG append [
+        "rhs_KORD_high_VDV"
+    ];
+};
+
+if (_hasRF) then {
+    _lightArmedVehicles append [
+        "I_G_Pickup_hmg_rf"
+    ];
+    _atVehicles append [
+        "I_G_Pickup_Rocket_rf",
+        "I_Pickup_hmg_rf"
+    ];
+    _civCars append [
+        "Aegis_C_Pickup_RF_Malden"
+    ];
+};
+
+if (_hasCSLA) then {
+    _truckVehicles append [
+        "CSLA_V3So_noinsignia"
+    ];
+    _civCars append [
+        "CSLA_CIV_Sakura1200"
+    ];
+} else {
+    _truckVehicles append [
+        "rhsgref_ins_g_gaz66o"
+    ];
+};
+
+if (_hasSOG) then {
+    _staticAA append [
+        "vn_b_sf_static_m45"
+    ];
+};
+
 if (_hasWs) then {
     _atVehicles append [
         "I_G_Offroad_01_armor_AT_lxWS",
-        "I_G_Offroad_01_armor_armed_lxWS"
+        "I_G_Offroad_01_armor_armed_lxWS",
+        "I_G_Offroad_01_armor_base_lxWS"
     ];
     _aaVehicles append [
         "I_A_Truck_02_aa_lxWS",
@@ -56,40 +177,58 @@ if (_hasApex) then {
     _planes append [
         "C_Plane_Civil_01_F"
     ];
+    _lightUnarmedVehicles append [
+        "C_Offroad_02_unarmed_F"
+    ];
+    _civCars append [
+        "C_Offroad_02_unarmed_F"
+    ];
+    _civBoats append [
+        "Aegis_C_Scooter_Transport_01_F_Tanoa"
+    ];
+    _boats append [
+        "B_GEN_Boat_Transport_02_F"
+    ];
 };
 
-["vehiclesAT", _atVehicles] call _fnc_saveToTemplate;
-["vehiclesAA", _aaVehicles] call _fnc_saveToTemplate;
-["vehiclesPlane", _planes] call _fnc_saveToTemplate;
-
-["vehiclesBoat", ["I_G_Boat_Transport_01_F"]] call _fnc_saveToTemplate;
-
-private _civCars = [
-    "C_Offroad_01_F",
-    "a3a_Van_02_black_transport_F",
-    "C_Hatchback_01_F"
-];
 if (_hasContact) then {
     _civCars append [
         "C_Tractor_01_F"
     ];
 };
 
+["flag", "Flag_AAF_F"] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Pictures\flag_ylf_co.paa)] call _fnc_saveToTemplate;
+["flagMarkerType", "ylf_flag"] call _fnc_saveToTemplate;
+
+["vehiclesBasic", _basicVehicles] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", _lightUnarmedVehicles] call _fnc_saveToTemplate;
+["vehiclesLightArmed", _lightArmedVehicles] call _fnc_saveToTemplate;
+["vehiclesTruck", _truckVehicles] call _fnc_saveToTemplate;
+
+["vehiclesAT", _atVehicles] call _fnc_saveToTemplate;
+["vehiclesAA", _aaVehicles] call _fnc_saveToTemplate;
+["vehiclesPlane", _planes] call _fnc_saveToTemplate;
+
+["vehiclesBoat", _boats] call _fnc_saveToTemplate;
+
 ["vehiclesCivCar", _civCars] call _fnc_saveToTemplate;
-["vehiclesCivTruck", ["C_Van_01_transport_F", "RHS_Ural_Civ_01"]] call _fnc_saveToTemplate;
-["vehiclesCivHeli", ["C_Heli_Light_02_civil_F"]] call _fnc_saveToTemplate;
-["vehiclesCivBoat", ["rhsgref_civ_canoe", "C_Boat_Civil_01_F"]] call _fnc_saveToTemplate;
+["vehiclesCivTruck", _civTrucks] call _fnc_saveToTemplate;
+["vehiclesCivHeli", _civHelis] call _fnc_saveToTemplate;
+["vehiclesCivBoat", _civBoats] call _fnc_saveToTemplate;
 ["vehiclesCivSupply", ["C_Van_01_box_F"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["I_G_HMG_02_high_F"]] call _fnc_saveToTemplate;
-["staticAT", ["rhsgref_ins_g_SPG9"]] call _fnc_saveToTemplate;
-["staticAA", ["rhsgref_ins_g_ZU23"]] call _fnc_saveToTemplate;
-["staticMortars", ["I_G_Mortar_01_F"]] call _fnc_saveToTemplate;
-["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
-["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
+["staticMGs", _staticMG] call _fnc_saveToTemplate;
+["staticAT", _staticAT] call _fnc_saveToTemplate;
+["staticAA", _staticAA] call _fnc_saveToTemplate;
+["staticMortars", ["RUS_MSV_2b14"]] call _fnc_saveToTemplate;
+["staticMortarMagHE", ["rhs_mag_3vo18_10"]] call _fnc_saveToTemplate;
+["staticMortarMagSmoke", ["rhs_mag_d832du_10"]] call _fnc_saveToTemplate;
 
 ["minesAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minesAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
+
+
 
 ["breachingExplosivesAPC", ["SatchelCharge_Remote_Mag", "rhsusf_m112x4_mag", "rhsusf_m112_mag", "rhs_charge_M2tet_x2_mag", "rhssaf_tm500_mag", "rhs_ec400_sand_mag", "rhs_ec400_mag", "rhssaf_tm200_mag", "rhs_ec200_mag", "rhs_ec200_sand_mag"]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", ["SatchelCharge_Remote_Mag", "rhsusf_m112x4_mag", "rhsusf_m112_mag", "rhs_charge_M2tet_x2_mag", "rhssaf_tm500_mag", "rhs_ec400_sand_mag", "rhs_ec400_mag"]] call _fnc_saveToTemplate;

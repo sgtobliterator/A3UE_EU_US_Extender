@@ -49,7 +49,7 @@ private _hasEF = "ef" in A3A_enabledDLC;
 ["vehiclesAirborne", ["RUS_VDV_bmd4m"]]                                                                                            call _fnc_saveToTemplate; // Parachute-deployable armored vehicles
 ["vehiclesIFVs", ["TV_kgn25_2A92", "rhs_t15_tv", "TV_kgn25_2A42", "O_BMPT", "rhs_bmp3mera_msv", "RUS_MSV_bmp2m", "RUS_VDV_bmd4m"]] call _fnc_saveToTemplate; // Heavier armament with infantry capacity
 ["vehiclesTanks", ["rhs_t14_tv", "RUS_MSV_t90m", "rhs_t90sab_tv", "rhs_t90saa_tv", "rhs_tv_t80bvm", "RUS_MSV_t72b3m"]]             call _fnc_saveToTemplate; // Tanks
-["vehiclesLightTanks", ["rhs_sprut_vdv"]]                                                                                          call _fnc_saveToTemplate; // Lesser armament and/or less armor
+["vehiclesLightTanks", ["O_R_APC_Wheeled_04_cannon_v2_F"]]                                                                         call _fnc_saveToTemplate; // Lesser armament and/or less armor
 ["vehiclesAA", ["mkk_sa22m_pantsir_r", "mkk_2s6m_tunguska"]]                                                                       call _fnc_saveToTemplate; // SPAA
 
 ["vehiclesTransportBoats", ["O_R_Boat_Transport_01_ard_F"]] call _fnc_saveToTemplate; // Little-to-no armament
