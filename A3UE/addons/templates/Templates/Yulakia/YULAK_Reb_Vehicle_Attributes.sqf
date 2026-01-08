@@ -1,3 +1,4 @@
+private _basicCost = 200;
 private _atLauncherCost = 250;
 private _aaGunCost = 300;
 private _mgCost = 150;
@@ -11,18 +12,8 @@ private _oldOffroadCost = _offroadCost / 1.125;
 private _mg3Cost = _mgCost * 0.8;
 
 ["attributesVehicles", [
-	["B_G_Quadbike_01_F", 				     ["rebcost", 250]],
-	["UAZ_05_transport_F",                   ["rebcost", _offroadCost]],
-	["UAZ_01_transport_F",                   ["rebcost", _offroadCost]],
+	["B_G_Quadbike_01_F", 				     ["rebcost", _basicCost]],
 	["B_G_Offroad_01_armed_F",               ["rebcost", _offroadCost + _mgCost + _armorCost * 0.2]],
-	["UAZ_GunMG_Camo",                       ["rebcost", _offroadCost + _mgCost]],
-	["UAZ_MG_Camo",                          ["rebcost", _offroadCost + _mgCost + _armorCost * 0.1]],
-	["UAZ_GunMG",                            ["rebcost", _offroadCost + _mgCost]],
-	["UAZ_MG",                               ["rebcost", _offroadCost + _mgCost + _armorCost * 0.1]],
-	["UAZ_GunMG_PBL",                        ["rebcost", _offroadCost + _mgCost]],
-	["UAZ_MG_PBL",                           ["rebcost", _offroadCost + _mgCost + _armorCost * 0.1]],
-	["UAZ_MG_PB",                            ["rebcost", _offroadCost + _mgCost + _armorCost * 0.1]],
-	["UAZ_GunMG_PB",                         ["rebcost", _offroadCost + _mgCost]],
 	["C_Truck_02_transport_F",               ["rebcost", _truckCost]],
 	["C_Truck_02_covered_F",                 ["rebcost", _truckCost]],
 	["I_G_Boat_Transport_01_F",              ["rebcost", 400]],
@@ -32,17 +23,13 @@ private _mg3Cost = _mgCost * 0.8;
 	["RHS_AN2_B",                            ["rebcost", 1500]],
 	["C_Offroad_01_F",                       ["rebcost", _offroadCost * _civilianMultiplier]],
 	["a3a_Van_02_black_transport_F",         ["rebcost", _truckCost]],
-	["UAZ_pat",                              ["rebcost", _offroadCost * _civilianMultiplier]],
-	["UAZ_04_transport_F",                   ["rebcost", _offroadCost * _civilianMultiplier]],
-	["UAZ_03_transport_F",                   ["rebcost", _offroadCost * _civilianMultiplier]],
-	["UAZ_02_transport_F",                   ["rebcost", _offroadCost * _civilianMultiplier]],
 	["Aegis_C_Heli_Light_01_Civil_F_malden", ["rebcost", 1000 * _civilianMultiplier]],
 	["rhsgref_civ_canoe",                    ["rebcost", 200]],
-	["Aegis_C_Boat_Transport_02_F_Malden",   ["rebcost", 400 * _civilianMultiplier]],
+	["Aegis_C_Boat_Transport_02_F_Malden",   ["rebcost", 500 * _civilianMultiplier]],
 	["C_Boat_Civil_01_F",                    ["rebcost", 650]],
 	["I_G_HMG_02_high_F",                    ["rebcost", _mgCost + _offroadCost]],
 	["rhsgref_ins_g_ZU23",                   ["rebcost", _aaGunCost + _truckCost]],
-	["gm_ge_army_k125",                      ["rebcost", 150]],
+	["gm_ge_army_k125",                      ["rebcost", _basicCost]],
 	["gm_dk_army_typ247_cargo",              ["rebcost", _oldOffroadCost]],
 	["gm_ge_army_w123_cargo",                ["rebcost", _oldOffroadCost * 0.9]],
 	["gm_ge_civ_u1300l",                     ["rebcost", _oldOffroadCost * _civilianMultiplier]],
@@ -63,8 +50,8 @@ private _mg3Cost = _mgCost * 0.8;
 	["C_Heli_Light_02_civil_F",              ["rebcost", 1250 * _civilianMultiplier]],
 	["rhsgref_ins_SPG9",                     ["rebcost", _atLauncherCost]],
 	["rhs_KORD_high_VDV",                    ["rebcost", _mgCost]],
-	["I_G_Pickup_hmg_rf",                    ["rebcost", _offroadCost + _armorCost * 0.5]],
-	["Aegis_C_Pickup_RF_Malden",             ["rebcost", _offroadCost]],
+	["I_G_Pickup_hmg_rf",                    ["rebcost", _newOffroadCost + _armorCost * 0.5]],
+	["Aegis_C_Pickup_RF_Malden",             ["rebcost", _newOffroadCost]],
 	["CSLA_V3So_noinsignia",                 ["rebcost", _truckCost * 0.7]],
 	["CSLA_CIV_Sakura1200",                  ["rebcost", _offroadCost * 0.8 * _civilianMultiplier]],
 	["rhsgref_ins_g_gaz66o",                 ["rebcost", _truckCost]],
@@ -87,5 +74,8 @@ private _mg3Cost = _mgCost * 0.8;
 	["C_Tractor_01_F",                       ["rebcost", _offroadCost * _civilianMultiplier * 0.5]],
 	["RUS_MSV_2b14",                         ["rebcost", _mortarCost]],
 	["CSLA_CS_CATOR_noinsignia",             ["rebcost", _offroadCost * _civilianMultiplier * 0.5]],
-	["gm_dk_army_u1300l_container",          ["rebcost", _oldOffroadCost + _mg3Cost]]
+	["gm_dk_army_u1300l_container",          ["rebcost", _oldOffroadCost + _mg3Cost]],
+	["B_G_Offroad_01_F",                     ["rebcost", _offroadCost]],
+	["C_Hatchback_01_F",                     ["rebcost", _offroadCost * _civilianCost]],
+	["Aegis_B_D_Pickup_RF",                  ["rebcost", _newOffroadCost * _civilianMultiplier]]
 ]] call _fnc_saveToTemplate;

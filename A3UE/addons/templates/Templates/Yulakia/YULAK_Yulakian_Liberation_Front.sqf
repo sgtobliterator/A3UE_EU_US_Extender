@@ -27,24 +27,11 @@ private _basicVehicles = [
 ];
 
 private _lightUnarmedVehicles = [
-    "B_G_Offroad_01_F",
-    "UAZ_05_transport_F",
-    "UAZ_04_transport_F",
-    "UAZ_03_transport_F",
-    "UAZ_02_transport_F",
-    "UAZ_01_transport_F"
+    "B_G_Offroad_01_F"
 ];
 
 private _lightArmedVehicles = [
-    "B_G_Offroad_01_armed_F",
-    "UAZ_GunMG_Camo",
-    "UAZ_MG_Camo",
-    "UAZ_GunMG",
-    "UAZ_MG",
-    "UAZ_GunMG_PBL",
-    "UAZ_MG_PBL",
-    "UAZ_MG_PB",
-    "UAZ_GunMG_PB"
+    "B_G_Offroad_01_armed_F"
 ];
 
 private _truckVehicles = [
@@ -69,12 +56,7 @@ private _planes = [
 
 private _civCars = [
     "C_Offroad_01_F",
-    "a3a_Van_02_black_transport_F",
-    "UAZ_pat",
-    "UAZ_04_transport_F",
-    "UAZ_03_transport_F",
-    "UAZ_02_transport_F",
-    "UAZ_01_transport_F"
+    "a3a_Van_02_black_transport_F"
 ];
 
 private _civTrucks = [];
@@ -117,8 +99,7 @@ if (_hasGM) then {
     _civCars append [
         "gm_ge_civ_typ247",
         "gm_ge_civ_typ253",
-        "gm_ge_civ_typ251",
-        "gm_ge_civ_w123"
+        "gm_ge_civ_typ251"
     ];
     _civTrucks append [
         "gm_ge_civ_u1300l",
@@ -151,9 +132,6 @@ if (_hasGM) then {
     _staticMG append [
         "rhs_KORD_high_VDV"
     ];
-    _civCars append [
-        "C_Hatchback_01_F"
-    ];
 };
 
 if (_hasRF) then {
@@ -170,7 +148,6 @@ if (_hasCSLA) then {
         "CSLA_V3So_noinsignia"
     ];
     _civCars append [
-        "CSLA_CIV_Sakura1200",
         "CSLA_CS_CATOR_noinsignia"
     ];
 } else {
@@ -228,6 +205,23 @@ if (_hasContact) then {
     _civCars append [
         "C_Tractor_01_F"
     ];
+};
+
+if (!_hasGM && !_hasCSLA) then {
+    _civCars append [
+        "C_Hatchback_01_F"
+    ];
+} else {
+    if (_hasGM) then {
+        _civCars append [
+            "gm_ge_civ_w123"
+        ];
+    };
+    if (_hasCSLA) then {
+        _civCars append [
+            "CSLA_CIV_Sakura1200"
+        ];
+    };
 };
 
 ["flag", "Flag_AAF_F"] call _fnc_saveToTemplate;
