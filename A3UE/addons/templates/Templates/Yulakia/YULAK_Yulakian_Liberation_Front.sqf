@@ -93,8 +93,7 @@ if (_hasGM) then {
     ];
     _lightUnarmedVehicles append [
         "gm_dk_army_typ247_cargo",
-        "gm_ge_army_w123_cargo",
-        "gm_ge_civ_u1300l"
+        "gm_ge_army_w123_cargo"
     ];
     _lightArmedVehicles append [ 
         "gm_dk_army_u1300l_container"
