@@ -27,6 +27,13 @@ private _characters = [
     "RuHead_12",
     "Vissim"
 ];
+private _languages = [
+    "RHS_Male01RUS",
+    "RHS_Male02RUS",
+    "RHS_Male03RUS",
+    "RHS_Male04RUS",
+    "RHS_Male05RUS"
+];
 
 if (_hasWs) then {
     _characters append [
@@ -59,16 +66,6 @@ if (_hasContact) then {
         "LivonianHead_4",
         "LivonianHead_9"
     ];
-};
-
-private _languages = [
-    "RHS_Male01RUS",
-    "RHS_Male02RUS",
-    "RHS_Male03RUS",
-    "RHS_Male04RUS",
-    "RHS_Male05RUS"
-];
-if (_hasContact) then {
     _languages append [
         "Male01RUS",
         "Male02RUS",

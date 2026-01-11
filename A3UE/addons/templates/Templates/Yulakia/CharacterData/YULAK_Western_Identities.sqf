@@ -29,13 +29,47 @@ private _characters = [
 ];
 
 if (_hasWS) then {
-    _characters append ["lxWS_Gustavo_Head", "lxWS_Journalist_Head"];
+    _characters append [
+        "lxWS_Gustavo_Head",
+        "lxWS_Journalist_Head"
+    ];
 };
 if (_hasLawsOfWar) then {
-    _characters append ["WhiteHead_23"];
+    _characters append [
+        "WhiteHead_23"
+    ];
 };
 if (_hasContact) then {
-    _characters append ["WhiteHead_24", "RussianHead_4", "LivonianHead_5", "WhiteHead_25", "LivonianHead_2", "RussianHead_1", "WhiteHead_27", "WhiteHead_28", "LivonianHead_3", "RussianHead_3", "RussianHead_2", "LivonianHead_10", "WhiteHead_32", "WhiteHead_30", "LivonianHead_8", "LivonianHead_4", "LivonianHead_9"];
+    _characters append [
+        "WhiteHead_24",
+        "RussianHead_4",
+        "LivonianHead_5",
+        "WhiteHead_25",
+        "LivonianHead_2",
+        "RussianHead_1",
+        "WhiteHead_27",
+        "WhiteHead_28",
+        "LivonianHead_3",
+        "RussianHead_3",
+        "RussianHead_2",
+        "LivonianHead_10",
+        "WhiteHead_32",
+        "WhiteHead_30",
+        "LivonianHead_8",
+        "LivonianHead_4",
+        "LivonianHead_9"
+    ];
+};
+if (_hasSOG) then {
+    _characters append [
+        "vn_b_WhiteHead_24_01",
+        "vn_b_WhiteHead_24_03",
+        "vn_b_WhiteHead_24_09",
+        "vn_b_WhiteHead_02_12",
+        "vn_b_WhiteHead_18_05",
+        "vn_m_elcid_face",
+        "vn_m_elcid_face_camo"
+    ];
 };
 
 ["faces", _characters] call _fnc_saveToTemplate;

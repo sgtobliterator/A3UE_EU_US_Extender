@@ -46,7 +46,7 @@ private _fuelTrucks                = ["O_R_Truck_02_fuel_F"];
 private _medicalTrucks             = ["O_R_Truck_02_medical_F"];
 private _lightAPCs                 = ["rhs_btr80_msv"];
 private _APCs                      = ["rhs_btr80a_msv"];
-private _airborneVehicles          = ["rhs_bmd2"];
+private _airborneVehicles          = ["rhs_bmd2", "rhs_sprut_vdv"];
 private _IFVs                      = ["RUS_MSV_bmp3", "rhs_bmp2d_msv", "rhs_bmp2_msv"];
 private _tanks                     = ["rhs_t90_tv", "mkk_t80bv_r", "rhs_t80a", "rhs_t72bc_tv", "rhs_t72bb_tv"];
 private _lightTanks                = ["rhs_sprut_vdv"];
@@ -1162,7 +1162,7 @@ private _squadLeaderTemplate = {
 
     ["backpacks"] call _fnc_setBackpack;
 
-    [["rifles"] call _fnc_fallback] call _fnc_setPrimary;
+    ["rifles"] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
     ["primary", 4] call _fnc_addAdditionalMuzzleMagazines;
 
