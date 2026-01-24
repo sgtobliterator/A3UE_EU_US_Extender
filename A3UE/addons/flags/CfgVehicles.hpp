@@ -18,7 +18,7 @@ class CfgVehicles
 
         class EventHandlers
         {
-            init = "(_this select 0) setFlagTexture '\x\A3UE\addons\templates\Pictures\flag_ypg_co.paa';";
+            init = "(_this select 0) setFlagTexture '\x\A3UE\addons\templates\Pictures\YULAK_ypg_flag.paa';";
         };
     };
 
@@ -38,7 +38,7 @@ class CfgVehicles
 
         class EventHandlers
         {
-            init = "(_this select 0) setFlagTexture '\x\A3UE\addons\templates\Pictures\flag_ylf_co.paa';";
+            init = "(_this select 0) setFlagTexture '\x\A3UE\addons\templates\Pictures\YULAK_ylf_flag.paa';";
         };
     };
 
@@ -58,7 +58,7 @@ class CfgVehicles
 
         class EventHandlers
         {
-            init = "(_this select 0) setFlagTexture '\x\A3UE\addons\templates\Pictures\flag_spz_co.paa';";
+            init = "(_this select 0) setFlagTexture '\x\A3UE\addons\templates\Pictures\YULAK_spz_flag.paa';";
         };
     };
 
@@ -78,7 +78,7 @@ class CfgVehicles
 
         class EventHandlers
         {
-            init = "(_this select 0) setFlagTexture '\x\A3UE\addons\templates\Pictures\flag_ru_co.paa';";
+            init = "(_this select 0) setFlagTexture '\x\A3UE\addons\templates\Pictures\YULAK_rus_flag.paa';";
         };
     };
 };
