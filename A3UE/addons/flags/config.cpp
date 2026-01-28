@@ -5,7 +5,7 @@ class CfgPatches
     class ADDON
     {
         name = COMPONENT_NAME;
-        units[] = { "YPG_FlagPole", "YLF_FlagPole", "SPZ_FlagPole", "RU_FlagPole" };
+        units[] = { "YPG_FlagPole", "YLF_FlagPole", "SPZ_FlagPole", "RUS_FlagPole" };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
 
