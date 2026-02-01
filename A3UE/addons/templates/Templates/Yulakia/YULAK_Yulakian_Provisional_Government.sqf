@@ -1187,22 +1187,17 @@ _sfLoadoutData set ["marksmanRifles", [
 
     ["rhs_weap_vss_grip", "", "rhs_acc_perst_1ik_ris", ["rhs_acc_1pn93_1", 1, "rhs_acc_pso1m21", 2, "rhs_acc_1p29", 1], ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 7
 
-    ["rhs_weap_vss_grip_npz", "", "rhs_acc_perst_1ik_ris", ["rhs_acc_dh520x56", 2, "MMM_acc_IT_1TWS_615A", 1], ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 3
+    ["rhs_weap_vss_grip_npz", "", "rhs_acc_perst_1ik_ris", ["rhs_acc_dh520x56", 3, "MMM_acc_IT_1TWS_615A", 1], ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 3
 ]];
 _sfLoadoutData set ["sniperRifles", [
     ["MMM_weap_SV98M", "", "", "rhs_acc_dh520x56", ["MMM_mag_SV98_7N1", "MMM_mag_SV98_7N14"], [], ""]
 ]];
 _sfLoadoutData set ["sidearms", [
-    ["rhs_weap_pb_6p9", "rhs_acc_6p9_suppressor", "", "", ["rhs_mag_9x18_8_57N181S"], [], ""],
-    ["rhs_weap_pb_6p9", "rhs_acc_6p9_suppressor", "", "", ["rhs_mag_9x18_8_57N181S"], [], ""],
-    ["rhs_weap_pb_6p9", "rhs_acc_6p9_suppressor", "", "", ["rhs_mag_9x18_8_57N181S"], [], ""],
-    ["rhs_weap_pb_6p9", "rhs_acc_6p9_suppressor", "", "", ["rhs_mag_9x18_8_57N181S"], [], ""],
-    ["rhs_weap_pb_6p9", "rhs_acc_6p9_suppressor", "", "", ["rhs_mag_9x18_8_57N181S"], [], ""],
+    ["rhs_weap_pb_6p9", "rhs_acc_6p9_suppressor", "", "", ["rhs_mag_9x18_8_57N181S"], [], ""], 5, 
 
-    ["rhs_weap_pya", "", "", "", ["rhs_mag_9x19_17", "rhs_mag_9x19_7n31_17"], [], ""],
+    ["rhs_weap_pya", "", "", "", ["rhs_mag_9x19_17", "rhs_mag_9x19_7n31_17"], [], ""], 1
 
-    ["rhs_weap_pp2000_folded", "", "", "Aegis_optic_1p87", ["rhs_mag_9x19mm_7n21_44", "rhs_mag_9x19mm_7n31_44"], [], ""],
-    ["rhs_weap_pp2000_folded", "", "", "Aegis_optic_1p87", ["rhs_mag_9x19mm_7n21_44", "rhs_mag_9x19mm_7n31_44"], [], ""]
+    ["rhs_weap_pp2000_folded", "", "", _sfOpticsRail, ["rhs_mag_9x19mm_7n21_44", "rhs_mag_9x19mm_7n31_44"], [], ""], 2
 ]];
 
 //////////////////////////
