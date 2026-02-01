@@ -1175,20 +1175,9 @@ _sfLoadoutData set ["grenadeLaunchers", [
     ["rhs_weap_ak103_gp25_npz", _sfMuzzles, "", _sfOpticsRail, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], ["rhs_VOG25P", "rhs_VG40TB", "rhs_VG40OP_white", "rhs_VG40MD", "rhs_GRD40_White", "rhs_GRD40_red"], ""], 3
 ]];
 _sfLoadoutData set ["SMGs", [
-    ["KA_PP19_MTK83", "KA_PBS_1_Silencer_PP19", "", "Aegis_optic_1p87", ["KA_64Rnd_9x18_PMM_FMJ_Mag"], [], ""],
-    ["KA_PP19_MTK83", "KA_PBS_1_Silencer_PP19", "", "Aegis_optic_ICO",  ["KA_64Rnd_9x18_PMM_FMJ_Mag"], [], ""],
-    ["KA_PP19_MTK83", "KA_PBS_1_Silencer_PP19", "", "rhs_acc_rakursPM", ["KA_64Rnd_9x18_PMM_FMJ_Mag"], [], ""],
-    ["KA_PP19_MTK83", "KA_PBS_1_Silencer_PP19", "", "rhs_acc_ekp8_18",  ["KA_64Rnd_9x18_PMM_FMJ_Mag"], [], ""],
-    ["KA_PP19_MTK83", "KA_PBS_1_Silencer_PP19", "", "rhsusf_acc_RX01",  ["KA_64Rnd_9x18_PMM_FMJ_Mag"], [], ""],
-    ["KA_PP19_MTK83", "KA_PBS_1_Silencer_PP19", "", "optic_Aco_smg",    ["KA_64Rnd_9x18_PMM_FMJ_Mag"], [], ""],
-    ["KA_PP19_MTK83", "KA_PBS_1_Silencer_PP19", "", "KA_M16A2_Scope",   ["KA_64Rnd_9x18_PMM_FMJ_Mag"], [], ""],
-    ["KA_PP19_MTK83", "KA_PBS_1_Silencer_PP19", "", "",                 ["KA_64Rnd_9x18_PMM_FMJ_Mag"], [], ""],
+    ["KA_PP19_MTK83", "KA_PBS_1_Silencer_PP19", "", _sfOpticsRail, ["KA_64Rnd_9x18_PMM_FMJ_Mag"], [], ""], 2,
 
-    ["KA_PP19_MTK83", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "Aegis_optic_1p87", ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
-    ["KA_PP19_MTK83", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "rhs_acc_rakursPM", ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
-    ["KA_PP19_MTK83", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "rhs_acc_ekp8_18",  ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
-    ["KA_PP19_MTK83", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "rhsusf_acc_RX01",  ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""],
-    ["KA_PP19_MTK83", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", "",                 ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""]
+    ["KA_PP19_MTK83", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", _sfOpticsRail, ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""], 5
 ]];
 _sfLoadoutData set ["machineGuns", [
     ["rhs_weap_pkp", "", "", "rhs_acc_1p63",    ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_7BZ3", "rhs_100Rnd_762x54mmR_7N13", "rhs_100Rnd_762x54mmR_7N26"], [], ""],
