@@ -1183,17 +1183,11 @@ _sfLoadoutData set ["machineGuns", [
     ["rhs_weap_pkp", "", "", _sfOpticsDovetail + ["rhs_acc_1p78", 3, "rhs_acc_1p29", 4], ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_7BZ3", "rhs_100Rnd_762x54mmR_7N13", "rhs_100Rnd_762x54mmR_7N26"], [], ""],
 ]];
 _sfLoadoutData set ["marksmanRifles", [
-    ["rhs_weap_vss", "", "", "rhs_acc_pso1m21", ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], ""],
-    ["rhs_weap_vss", "", "", "rhs_acc_1p29",    ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], ""],
+    ["rhs_weap_vss", "", "", ["rhs_acc_1pn93_1", 1, "rhs_acc_pso1m21", 2, "rhs_acc_1p29", 1], ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], ""], 2
 
-    ["rhs_weap_vss_grip", "", "rhs_acc_perst_1ik_ris", "rhs_acc_1pn93_1", ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], "rhs_acc_grip_ffg2"],
-    ["rhs_weap_vss_grip", "", "rhs_acc_perst_1ik_ris", "rhs_acc_pso1m21", ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], "rhs_acc_grip_rk2" ],
-    ["rhs_weap_vss_grip", "", "rhs_acc_perst_1ik_ris", "rhs_acc_pso1m21", ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], "rhs_acc_grip_ffg2"],
-    ["rhs_weap_vss_grip", "", "rhs_acc_perst_1ik_ris", "rhs_acc_1p29",    ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], "rhs_acc_grip_rk2" ],
+    ["rhs_weap_vss_grip", "", "rhs_acc_perst_1ik_ris", ["rhs_acc_1pn93_1", 1, "rhs_acc_pso1m21", 2, "rhs_acc_1p29", 1], ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 7
 
-    ["rhs_weap_vss_grip_npz", "", "rhs_acc_perst_1ik_ris", "rhs_acc_dh520x56",     ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], "rhs_acc_grip_rk2" ],
-    ["rhs_weap_vss_grip_npz", "", "rhs_acc_perst_1ik_ris", "MMM_acc_IT_1TWS_615A", ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], "rhs_acc_grip_ffg2"],
-    ["rhs_weap_vss_grip_npz", "", "rhs_acc_perst_1ik_ris", "rhs_acc_dh520x56",     ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], "rhs_acc_grip_ffg2"]
+    ["rhs_weap_vss_grip_npz", "", "rhs_acc_perst_1ik_ris", ["rhs_acc_dh520x56", 2, "MMM_acc_IT_1TWS_615A", 1], ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 3
 ]];
 _sfLoadoutData set ["sniperRifles", [
     ["MMM_weap_SV98M", "", "", "rhs_acc_dh520x56", ["MMM_mag_SV98_7N1", "MMM_mag_SV98_7N14"], [], ""]
