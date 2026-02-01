@@ -1161,27 +1161,13 @@ _sfLoadoutData set ["rifles", [
     ["rhs_weap_asval_npz", "", "", _sfOpticsRail,             ["rhs_20Rnd_9x39mm_SP5", "rhs_20Rnd_9x39mm_SP6"], [], ""], 1
 ]];
 _sfLoadoutData set ["carbines", [
-    ["rhs_weap_ak104", "rhs_acc_dtk4long",   "rhs_acc_perst1ik", "rhs_acc_1p63",          ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
-    ["rhs_weap_ak104", "rhs_acc_dtk4screws", "rhs_acc_2dpZenit", "rhs_acc_okp7_dovetail", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
-    ["rhs_weap_ak104", "rhs_acc_pbs1",       "rhs_acc_2dpZenit", "rhs_acc_ekp8_02",       ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
-    ["rhs_weap_ak104", "rhs_acc_pbs1",       "rhs_acc_perst1ik", "rhs_acc_ekp1",          ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
-    ["rhs_weap_ak104", "rhs_acc_pbs1",       "rhs_acc_perst1ik", "rhs_acc_pkas",          ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
+    ["rhs_weap_ak104", _sfMuzzles, , _sfAttachmentsBarrel, _sfOpticsDovetail, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""], 5,
 
-    ["rhs_weap_ak104_npz", "rhs_acc_dtk4screws", "rhs_acc_perst1ik", "MMM_Acc_IT_1TWS_615A",   ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
-    ["rhs_weap_ak104_npz", "rhs_acc_dtk4long",   "rhs_acc_2dpZenit", "Aegis_optic_ICO",        ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
-    ["rhs_weap_ak104_npz", "rhs_acc_dtk4screws", "rhs_acc_2dpZenit", "rhs_acc_okp7_picatinny", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
-    ["rhs_weap_ak104_npz", "rhs_acc_pbs1",       "rhs_acc_2dpZenit", "rhs_acc_epk8_18",        ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
-    ["rhs_weap_ak104_npz", "rhs_acc_pbs1",       "rhs_acc_2dpZenit", "rhsusf_acc_RX01",        ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
-    ["rhs_weap_ak104_npz", "rhs_acc_pbs1",       "rhs_acc_perst1ik", "rhsusf_acc_su230_mrds",  ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
-    ["rhs_weap_ak104_npz", "rhs_acc_pbs1",       "rhs_acc_perst1ik", "rhsusf_acc_su230",       ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""],
+    ["rhs_weap_ak104_npz", _sfMuzzles, _sfAttachmentsBarrel, _sfOpticsRail, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""], 4,
 
-    ["rhs_weap_ak104_zenitco01", "rhs_acc_pbs1",       "rhs_acc_perst3",       "rhs_acc_ekp8_02",       ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], "rhs_grip_ffg2"],
-    ["rhs_weap_ak104_zenitco01", "rhs_acc_pbs1",       "rhs_acc_perst3_2dp_h", "rhs_acc_pkas",          ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], "rhs_grip_rk6" ],
-    ["rhs_weap_ak104_zenitco01", "rhs_acc_pbs1",       "rhs_acc_perst3_2dp_h", "rhs_acc_okp7_dovetail", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""             ],
-    ["rhs_weap_ak104_zenitco01", "rhs_acc_dtk4screws", "rhs_acc_perst3_2dp_h", "rhs_acc_1p63",          ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], "rhs_grip_ffg2"],
+    ["rhs_weap_ak104_zenitco01", _sfMuzzles, _sfAttachmentsRail, _sfOpticsDovetail, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], _sfUnderbarrels], 3,
 
-    ["rhs_weap_ak104_zenitco01_b33", "rhs_acc_pbs1", "rhs_acc_perst3_2dp_h", "rhsusf_acc_su230", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], "rhsusf_acc_grip3"],
-    ["rhs_weap_ak104_zenitco01_b33", "rhs_acc_pbs1", "rhs_acc_perst3_2dp_h", "rhsusf_acc_ELCAN", ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], "rhs_grip_ffg2"   ]
+    ["rhs_weap_ak104_zenitco01_b33", _sfMuzzles, _sfAttachmentsRail, _sfOpticsRail, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], _sfUnderbarrels], 1
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
     ["rhs_weap_ak103_gp25", "rhs_acc_dtk4screws", "", "rhs_acc_1p63",          ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], ["rhs_VOG25P", "rhs_VG40TB", "rhs_VG40OP_white", "rhs_VG40MD", "rhs_GRD40_White", "rhs_GRD40_red"], ""],
