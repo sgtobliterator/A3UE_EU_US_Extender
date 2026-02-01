@@ -6,5 +6,5 @@ overview = "A faction extender for Antistasi Ultimate that brings the forces of 
 overviewPicture = "mod.paa";
 picture = "mod.paa";
 logo = "mod.paa";
-logoOver = "hover.paa";
-logoSmall = "text_logo.paa";
+logoOver = "mod.paa";
+logoSmall = "mod.paa";

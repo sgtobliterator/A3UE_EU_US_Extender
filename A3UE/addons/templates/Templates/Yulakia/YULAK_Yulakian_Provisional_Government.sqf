@@ -70,7 +70,7 @@ private _militiaAPCs               = [];
 private _policeVehicles            = [];
 private _staticMGs                 = ["I_G_HMG_02_high_F", "rhs_KORD_high_VDV", "rhs_KORD_high_VDV"];
 private _staticATs                 = ["RHS_TOW_TriPod_WD", "rhs_Kornet_9M133_2_vdv", "rhs_Kornet_9M133_2_vdv", "rhs_SPG9M_VDV"];
-private _staticAAs                 = ["rhs_Igla_AA_pod", "rhs_ZU23_VDV", "rhs_Igla_AA_pod"];
+private _staticAAs                 = ["rhs_Igla_AA_pod_msv", "rhs_ZU23_VDV", "rhs_Igla_AA_pod_msv"];
 private _mortars                   = [];
 private _howitzers                 = [];
 
@@ -1138,55 +1138,41 @@ _sfLoadoutData set ["binoculars", ["rhs_pdu4"]];
 _sfLoadoutData set ["rifles", [
     ["rhs_weap_ak103", _sfMuzzles, _sfAttachmentsBarrel, _sfOpticsDovetail_squadLeader, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""], 1,
     ["rhs_weap_ak103", _sfMuzzles, _sfAttachmentsBarrel, _sfOpticsDovetail,             ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""], 3,
-
     ["rhs_weap_ak103_npz", _sfMuzzles, _sfAttachmentsBarrel, _sfOpticsRail_squadLeader, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""], 1,
     ["rhs_weap_ak103_npz", _sfMuzzles, _sfAttachmentsBarrel, _sfOpticsRail,             ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""], 2,
-
     ["rhs_weap_ak103_zenitco01", _sfMuzzles, _sfAttachmentsRail, _sfOpticsDovetail_squadLeader, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], _sfUnderbarrels], 2,
     ["rhs_weap_ak103_zenitco01", _sfMuzzles, _sfAttachmentsRail, _sfOpticsDovetail,             ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], _sfUnderbarrels], 5,
-
     ["rhs_weap_ak103_zenitco01_b33", _sfMuzzles, _sfAttachmentsRail, _sfOpticsRail_squadLeader, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], _sfUnderbarrels], 3,
     ["rhs_weap_ak103_zenitco01_b33", _sfMuzzles, _sfAttachmentsRail, _sfOpticsRail,             ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], _sfUnderbarrels], 7,
-
     ["rhs_weap_asval", "", "", _sfOpticsDovetail_squadLeader, ["rhs_20Rnd_9x39mm_SP5", "rhs_20Rnd_9x39mm_SP6"], [], ""], 1,
     ["rhs_weap_asval", "", "", _sfOpticsDovetail,             ["rhs_20Rnd_9x39mm_SP5", "rhs_20Rnd_9x39mm_SP6"], [], ""], 2,
-
     ["rhs_weap_asval_grip", "", ["rhs_acc_2dpZenit_ris", 1, "rhs_acc_perst1ik_ris", 2], _sfOpticsDovetail_squadLeader, ["rhs_20Rnd_9x39mm_SP5", "rhs_20Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 2,
     ["rhs_weap_asval_grip", "", ["rhs_acc_2dpZenit_ris", 2, "rhs_acc_perst1ik_ris", 1], _sfOpticsDovetail,             ["rhs_20Rnd_9x39mm_SP5", "rhs_20Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 2,
-
     ["rhs_weap_asval_grip_npz", "", ["rhs_acc_2dpZenit_ris", 1, "rhs_acc_perst1ik_ris", 2], _sfOpticsRail_squadLeader, ["rhs_20Rnd_9x39mm_SP5", "rhs_20Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 2,
     ["rhs_weap_asval_grip_npz", "", ["rhs_acc_2dpZenit_ris", 2, "rhs_acc_perst1ik_ris", 1], _sfOpticsRail ,            ["rhs_20Rnd_9x39mm_SP5", "rhs_20Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 4,
-
     ["rhs_weap_asval_npz", "", "", _sfOpticsRail_squadLeader, ["rhs_20Rnd_9x39mm_SP5", "rhs_20Rnd_9x39mm_SP6"], [], ""], 1,
     ["rhs_weap_asval_npz", "", "", _sfOpticsRail,             ["rhs_20Rnd_9x39mm_SP5", "rhs_20Rnd_9x39mm_SP6"], [], ""], 1
 ]];
 _sfLoadoutData set ["carbines", [
     ["rhs_weap_ak104", _sfMuzzles, _sfAttachmentsBarrel, _sfOpticsDovetail, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""], 5,
-
     ["rhs_weap_ak104_npz", _sfMuzzles, _sfAttachmentsBarrel, _sfOpticsRail, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], ""], 4,
-
     ["rhs_weap_ak104_zenitco01", _sfMuzzles, _sfAttachmentsRail, _sfOpticsDovetail, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], _sfUnderbarrels], 3,
-
     ["rhs_weap_ak104_zenitco01_b33", _sfMuzzles, _sfAttachmentsRail, _sfOpticsRail, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], [], _sfUnderbarrels], 1
 ]];
 _sfLoadoutData set ["grenadeLaunchers", [
     ["rhs_weap_ak103_gp25", _sfMuzzles, "", _sfOpticsDovetail, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], ["rhs_VOG25P", "rhs_VG40TB", "rhs_VG40OP_white", "rhs_VG40MD", "rhs_GRD40_White", "rhs_GRD40_red"], ""], 2,
-
     ["rhs_weap_ak103_gp25_npz", _sfMuzzles, "", _sfOpticsRail, ["rhs_30Rnd_762x39mm_polymer", "rhs_30Rnd_762x39mm_polymer_89"], ["rhs_VOG25P", "rhs_VG40TB", "rhs_VG40OP_white", "rhs_VG40MD", "rhs_GRD40_White", "rhs_GRD40_red"], ""], 3
 ]];
 _sfLoadoutData set ["SMGs", [
     ["KA_PP19_MTK83", "KA_PBS_1_Silencer_PP19", "", _sfOpticsRail, ["KA_64Rnd_9x18_PMM_FMJ_Mag"], [], ""], 2,
-
     ["KA_PP19_MTK83", "KA_Vityaz_PBS_1_Silencer", "KA_Vityaz_Laser_IR", _sfOpticsRail, ["KA_30Rnd_9x19_7N31_AP_Mag", "KA_30Rnd_9x19_LIBRASNAIL_AP_Mag"], [], ""], 5
 ]];
 _sfLoadoutData set ["machineGuns", [
-    ["rhs_weap_pkp", "", "", _sfOpticsDovetail + ["rhs_acc_1p78", 3, "rhs_acc_1p29", 4], ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_7BZ3", "rhs_100Rnd_762x54mmR_7N13", "rhs_100Rnd_762x54mmR_7N26"], [], ""],
+    ["rhs_weap_pkp", "", "", _sfOpticsDovetail + ["rhs_acc_1p78", 3, "rhs_acc_1p29", 4], ["rhs_100Rnd_762x54mmR", "rhs_100Rnd_762x54mmR_7BZ3", "rhs_100Rnd_762x54mmR_7N13", "rhs_100Rnd_762x54mmR_7N26"], [], ""]
 ]];
 _sfLoadoutData set ["marksmanRifles", [
-    ["rhs_weap_vss", "", "", ["rhs_acc_1pn93_1", 1, "rhs_acc_pso1m21", 2, "rhs_acc_1p29", 1], ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], ""], 2
-
-    ["rhs_weap_vss_grip", "", "rhs_acc_perst_1ik_ris", ["rhs_acc_1pn93_1", 1, "rhs_acc_pso1m21", 2, "rhs_acc_1p29", 1], ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 7
-
+    ["rhs_weap_vss", "", "", ["rhs_acc_1pn93_1", 1, "rhs_acc_pso1m21", 2, "rhs_acc_1p29", 1], ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], ""], 2,
+    ["rhs_weap_vss_grip", "", "rhs_acc_perst_1ik_ris", ["rhs_acc_1pn93_1", 1, "rhs_acc_pso1m21", 2, "rhs_acc_1p29", 1], ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 7,
     ["rhs_weap_vss_grip_npz", "", "rhs_acc_perst_1ik_ris", ["rhs_acc_dh520x56", 3, "MMM_acc_IT_1TWS_615A", 1], ["rhs_10Rnd_9x39mm_SP5", "rhs_10Rnd_9x39mm_SP6"], [], _sfUnderbarrels], 3
 ]];
 _sfLoadoutData set ["sniperRifles", [
@@ -1194,9 +1180,7 @@ _sfLoadoutData set ["sniperRifles", [
 ]];
 _sfLoadoutData set ["sidearms", [
     ["rhs_weap_pb_6p9", "rhs_acc_6p9_suppressor", "", "", ["rhs_mag_9x18_8_57N181S"], [], ""], 5, 
-
-    ["rhs_weap_pya", "", "", "", ["rhs_mag_9x19_17", "rhs_mag_9x19_7n31_17"], [], ""], 1
-
+    ["rhs_weap_pya", "", "", "", ["rhs_mag_9x19_17", "rhs_mag_9x19_7n31_17"], [], ""], 1,
     ["rhs_weap_pp2000_folded", "", "", _sfOpticsRail, ["rhs_mag_9x19mm_7n21_44", "rhs_mag_9x19mm_7n31_44"], [], ""], 2
 ]];
 
