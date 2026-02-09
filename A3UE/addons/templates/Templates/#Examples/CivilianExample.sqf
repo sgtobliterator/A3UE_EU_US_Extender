@@ -1,29 +1,59 @@
-private _hasWs = "ws" in A3A_enabledDLC;
+/* private _hasWs = "ws" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
 private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 private _hasTanks = "tank" in A3A_enabledDLC;
+private _hasContact = "enoch" in A3A_enabledDLC;
+private _hasJets = "jets" in A3A_enabledDLC;
+private _hasHelicopters = "heli" in A3A_enabledDLC;
+private _hasArtOfWar = "aow" in A3A_enabledDLC;
 private _hasApex = "expansion" in A3A_enabledDLC;
+private _hasGM = "gm" in A3A_enabledDLC;
+private _hasCSLA = "csla" in A3A_enabledDLC;
+private _hasRF = "rf" in A3A_enabledDLC;
+private _hasSOG = "vn" in A3A_enabledDLC;
+private _hasSPE = "spe" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs it
 
 //////////////////////////
 //       Vehicles       //
 //////////////////////////    
 
-["vehiclesCivCar", []] call _fnc_saveToTemplate;                    //this line determines civilian cars -- Example: ["vehiclesCivCar", ["C_Offroad_01_F"]] -- Array, can contain multiple assets
+["vehiclesCivCar", []] call _fnc_saveToTemplate;             //this line determines civilian cars -- Example: ["vehiclesCivCar", ["C_Offroad_01_F"]] -- Array, can contain multiple assets
 
 ["vehiclesCivIndustrial", []] call _fnc_saveToTemplate;             //this line determines civilian trucks -- Example: ["vehiclesCivIndustrial", ["C_Truck_02_transport_F"]] -- Array, can contain multiple assets
 
-["vehiclesCivHeli", []] call _fnc_saveToTemplate;                   //this line determines civilian helis -- Example: ["vehiclesCivHeli", ["C_Heli_Light_01_civil_F"]] -- Array, can contain multiple assets
+["vehiclesCivHeli", []] call _fnc_saveToTemplate;            //this line determines civilian helis -- Example: ["vehiclesCivHeli", ["C_Heli_Light_01_civil_F"]] -- Array, can contain multiple assets
 
-["vehiclesCivBoat", []] call _fnc_saveToTemplate;                   //this line determines civilian boats -- Example: ["vehiclesCivBoat", ["C_Boat_Civil_01_F"]] -- Array, can contain multiple assets
+["vehiclesCivPlanes", []] call _fnc_saveToTemplate;          // this line determines civilian planes -- Example: ["vehiclesCivPlanes", ["C_Plane_Civil_01_F"]] -- Array, can contain multiple assets
 
-["vehiclesCivRepair", []] call _fnc_saveToTemplate;                 //this line determines civilian repair vehicles
+["vehiclesCivBoat", []] call _fnc_saveToTemplate;             //this line determines civilian boats -- Example: ["vehiclesCivBoat", ["C_Boat_Civil_01_F"]] -- Array, can contain multiple assets
 
-["vehiclesCivMedical", []] call _fnc_saveToTemplate;                //this line determines civilian medic vehicles
+["vehiclesCivRepair", []] call _fnc_saveToTemplate;            //this line determines civilian repair vehicles
 
-["vehiclesCivFuel", []] call _fnc_saveToTemplate;                   //this line determines civilian fuel vehicles
+["vehiclesCivMedical", []] call _fnc_saveToTemplate;        //this line determines civilian medic vehicles
+
+["vehiclesCivFuel", []] call _fnc_saveToTemplate;            //this line determines civilian fuel vehicles
+
+//Example on how to use dlc content
+/* if (_hasKart) then {
+  #include "..\DLC_content\vehicles\Kart\kart.sqf"  
+}; */
 
 
-["vehiclesCivHeli", []] call _fnc_saveToTemplate;
+["variants", []] call _fnc_saveToTemplate;                 //this line determines particular paintjob/camo for a vehicle --  Example: ["I_Heli_Transport_02_F", ["Dahoman", 1]] -- Array, can contain multiple assets
+
+//or do it like this
+/* ["variants", [
+  #include "..\vehicleVariants\Vanilla_GM_CIV.sqf"
+]] call _fnc_saveToTemplate; */
+
+["animations", []] call _fnc_saveToTemplate;                //     -- Example: ["vehClass", ["animsourcefromgarage1", 0.3, "animsourcefromgarage2", 0.25, "animsourcefromgarage3", 0.3, "animsourcefromgarage4", 0.3]] -- Array, can contain multiple assets
+
+//or do it like this
+/* ["animations", [
+  #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf"
+]] call _fnc_saveToTemplate; */
+
 /////////////////////////////////
 ///  Identities and currency  ///
 ////////////////////////////////
@@ -36,13 +66,13 @@ private _hasApex = "expansion" in A3A_enabledDLC;
 //       Loadouts       //
 //////////////////////////
 
-private _civUniforms = [];                                                                                      //Uniforms given to Normal Civs
+private _civUniforms = [];          //Uniforms given to Normal Civs
 
-private _pressUniforms = [];                                                                                    //Uniforms given to Press/Journalists
+private _pressUniforms = [];            //Uniforms given to Press/Journalists
 
-private _workerUniforms = [];                                                                                   //Uniforms given to Workers at Factories/Resources
+private _workerUniforms = [];           //Uniforms given to Workers at Factories/Resources
 
-private _dlcUniforms = [];                                                                                      //Uniforms given if DLCs are enabled, only given to the Arsenal not Civilians
+private _dlcUniforms = [];          //Uniforms given if DLCs are enabled, only given to the Arsenal not Civilians
 
 if (_hasApex) then {_dlcUniforms append [];
 };
@@ -54,16 +84,19 @@ if (_hasLawsOfWar) then {_dlcUniforms append [];
 
 _civhats = [];
 
-["headgear", _civHats] call _fnc_saveToTemplate;                                                                //Headgear given to Normal Civs, Workers, Undercover Rebels.
+["headgear", _civHats] call _fnc_saveToTemplate;            //Headgear given to Normal Civs, Workers, Undercover Rebels.
 
 private _loadoutData = call _fnc_createLoadoutData;
 
 _loadoutData set ["uniforms", _civUniforms];
-_loadoutData set ["pressUniforms", _pressUniforms];
-_loadoutData set ["workerUniforms", _workerUniforms];
-_loadoutData set ["pressVests", []];
 _loadoutData set ["helmets", _civHats];
-_loadoutData set ["pressHelmets", []];
+
+_loadoutData set ["pressUniforms", _pressUniforms];
+_loadoutData set ["pressVests", _pressVests];
+_loadoutData set ["pressHelmets", _pressHelmets];
+
+_loadoutData set ["workerUniforms", _workerUniforms];
+_loadoutData set ["workerHelmets", _workerHelmets];
 
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
@@ -81,7 +114,7 @@ private _manTemplate = {
     ["compasses"] call _fnc_addCompass;
 };
 private _workerTemplate = {
-    ["helmets"] call _fnc_setHelmet;
+    [["workerHelmets", "helmets"] call _fnc_fallback] call _fnc_setHelmet;
     ["workerUniforms"] call _fnc_setUniform;
 
     ["items_medical_standard"] call _fnc_addItemSet;
@@ -91,7 +124,7 @@ private _workerTemplate = {
     ["compasses"] call _fnc_addCompass;
 };
 private _pressTemplate = {
-    ["pressHelmets"] call _fnc_setHelmet;
+    [["pressHelmets", "helmets"] call _fnc_fallback] call _fnc_setHelmet;
     ["pressVests"] call _fnc_setVest;
     ["pressUniforms"] call _fnc_setUniform;
 

@@ -1,8 +1,8 @@
-name = "A3UE - The Yulakian War For Independence";
-author = "* Black Ops *";
+name = "A3UE - The US vs the EU";
+author = "sgtobliterator";
 actionName = "Website";
-action = "https://github.com/Black-Ops-2-543/A3UE_Yulakia_Extender";
-overview = "A faction extender for Antistasi Ultimate that brings the forces of the Yulakians and Russians to bear. Be prepared to fight hostiles with equipment from the Cold War and beyond in this vicious fight over the densely-populated island.";
+action = "https://github.com/sgtobliterator/A3UE_EU_US_Extender";
+overview = "An extender for Antistasi Ultimate that portrays an alternate reality where the US and the EU are at war.";
 overviewPicture = "mod.paa";
 picture = "mod.paa";
 logo = "mod.paa";

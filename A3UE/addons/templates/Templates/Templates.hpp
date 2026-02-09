@@ -2,10 +2,10 @@ class Templates
 {
     class Vanilla_Base;
 
-    class Yulak_Base : Vanilla_Base
+    class US_EU_A3UE_Base : Vanilla_Base
     {
-        basepath = QPATHTOFOLDER(Templates\Yulakia);                                                    // The path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
-        maps[] = {"yulakia"};                                                                           // If this template should be prioritized on any maps (case sensitive to worldName)
+        basepath = QPATHTOFOLDER(Templates\US_EU_A3UE);                                                    // The path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
+        maps[] = {};                                                                           // If this template should be prioritized on any maps (case sensitive to worldName)
         climate[] = {"temperate"};                                                                      // The climate that the template can be selected on.
         logo = QPATHTOFOLDER(Pictures\a3ue_logo.paa);
     };
@@ -13,48 +13,48 @@ class Templates
     Climates: {"arid", "arctic", "temperate", "tropical"}
     */
 
-    class Yulakian_Provisional_Government : Yulak_Base
+    class US_EU_A3UE_EU : US_EU_A3UE_Base
     {                                                 // The path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
         side = "Occ";                                                                                   // Inv, Occ, Reb, Riv, Civ
         flagTexture = QPATHTOFOLDER(Pictures\YULAK_ypg_flag.paa);                                 // Path to an icon to be displayed in the select menu.
-        name = "YPG";                                                                                   // Name shown in the select menu.
-        file = "YULAK_Yulakian_Provisional_Government";                                                 // The template file name - .sqf, that gets appended automatically.
-        description = "Yulakian Provisional Government (YPG)\nThe authoritarian ruling government of Yulakia.";                                // If this isn't included, no description will show (unless inherited from the base class.)
+        name = "EU";                                                                                   // Name shown in the select menu.
+        file = "US_EU_A3UE_EU";                                                 // The template file name - .sqf, that gets appended automatically.
+        description = "The United States of Europe";                                // If this isn't included, no description will show (unless inherited from the base class.)
     };
     
-    class Russian_Forces : Yulak_Base
+    class US_EU_A3UE_ : US_EU_A3UE_Base
     {
         side = "Inv";                                                                                   // Inv, Occ, Reb, Riv, Civ
         flagTexture = QPATHTOFOLDER(Pictures\YULAK_rus_flag.paa);                                  // Path to an icon to be displayed in the select menu.
-        name = "Russian Forces";                                                                        // Name shown in the select menu.
-        file = "YULAK_Russian_Forces";                                                                  // The template file name - .sqf, that gets appended automatically.
-        description = "The invasion force dispatched to conquer Yulakia.";                              // If this isn't included, no description will show (unless inherited from the base class.)
+        name = "US Joint Forces";                                                                        // Name shown in the select menu.
+        file = "US_EU_A3UE_US";                                                                  // The template file name - .sqf, that gets appended automatically.
+        description = "Joint US invasion force";                              // If this isn't included, no description will show (unless inherited from the base class.)
     };
 
-    class Spetsnaz : Yulak_Base
+    class US_EU_A3UE_SOAR : US_EU_A3UE_Base
     {
         side = "Riv";                                                                                   // Inv, Occ, Reb, Riv, Civ
         flagTexture = QPATHTOFOLDER(Pictures\YULAK_spz_flag.paa);                                 // Path to an icon to be displayed in the select menu.
-        name = "Spetsnaz";                                                                              // Name shown in the select menu.
-        file = "YULAK_Spetsnaz";                                                                        // The template file name - .sqf, that gets appended automatically.
-        description = "Russian Special Forces deployed to disrupt resistance in Yulakia.";              // If this isn't included, no description will show (unless inherited from the base class.)
+        name = "US SOF";                                                                              // Name shown in the select menu.
+        file = "US_EU_A3UE_SOAR";                                                                        // The template file name - .sqf, that gets appended automatically.
+        description = "US Special Forces";              // If this isn't included, no description will show (unless inherited from the base class.)
     };
 
-    class Yulakian_Liberation_Front : Yulak_Base
+    class US_EU_A3UE_REB : US_EU_A3UE_Base
     {
         side = "Reb";                                                                                   // Inv, Occ, Reb, Riv, Civ
         flagTexture = QPATHTOFOLDER(Pictures\YULAK_ylf_flag.paa);                                 // Path to an icon to be displayed in the select menu.
-        name = "YLF";                                                                                   // Name shown in the select menu.
-        file = "YULAK_Yulakian_Liberation_Front";                                                       // The template file name - .sqf, that gets appended automatically.
-        description = "Yulakian Liberation Front (YLF)\nPro-Western rebels fighting in Yulakia.";                                        // If this isn't included, no description will show (unless inherited from the base class.)
+        name = "Rebels";                                                                                   // Name shown in the select menu.
+        file = "US_EU_A3UE_REB";                                                       // The template file name - .sqf, that gets appended automatically.
+        description = "Allan please add details";                                        // If this isn't included, no description will show (unless inherited from the base class.)
     };
 
-    class Yulakian_Civilians : Yulak_Base
+    class US_EU_A3UE_Civilians : US_EU_A3UE_Base
     {
         side = "Civ";
         flagTexture = QPATHTOFOLDER(Pictures\YULAK_ypg_flag.paa);                                 // Path to an icon to be displayed in the select menu.
-        name = "Yulakians";
-        file = "YULAK_Civilians";
-        description = "Citizens of Yulakia.";
+        name = "Europeans";
+        file = "US_EU_A3UE_Civilians";
+        description = "Citizens of the EU";
     };
 };

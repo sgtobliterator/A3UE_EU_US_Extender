@@ -1,4 +1,4 @@
-/* private _hasWs = "ws" in A3A_enabledDLC;
+private _hasWs = "ws" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
 private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 private _hasTanks = "tank" in A3A_enabledDLC;
@@ -12,7 +12,20 @@ private _hasCSLA = "csla" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
 private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
-private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs it
+private _hasEF = "ef" in A3A_enabledDLC; //dlc stuff if your templates needs it
+/*
+private _obj = curatorMouseOver select 1;
+copyToClipboard str (configOf _obj);
+hint str (configOf _obj);
+*/
+private _hasHatchet = isClass (configFile >> "CfgVehicles" >> "vtx_MH60M");
+private _hasSOAR = isClass ("allan please add details");
+private _hasRTS = isClass ("allan please add details");
+private _hasMTLB = isClass ("allan please add details");
+private _hasSFP = isClass ("allan please add details");
+private _hasFFP = isClass ("allan please add details");
+private _hasAC130 = isClass ("allan please add details");
+private _has
 
 //////////////////////////
 //   Side Information   //
@@ -20,12 +33,12 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 
 #include "..\..\script_component.hpp" // TAKE NOTE OF THIS. WITHOUT THIS, YOU CAN'T USE MACROS LIKE QPATHTOFOLDER.
 
-["name", ""] call _fnc_saveToTemplate;
-["spawnMarkerName", ""] call _fnc_saveToTemplate;
+["name", "USE"] call _fnc_saveToTemplate;
+["spawnMarkerName", "USE Support Corridor"] call _fnc_saveToTemplate;
 
-["flag", ""] call _fnc_saveToTemplate;
-["flagTexture", ""] call _fnc_saveToTemplate;
-["flagMarkerType", ""] call _fnc_saveToTemplate;
+["flag", "Flag_AAF_F"] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Pictures\YULAK_ypg_flag.paa)] call _fnc_saveToTemplate;
+["flagMarkerType", "flag_YULAK_YPG"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
@@ -41,74 +54,114 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 ["equipmentBox", "Box_NATO_Equip_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
 
-["smallBunker", ""] call _fnc_saveToTemplate;
-["sandbag", ""] call _fnc_saveToTemplate;
-["sandbagRound", ""] call _fnc_saveToTemplate;
+private _basicVehicles             = ["BWA3_Eagle_Fleck"];
+private _unarmedLightVehicles      = ["BWA3_Eagle_Fleck"];
+private _armedLightVehicles        = ["BWA3_Dingo2_FLW200_GMW_CG13_Fleck","BWA3_Dingo2_FLW200_M2_CG13_Fleck","BWA3_Dingo2_FLW100_MG3_CG13_Fleck","BWA3_Eagle_FLW100_Fleck"];
+private _transportTrucks           = [""];
+private _cargoTrucks               = [""];
+private _ammoTrucks                = [""];
+private _repairTrucks              = [""];
+private _fuelTrucks                = [""];
+private _medicalTrucks             = [""];
+private _lightAPCs                 = [""];
+private _APCs                      = [""];
+private _airborneVehicles          = [""];
+private _IFVs                      = ["BWA3_Puma_Fleck"];
+private _tanks                     = ["BWA3_Leopard2_Fleck"];
+private _lightTanks                = [""];
+private _SPAA                      = [""];
+private _transportBoats            = [""];
+private _armedBoats                = [""];
+private _amphibiousVehicles        = [""];
+private _casPlanes                 = [""];
+private _asPlanes                  = [""];
+private _transportPlanes           = [""];
+private _gunshipPlanes             = [""];
+private _lightHelicopters          = [""];
+private _transportHelicopters      = ["BWA3_NH90_TTH_Fleck","BWA3_NH90_TTH_M3M_Fleck"];
+private _armedHelicopters          = [""];
+private _gunshipHelicopters        = ["BWA3_Tiger","BWA3_Tiger_RMK"];
+private _patrolHelicopters         = [""];
+private _SPGs                      = [""];
+private _attackUAVs                = [""];
+private _portableUAVs              = [""];
+private _armedLightMilitiaVehicles = [""];
+private _transportMilitiaTrucks    = [""];
+private _unarmedMilitiaCars        = ["BWA3_Eagle_Fleck"];
+private _militiaAPCs               = [""];
+private _policeVehicles            = [""];
+private _staticMGs                 = [""];
+private _staticATs                 = [""];
+private _staticAAs                 = [""];
+private _mortars                   = [""];
+private _howitzers                 = [""];
+private _radarTrucks               = [""];
+private _samTrucks                 = [""];
 
 // vehicles can be placed in more than one category if they fit between both. Cost will be derived by the higher category
-["vehiclesBasic", []] call _fnc_saveToTemplate;			 // unarmed or armed, with 0-2 passengers
-["vehiclesLightUnarmed", []] call _fnc_saveToTemplate;		 // must be unarmed, unarmoured to lightly armoured, with 0-4 passengers
-["vehiclesLightArmed", []] call _fnc_saveToTemplate;             // Should be armed, unarmoured to lightly armoured, with 0-4 passengers
-["vehiclesTrucks", []] call _fnc_saveToTemplate;		 // vehicle that can carry troops and cargoboxes
-["vehiclesCargoTrucks", []] call _fnc_saveToTemplate;		 // vehicle that can carry only cargoboxes
-["vehiclesAmmoTrucks", []] call _fnc_saveToTemplate;		 // wheeled vehicle with capability to rearm vehicles
-["vehiclesRepairTrucks", []] call _fnc_saveToTemplate;		 // wheeled vehicle with capability to repair vehicles
-["vehiclesFuelTrucks", []] call _fnc_saveToTemplate;		 // wheeled vehicle with capability to refuel vehicles
-["vehiclesMedical", []] call _fnc_saveToTemplate;		 // vehicle with capability to provide healing
-["vehiclesLightAPCs", []] call _fnc_saveToTemplate;             // armed, lightly armoured, with 6-8 passengers 
-["vehiclesAPCs", []] call _fnc_saveToTemplate;                  // armed with enclosed turret, armoured, with 6-8 passengers
-["vehiclesAirborne", []] call _fnc_saveToTemplate;              // airborne vehicles, could be with passenger seats or just a crew 
-["vehiclesIFVs", []] call _fnc_saveToTemplate;                  // capable of surviving multiple rockets, cannon armed, with 6-8 passengers
-["vehiclesTanks", []] call _fnc_saveToTemplate;                 // cannon armed, heavely armored, passengers will be ignored
-["vehiclesLightTanks", []] call _fnc_saveToTemplate;             // tanks with poor armor and weapons
-["vehiclesAA", []] call _fnc_saveToTemplate;                    // ideally heavily armed with anti-ground capability and enclosed turret. Passengers will be ignored
+["vehiclesBasic", _basicVehicles] call _fnc_saveToTemplate;			 // unarmed or armed, with 0-2 passengers
+["vehiclesLightUnarmed", _unarmedLightVehicles] call _fnc_saveToTemplate;		 // must be unarmed, unarmoured to lightly armoured, with 0-4 passengers
+["vehiclesLightArmed", _armedLightVehicles] call _fnc_saveToTemplate;             // Should be armed, unarmoured to lightly armoured, with 0-4 passengers
+["vehiclesTrucks", _transportTrucks] call _fnc_saveToTemplate;		 // vehicle that can carry troops and cargoboxes
+["vehiclesCargoTrucks", _cargoTrucks] call _fnc_saveToTemplate;		 // vehicle that can carry only cargoboxes
+["vehiclesAmmoTrucks", _ammoTrucks] call _fnc_saveToTemplate;		 // wheeled vehicle with capability to rearm vehicles
+["vehiclesRepairTrucks", _repairTrucks] call _fnc_saveToTemplate;		 // wheeled vehicle with capability to repair vehicles
+["vehiclesFuelTrucks", _fuelTrucks] call _fnc_saveToTemplate;		 // wheeled vehicle with capability to refuel vehicles
+["vehiclesMedical", _medicalTrucks] call _fnc_saveToTemplate;		 // vehicle with capability to provide healing
+["vehiclesLightAPCs", _lightAPCs] call _fnc_saveToTemplate;             // armed, lightly armoured, with 6-8 passengers 
+["vehiclesAPCs", _APCs] call _fnc_saveToTemplate;                  // armed with enclosed turret, armoured, with 6-8 passengers
+["vehiclesAirborne", _airborneVehicles] call _fnc_saveToTemplate;              // airborne vehicles, could be with passenger seats or just a crew 
+["vehiclesIFVs", _IFVs] call _fnc_saveToTemplate;                  // capable of surviving multiple rockets, cannon armed, with 6-8 passengers
+["vehiclesTanks", _tanks] call _fnc_saveToTemplate;                 // cannon armed, heavely armored, passengers will be ignored
+["vehiclesLightTanks", _lightTanks] call _fnc_saveToTemplate;             // tanks with poor armor and weapons
+["vehiclesAA", _SPAA] call _fnc_saveToTemplate;                    // ideally heavily armed with anti-ground capability and enclosed turret. Passengers will be ignored
 
-["vehiclesTransportBoats", []] call _fnc_saveToTemplate;	// boat that can carry passengers and cargoboxes
-["vehiclesGunBoats", []] call _fnc_saveToTemplate;              // armed boat, with passengers(?)
-//["vehiclesAmphibious", []] call _fnc_saveToTemplate;          // armed or unarmed wheled or tracked based vehicle with light armor(?) and passengers(?)
+["vehiclesTransportBoats", _transportBoats] call _fnc_saveToTemplate;	// boat that can carry passengers and cargoboxes
+["vehiclesGunBoats", _armedBoats] call _fnc_saveToTemplate;              // armed boat, with passengers(?)
+["vehiclesAmphibious", _amphibiousVehicles] call _fnc_saveToTemplate;          // armed or unarmed wheled or tracked based vehicle with light armor(?) and passengers(?)
 
-["vehiclesPlanesCAS", []] call _fnc_saveToTemplate;             // Will be used with CAS script, must be defined in setPlaneLoadout. Needs fixed gun and either rockets or missiles
-["vehiclesPlanesAA", []] call _fnc_saveToTemplate;              //Will be used with ASF script, must be defined in setPlaneLoadout.
+["vehiclesPlanesCAS", _casPlanes] call _fnc_saveToTemplate;             // Will be used with CAS script, must be defined in setPlaneLoadout. Needs fixed gun and either rockets or missiles
+["vehiclesPlanesAA", _asPlanes] call _fnc_saveToTemplate;              //Will be used with ASF script, must be defined in setPlaneLoadout.
 //Needs fixed gun and either rockets or missiles
-["vehiclesPlanesTransport", []] call _fnc_saveToTemplate;	//Plane that can carry passengers and cargo(?), infantry variant if availbe 
+["vehiclesPlanesTransport", _transportPlanes] call _fnc_saveToTemplate;	//Plane that can carry passengers and cargo(?), infantry variant if availbe 
 //no need for vehicle variant currently
-["vehiclesPlanesGunship", []] call _fnc_saveToTemplate;     // planes like V-44X armed, AC-130 or pelican from OPTRE, used in GUNSHIP support
+["vehiclesPlanesGunship", _gunshipPlanes] call _fnc_saveToTemplate;     // planes like V-44X armed, AC-130 or pelican from OPTRE, used in GUNSHIP support
 //probably can also be a helicopter
 
-["vehiclesHelisLight", []] call _fnc_saveToTemplate;            // ideally fragile & unarmed helis seating 4+
-["vehiclesHelisTransport", []] call _fnc_saveToTemplate;        // bigger heli with more passengers. 
+["vehiclesHelisLight", _lightHelicopters] call _fnc_saveToTemplate;            // ideally fragile & unarmed helis seating 4+
+["vehiclesHelisTransport", _transportHelicopters] call _fnc_saveToTemplate;        // bigger heli with more passengers. 
 //Should be capable of dealing damage to ground targets without additional scripting
 
 // Should be capable of dealing damage to ground targets without additional scripting
-["vehiclesHelisLightAttack", []] call _fnc_saveToTemplate;      // Utility helis with fixed or door guns + rocket pods
-["vehiclesHelisAttack", []] call _fnc_saveToTemplate;           // Proper attack helis: Apache, Hind etc
+["vehiclesHelisLightAttack", _armedHelicopters] call _fnc_saveToTemplate;      // Utility helis with fixed or door guns + rocket pods
+["vehiclesHelisAttack", _gunshipHelicopters] call _fnc_saveToTemplate;           // Proper attack helis: Apache, Hind etc
 
-["vehiclesAirPatrol", []] call _fnc_saveToTemplate;             // preferably light helicopters(armed or unarmed), used in base patrol near bases
+["vehiclesAirPatrol", _patrolHelicopters] call _fnc_saveToTemplate;             // preferably light helicopters(armed or unarmed), used in base patrol near bases
 
-["vehiclesArtillery", []] call _fnc_saveToTemplate;             // wheeled or tracked vehicle with artillery cannon or rockets
+["vehiclesArtillery", _SPGs] call _fnc_saveToTemplate;             // wheeled or tracked vehicle with artillery cannon or rockets
 ["magazines", createHashMapFromArray []] call _fnc_saveToTemplate; //element format: [Vehicle class, [Magazines]]
 
-["uavsAttack", []] call _fnc_saveToTemplate;                    // unmanned aerial vehicle with heavy armament
-["uavsPortable", []] call _fnc_saveToTemplate;                  // unmanned aerial vehicle(drone), unarmed or armed(Western Sahara style), must be able to be disassembled
+["uavsAttack", _attackUAVs] call _fnc_saveToTemplate;                    // unmanned aerial vehicle with heavy armament
+["uavsPortable", _portableUAVs] call _fnc_saveToTemplate;                  // unmanned aerial vehicle(drone), unarmed or armed(Western Sahara style), must be able to be disassembled
 
 
 //Config special vehicles
-["vehiclesMilitiaLightArmed", []] call _fnc_saveToTemplate;     // same as "vehiclesLightArmed" but for milita forces
-["vehiclesMilitiaTrucks", []] call _fnc_saveToTemplate;         // same as "vehiclesTrucks" but for milita forces
-["vehiclesMilitiaCars", []] call _fnc_saveToTemplate;           // same as "vehiclesLightUnarmed" but for milita forces
+["vehiclesMilitiaLightArmed", _armedLightMilitiaVehicles] call _fnc_saveToTemplate;     // same as "vehiclesLightArmed" but for milita forces
+["vehiclesMilitiaTrucks", _transportMilitiaTrucks] call _fnc_saveToTemplate;         // same as "vehiclesTrucks" but for milita forces
+["vehiclesMilitiaCars", _unarmedMilitiaCars] call _fnc_saveToTemplate;           // same as "vehiclesLightUnarmed" but for milita forces
 
-["vehiclesMilitiaAPCs", []] call _fnc_saveToTemplate;              // Militia APCs will be used at roadblocks and attacks at first 4 war levels
+["vehiclesMilitiaAPCs", _militiaAPCs] call _fnc_saveToTemplate;              // Militia APCs will be used at roadblocks and attacks at first 4 war levels
 
-["vehiclesPolice", []] call _fnc_saveToTemplate;                // cars used by police forces
+["vehiclesPolice", _policeVehicles] call _fnc_saveToTemplate;                // cars used by police forces
 
-["staticMGs", []] call _fnc_saveToTemplate;                     // static machine guns
-["staticAT", []] call _fnc_saveToTemplate;                      // static anti-tank weapons 
-["staticAA", []] call _fnc_saveToTemplate;                      // static anti-aircraft weapons
-["staticMortars", []] call _fnc_saveToTemplate;                 // static mortars
-["staticHowitzers", []] call _fnc_saveToTemplate;               // static howitzers
+["staticMGs", _staticMGs] call _fnc_saveToTemplate;                     // static machine guns
+["staticAT", _staticATs] call _fnc_saveToTemplate;                      // static anti-tank weapons 
+["staticAA", _staticAAs] call _fnc_saveToTemplate;                      // static anti-aircraft weapons
+["staticMortars", _mortars] call _fnc_saveToTemplate;                 // static mortars
+["staticHowitzers", _howitzers] call _fnc_saveToTemplate;               // static howitzers
 
-["vehicleRadar", ""] call _fnc_saveToTemplate;                  // vehicle with radar
-["vehicleSam", ""] call _fnc_saveToTemplate;                    // vehicle with SAM
+["vehicleRadar", _radarTrucks] call _fnc_saveToTemplate;                  // vehicle with radar
+["vehicleSam", _samTrucks] call _fnc_saveToTemplate;                    // vehicle with SAM
 
 ["howitzerMagazineHE", ""] call _fnc_saveToTemplate;            // explosive ammo for Howitzer
 
