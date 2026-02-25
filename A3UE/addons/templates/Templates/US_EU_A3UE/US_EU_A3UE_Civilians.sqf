@@ -170,7 +170,7 @@ if (!_hasGM && !_hasCSLA) then {
 ///  Identities and currency  ///
 /////////////////////////////////
 
-#include "CharacterData\YULAK_Western_Identities.sqf"
+#include "CharacterData\US_EU_A3UE_Western_Identities.sqf"
 
 ["currencySymbol", "YKR"] call _fnc_saveToTemplate; // Yulakian Krone
 

@@ -16,6 +16,9 @@ private _hasEF = "ef" in A3A_enabledDLC;
 
 #include "..\..\script_component.hpp" // TAKE NOTE OF THIS. WITHOUT THIS, YOU CAN'T USE MACROS LIKE QPATHTOFOLDER.
 
+//TODO See about adding Turkey
+//TODO See about adding Russia
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -111,13 +114,13 @@ if (_hasEF) then {
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;
 ["minefieldAPERS", ["APERSMine"]] call _fnc_saveToTemplate;
 
-#include "VehicleData\YULAK_RUS_Vehicle_Attributes.sqf"
+#include "VehicleData\US_EU_A3UE_US_Vehicle_Attributes.sqf"
 
 /////////////////////
 ///  Identities   ///
 /////////////////////
 
-#include "CharacterData\YULAK_Eastern_Identities.sqf"
+#include "CharacterData\US_EU_A3UE_Eastern_Identities.sqf"
 
 private _insignia = ["Spetsnaz545thRegiment"];
 if (_hasContact) then {

@@ -263,7 +263,7 @@ if (!_hasGM && !_hasCSLA) then {
 ["breachingExplosivesAPC", ["SatchelCharge_Remote_Mag", "rhsusf_m112x4_mag", "rhsusf_m112_mag", "rhs_charge_M2tet_x2_mag", "rhssaf_tm500_mag", "rhs_ec400_sand_mag", "rhs_ec400_mag", "rhssaf_tm200_mag", "rhs_ec200_mag", "rhs_ec200_sand_mag"]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", ["SatchelCharge_Remote_Mag", "rhsusf_m112x4_mag", "rhsusf_m112_mag", "rhs_charge_M2tet_x2_mag", "rhssaf_tm500_mag", "rhs_ec400_sand_mag", "rhs_ec400_mag"]] call _fnc_saveToTemplate;
 
-#include "VehicleData\YULAK_YLF_Vehicle_Attributes.sqf"
+#include "VehicleData\US_EU_A3UE_REB_Vehicle_Attributes.sqf"
 
 ///////////////////////////
 //  Rebel Starting Gear  //
@@ -488,7 +488,7 @@ if (_hasLawsOfWar) then {
 ///  Identities   ///
 /////////////////////
 
-#include "CharacterData\YULAK_Western_Identities.sqf"
+#include "CharacterData\US_EU_A3UE_Western_Identities.sqf"
 
 //////////////////////////
 //       Loadouts       //

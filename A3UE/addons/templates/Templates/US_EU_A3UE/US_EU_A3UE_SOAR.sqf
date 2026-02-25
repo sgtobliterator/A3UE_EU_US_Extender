@@ -27,7 +27,7 @@ private _hasEF = "ef" in A3A_enabledDLC;
 //       	Identities    			//
 //////////////////////////////////////
 
-#include "CharacterData\YULAK_Eastern_Identities.sqf"
+#include "CharacterData\US_EU_A3UE_Eastern_Identities.sqf"
 
 //////////////////////////
 //       Vehicles       //
@@ -75,6 +75,7 @@ if (_hasWs) then {
 ["Weapon Classname", "Muzzle Classname", "Accessory Classname", "Scope Classname", ["Magazine Classname 1", "Magazine Classname 2", ...], ["GL Magazine Classname 1", ...], "Bipod Classname"]
 */
 private _loadoutData = call _fnc_createLoadoutData;
+private _akMuzzles
 private _rifles = [
 	["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "optic_MRCO",             ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhs_acc_grip_ffg2"],
     ["MMM_weap_AK12", "MMM_acc_PMS", "rhs_acc_perst3_2dp_h", "optic_MRCO",             ["MMM_mag_30rnd_545x39_AK12_7N10", "MMM_mag_30rnd_545x39_AK12_7N22", "MMM_mag_30rnd_545x39_AK12_7N6", "MMM_mag_30rnd_545x39_AK12_7N6M", "MMM_mag_30rnd_545x39_AK12_7U1"], [], "rhsusf_acc_grip2"],
