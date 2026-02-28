@@ -51,7 +51,7 @@ private _hasF18 = isClass (configFile >> "CfgVehicles" >> "FIR_F18C_MALS11");
 //private _hasProjectMSnipers = isClass ("allan please add details");
 //private _hasProjectMHandguns = isClass ("allan please add details");
 //private _hasProjectMPistols = isClass ("allan please add details");
-//private _hasDAGR = isClass ("allan please add details");
+private _hasDAGR = isClass (configFile >> 'CfgWeapons' >> 'dgr_ghillie2');
 //private _hasJCA = isClass ("allan please add details");
 //private _hasTFLEquipment = isClass ("allan please add details");
 //////////////////////////
@@ -1060,246 +1060,6 @@ if (_hasGM) then {
 //       Loadouts       //
 //////////////////////////
 private _loadoutData = call _fnc_createLoadoutData;
-_loadoutData set ["slRifles", []];
-_loadoutData set ["rifles", []];
-_loadoutData set ["carbines", []];
-_loadoutData set ["grenadeLaunchers", []];
-_loadoutData set ["designatedGrenadeLaunchers", []];
-_loadoutData set ["SMGs", []];
-_loadoutData set ["machineGuns", []];
-_loadoutData set ["marksmanRifles", []];
-_loadoutData set ["sniperRifles", []];
-
-//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
-//["", "", "", "", [], [], ""]
-
-_loadoutData set ["lightATLaunchers", [
-    ["UK3CB_BAF_AT4_CS_AT_Launcher", "", "", "", [], [], ""],
-    ["AMF_AT4CS_Loaded", "", "", "", [], [], ""],
-    ["BWA3_PzF3_Tandem_Loaded", "", "", "", [], [], ""],
-    ["BWA3_RGW90_Loaded", "", "", "", [], [], ""],
-    ["ffaa_armas_c100", "", "", ["ffaa_optic_vosel", 1, "", 2], [], [], ""],
-    ["ffaa_armas_c90", "", "", "", [], [], ""],
-    ["ASZ_PzF3_Loaded", "", "", "", [], [], ""]
-]];
-_loadoutData set ["lightHELaunchers", [
-    ["UK3CB_BAF_AT4_CS_AP_Launcher", "", "", "", [], [], ""],
-    ["BWA3_CarlGustav", "", "", "BWA3_optic_CarlGustav", ["BWA3_CarlGustav_HE"], [], ""],
-    ["BWA3_CarlGustav", "", "", "BWA3_optic_CarlGustav", ["BWA3_CarlGustav_HEDP"], [], ""],
-    ["BWA3_Bunkerfaust_Loaded", "", "", "", [], [], ""],
-    ["ffaa_armas_c100_biv", "", "", ["ffaa_optic_vosel", 1, "", 2], [], [], ""],
-    ["ffaa_armas_c90_CR_AM", "", "", "", [], [], ""]
-]];
-_loadoutData set ["ATLaunchers", [
-    ["AMF_LRAC89_F", "", "", "", ["AMF_AC89mm_F1"], [], ""],
-    ["BWA3_CarlGustav", "", "", "BWA3_optic_CarlGustav", ["BWA3_CarlGustav_HEAT"], [], ""]
-]];
-_loadoutData set ["missileATLaunchers", [
-    ["UK3CB_BAF_NLAW_Launcher", "", "", "", [], [], ""],
-    ["AMF_Eryx", "", "", "", ["Eryx_HEAT"], [], ""],
-    ["ASZ_SpikeSR_Loaded", "", "", "", [], [], ""]
-]];
-_loadoutData set ["AALaunchers", [
-        ["BWA3_Fliegerfaust", "", "", "", ["BWA3_Fliegerfaust_Mag"], [], ""],
-        ["ASZ_Launch_Stinger", "", "", "", ["ASZ_Stinger_Mag"], [], ""]
-]];
-_loadoutData set ["sidearms", []];
-
-_loadoutData set ["ATMines", [
-    "BWA3_DM31AT_Mag",
-    "ATMine_Range_Mag"
-]];
-_loadoutData set ["APMines", [
-    "APERSMine_Range_Mag",
-    "APERSBoundingMine_Range_Mag"
-]];
-_loadoutData set ["lightExplosives", [
-    "DemoCharge_Remote_Mag"
-]];
-_loadoutData set ["heavyExplosives", [
-    "SatchelCharge_Remote_Mag"
-]];
-
-_loadoutData set ["antiInfantryGrenades", [
-    "ffaa_granada_alhambra",
-    "BWA3_DM51A1",
-    "AMF_GR_DEFF1",
-    "AMF_GR_OFF1"
-]];
-_loadoutData set ["smokeGrenades", [
-    "BWA3_DM25",
-    "AMF_GR_FUMF5",
-    "UK3CB_BAF_SmokeShell"
-]];
-_loadoutData set ["signalsmokeGrenades", [
-    "BWA3_DM32_Blue",
-    "BWA3_DM32_Green",
-    "BWA3_DM32_Orange",
-    "BWA3_DM32_Purple",
-    "BWA3_DM32_Red",
-    "BWA3_DM32_Yellow",
-    "UK3CB_BAF_SmokeShellYellow",
-    "UK3CB_BAF_SmokeShellPurple",
-    "UK3CB_BAF_SmokeShellGreen",
-    "UK3CB_BAF_SmokeShellOrange",
-    "UK3CB_BAF_SmokeShellRed",
-    "UK3CB_BAF_SmokeShellBlue"
-]];
-
-
-//Basic equipment. Shouldn't need touching most of the time.
-//Mods might override this, or certain mods might want items removed (No GPSs in WW2, for example)
-_loadoutData set ["maps", ["ItemMap"]];
-_loadoutData set ["watches", ["ItemWatch"]];
-_loadoutData set ["compasses", ["ItemCompass"]];
-_loadoutData set ["radios", ["ItemRadio"]];
-_loadoutData set ["gpses", ["ItemGPS"]];
-_loadoutData set ["NVGs", [
-    "UK3CB_BAF_HMNVS",
-    "AMF_BINYX_BLK_NVG",
-    "AMF_BINYX_Tan_NVG"
-]];
-_loadoutData set ["binoculars", [
-    "Binocular",
-    "AMF_APX_M241",
-    "AMF_OB72_SOPHIE"
-]];
-_loadoutData set ["rangefinders", [
-    "UK3CB_BAF_Soflam_Laserdesignator",
-    "AMF_VectorIV",
-    "BWA3_Vector",
-    "ASZ_Vector"
-]];
-
-_loadoutData set ["traitorUniforms", [
-    "U_BG_Guerrilla_6_1",
-    "rhs_uniform_afghanka_moldovan_ttsko_desat"
-]];
-_loadoutData set ["traitorVests", [
-    "V_TacVest_oli",
-    "V_TacVest_khk",
-    "V_TacVest_brn",
-    "V_TacVest_blk",
-    "V_TacVest_blk_POLICE"
-]];
-_loadoutData set ["traitorHats", [
-    "H_Booniehat_khk",
-    "H_Booniehat_oli",
-    "H_Booniehat_tan",
-    "H_Cap_tan",
-    "H_Cap_oli",
-    "H_Cap_grn",
-    "H_Cap_blk"
-]];
-
-_loadoutData set ["officerUniforms", [
-    "amf_uniform_01_NG_CE_HX",
-    "UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve_RM",
-    "BWA3_Uniform_sleeves_Fleck",
-    "ASZ_Uniforme_EI_LS_Vegecam",
-    "rhs_uniform_afghanka_moldovan_ttsko_blue"
-]];
-_loadoutData set ["officerVests", [
-    "amf_Belt"
-]];
-_loadoutData set ["officerHats", [
-    "UK3CB_BAF_H_Beret_BR",
-    "UK3CB_BAF_H_Beret_CSG",
-    "UK3CB_BAF_H_Beret_Mer",
-    "UK3CB_BAF_H_Beret_RM_Officer",
-    "UK3CB_BAF_H_Beret_UN_Officer",
-    "AMF_BERET_RPIMa",
-    "BWA3_Beret_Falli",
-    "BWA3_Beret_PzAufkl"
-]];
-
-private _cloakUniforms = [
-    "ASZ_GhillieSuit_Vegecam",
-    "ASZ_GhillieSuit_CBT"
-];
-private _ghillieSuits = [
-    "U_I_FullGhillie_lsh",
-    "U_I_FullGhillie_sard"
-];
-/*
-if (_hasDAGR) then {
-    _cloakUniforms append [
-        ""
-    ];
-    _ghillieSuits append [
-        ""
-    ];
-};
-*/
-_loadoutData set ["cloakUniforms", _cloakUniforms];
-_loadoutData set ["ghillieSuits", _ghillieSuits];
-
-_loadoutData set ["cloakVests", []];
-
-//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
-//["", "", "", "", [], [], ""]
-
-private _sniperScopes = [
-    "optic_LRPS",
-    "AMF_schmidt_bendex4",
-    "AMF_SB_PM2_P3L",
-    "AMF_SB_PM2_P4FL",
-    "ffaa_optic_Mk4_v1",
-    "ffaa_optic_3x12x50",
-    "ASZ_AMS",
-    "ASZ_Leupold_MK4_MRT_black",
-    "ASZ_Schmidt_Bender_LP",
-    "ASZ_Tasco_Pronghorn"
-];
-/*
-_loadoutData set ["cloakRifles", [
-    ["UK3CB_BAF_L115A3", ["UK3CB_BAF_Silencer_L115A3", ""], "", _sniperScopes, ["UK3CB_BAF_338_5Rnd", "UK3CB_BAF_338_5Rnd_Tracer"], [], "UK3CB_underbarrel_acc_bipod"],
-    ["UK3CB_BAF_L115A3_Ghillie", ["UK3CB_BAF_Silencer_L115A3", ""], "", _sniperScopes, ["UK3CB_BAF_338_5Rnd", "UK3CB_BAF_338_5Rnd_Tracer"], [], "UK3CB_underbarrel_acc_bipod"],
-    ["UK3CB_BAF_L118A1_Covert", "", "", _sniperScopes, ["UK3CB_BAF_762_L42A1_10Rnd", "UK3CB_BAF_762_L42A1_10Rnd_T"], [], ""],
-    ["AMF_PGM_ULTIMA_RATIO_F", "", "", _sniperScopes, ["AMF_10Rnd_308WIN_UR_CBC_168GR_HPBT"], [], ""],
-    ["BWA3_G29", ["BWA3_muzzle_snds_Rotex_Monoblock", ""], ["AMF_AN_PEQ_15_tan", ""], _sniperScopes, ["BWA3_10Rnd_86x70_G29", "BWA3_10Rnd_86x70_G29_Tracer"], [], "BWA3_bipod_Harris_tan"],
-    ["ffaa_armas_aw", ["ASZ_Silencer_762_blk", ""], "", _sniperScopes, ["ffaa_762x51_accuracy"], [], ""],
-    ["ASZ_M40A3_Green", [], "", _sniperScopes, [], [], "ASZ_Bipod_M40A3"],
-    ["ASZ_SakoTRG42", "", "", _sniperScopes, [], [], "ASZ_Bipod_SakoTRG42"]
-]];
-*/
-_loadoutData set ["cloakRifles", []];
-_loadoutData set ["cloakCarbines", []];
-_loadoutData set ["cloakSidearms", []];
-_loadoutData set ["cloakGlasses", []];
-
-_loadoutData set ["uniforms", [
-    "amf_uniform_01_NG_OD_LowaZephyr",
-    "amf_uniform_01_OD_LowaZephyr",
-    "amf_uniform_01_RE_NG_OD_LowaZephyr",
-    "amf_uniform_01_RE_OD_MD",
-    "amf_uniform_04_MTP",
-    "UK3CB_BAF_U_CombatUniform_MTP",
-    "UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve",
-    "UK3CB_BAF_U_Smock_MTP",
-    "BWA3_Uniform_Crye_G3_Fleck",
-    "BWA3_Uniform_Fleck",
-    "G3_cbt",
-    "ASZ_cotton",
-    "ASZ_Parka_CBT",
-    "ASZ_SOD_Combat_CBT2",
-    "ASZ_SOF_Uniform_CBT",
-    "BWA3_Uniform_sleeves_Fleck"
-]];
-_loadoutData set ["vests", []];
-_loadoutData set ["Hvests", []];
-_loadoutData set ["glVests", [
-    "UK3CB_BAF_V_Osprey_Grenadier_A",
-    "UK3CB_BAF_V_Osprey_Grenadier_B"
-]];
-_loadoutData set ["backpacks", []];
-_loadoutData set ["atBackpacks", []];
-_loadoutData set ["longRangeRadios", ["B_RadioBag_01_mtp_F"]];
-_loadoutData set ["helmets", []];
-_loadoutData set ["slHat", ["H_Beret_02"]];
-_loadoutData set ["sniHats", ["H_Booniehat_mcamo"]];
-
-_loadoutData set ["facewear", []];
 
 //Item *set* definitions. These are added in their entirety to unit loadouts. No randomisation is applied.
 if(A3A_hasACE) then {
@@ -1309,11 +1069,11 @@ if(A3A_hasACE) then {
     Squad Lead Medical:  6 Bandages, 4 Tourniquets, 1 Splint
     Doctor Medical:     12 Bandages, 2 Tourniquets, 2 Splints, 4 Morphine, 2 Epinephrine, 1 PAK
     */
-    _loadoutData set ["items_medical_basic",    ["ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing"]                                                                                                                                                                                                                                                                                                                                                                                     call A3A_fnc_itemset_medicalSupplies];
-    _loadoutData set ["items_medical_standard", ["ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_tourniquet", "ACE_tourniquet"]                                                                                                                                                                                                                                                                                                  call A3A_fnc_itemset_medicalSupplies];
-    _loadoutData set ["items_medical_leader",   ["ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint"]                                                                                                                                                                                                                          call A3A_fnc_itemset_medicalSupplies];
-    _loadoutData set ["items_medical_medic",    ["ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_epinephrine", "ACE_epinephrine", "ACE_personalAidKit"]  call A3A_fnc_itemset_medicalSupplies];
-    _loadoutData set ["items_miscEssentials",   ["ACE_IR_Strobe_Item", "ACE_EntrenchingTool", "ACE_Flashlight_XL50"]                                                                                                                                                                                                                                                                                                                                                                                call A3A_fnc_itemset_miscEssentials ];
+    _loadoutData set ["items_medical_basic",    ["ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing"]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_standard", ["ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_tourniquet", "ACE_tourniquet"]                                                                                                                                                                                                                                                                                                                                                                                                                                             call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_leader",   ["ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint"]                                                                                                                                                                                                                                                                                                                                                                     call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_medical_medic",    ["ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_epinephrine", "ACE_epinephrine", "ACE_personalAidKit", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_painkillers", "ACE_painkillers", "ACE_painkillers", "ACE_painkillers", "ACE_painkillers"] call A3A_fnc_itemset_medicalSupplies];
+    _loadoutData set ["items_miscEssentials",   ["ACE_IR_Strobe_Item", "ACE_EntrenchingTool", "ACE_Flashlight_XL50", "ACE_EarPlugs", "ACE_EHP", "ACE_CableTie"]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                call A3A_fnc_itemset_miscEssentials ];
 } else {
     /*
     Basic Medical:      1 FAK
@@ -1332,8 +1092,8 @@ if(A3A_hasACE) then {
 private   _squadLeaderItems = ["MineDetector"];
 private      _riflemanItems = [];
 private         _medicItems = [];
-private     _grenadierItems = ["rhs_ec75_mag"];
-private          _demoItems = ["rhs_ec200_mag", "MineDetector"];
+private     _grenadierItems = [];
+private          _demoItems = ["MineDetector"];
 private      _engineerItems = ["ToolKit"];
 private _lightAntiTankItems = [];
 private      _antiTankItems = [];
@@ -1349,15 +1109,15 @@ if (A3A_hasACE) then {
     _squadLeaderItems append   [];
     _riflemanItems append      [];
     _medicItems append         [];
-    _grenadierItems append     [];
-    _demoItems append          [];
-    _engineerItems append      [];
+    _grenadierItems append     ["ACE_Clacker"];
+    _demoItems append          ["ACE_Clacker", "ACE_DefusalKit"];
+    _engineerItems append      ["ACE_wirecutter"];
     _lightAntiTankItems append [];
     _antiTankItems append      [];
     _antiAirItems append       [];
     _machineGunnerItems append [];
-    _marksmanItems append      [];
-    _sniperItems append        [];
+    _marksmanItems append      ["ACE_SpottingScope", "ACE_Kestrel4500"];
+    _sniperItems append        ["ACE_Tripod", "ACE_SpottingScope", "ACE_Kestrel4500", "ACE_ATragMX"];
     _policeItems append        [];
     _crewItems append          [];
     _unarmedItems append       [];
@@ -1379,21 +1139,20 @@ _loadoutData set ["items_police_extras",           _policeItems];
 _loadoutData set ["items_crew_extras",             _crewItems];
 _loadoutData set ["items_unarmed_extras",          _unarmedItems];
 
-_loadoutData set ["glasses", []];
-_loadoutData set ["goggles", []];
 
 private _frenchSniperScopes = [
-    "AMF_schmidt_bendex4",
+    "AMF_schmidt_benderx4",
     "AMF_SB_PM2_P3L",
     "AMF_SB_PM2_P4FL"
 ];
 
 private _frenchUniforms                      = [
-    "amf_uniform_01_NG_OD_LowaZephyr",
-    "amf_uniform_01_OD_LowaZephyr",
-    "amf_uniform_01_RE_NG_OD_LowaZephyr",
-    "amf_uniform_01_RE_OD_MD",
-    "amf_uniform_04_MTP"
+    "amf_uniform_01_NG_BM_HX",
+    "amf_uniform_01_BM_HX",
+    "amf_uniform_01_RE_BM_HX",
+    "amf_uniform_01_RE_NG_BM_HX",
+    "amf_uniform_02_NG_BM_MD",
+    "amf_uniform_02_BM_MD"
 ];                                           
 private _frenchVests                         = [
     "AMF_WA_DCS_V1_MTC",
@@ -1490,7 +1249,7 @@ private _frenchSidearms                      = [
     ["AMF_PSA_Glock_17", "", "", "", ["AMF_17Rnd_9x19_Glock"], [], ""]
 ];                                         
 private _frenchNVGs                          = [
-    "AFM_BINYX_BLK_NVG",
+    "AMF_BINYX_BLK_NVG",
     "AMF_BINYX_Tan_NVG"
 ];
 private _frenchBerets                       = [
@@ -1511,6 +1270,12 @@ private _frenchGlasses                      = [
 private _frenchGoggles                      = [
     "amf_balaclava_goggles_od",
     "amf_balaclava_od"
+];
+private _frenchCrewUniforms                 = [
+    "amf_classique_f"
+];
+private _frenchPilotUniforms                 =[
+    "amf_pilot_01_f"
 ];
 
 
@@ -1564,6 +1329,9 @@ private _britishHelmets                      = [
     "UK3CB_BAF_H_Mk7_Scrim_D",
     "UK3CB_BAF_H_Mk7_Scrim_E",
     "UK3CB_BAF_H_Mk7_Scrim_F"
+];
+private _britishCrewHelmets                  = [
+    "UK3CB_BAF_H_CrewHelmet_A"
 ];
 private _britishFacewear                     = [
     "UK3CB_BAF_G_Tactical_Black",
@@ -1630,16 +1398,16 @@ private _britishSlGrenades                   = [
 //["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
 //["", "", "", "", [], [], ""]
 private _britishSlRifles                     = [
-    ["UK3CB_BAF_L85A3_UGL", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLFM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, _britishSlGrenades, ""],
-    ["UK3CB_BAF_L85A2_UGL", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLFM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, _britishSlGrenades, ""],
-    ["UK3CB_BAF_L119A1_UKUGL", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLFM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, _britishSlGrenades, ""]
+    ["UK3CB_BAF_L85A3_UGL", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, _britishSlGrenades, ""],
+    ["UK3CB_BAF_L85A2_UGL", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, _britishSlGrenades, ""],
+    ["UK3CB_BAF_L119A1_UKUGL", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, _britishSlGrenades, ""]
 ];
 private _britishRifles                       = [
     ["UK3CB_BAF_L103A2", "", "", "", ["30Rnd_556x45_Stanag_red", "30Rnd_556x45_Stanag_Tracer_red"], [], ""],
-    ["UK3CB_BAF_L119A1_RIS", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLFM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, [], ""],
+    ["UK3CB_BAF_L119A1_RIS", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, [], ""],
     ["UK3CB_BAF_L85A2_EMAG", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], "", _britishRifleOptics, _british556Magazines, [], ""],
-    ["UK3CB_BAF_L85A2_RIS", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLFM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, [], ""],
-    ["UK3CB_BAF_L85A3", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLFM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, [], ""]
+    ["UK3CB_BAF_L85A2_RIS", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, [], ""],
+    ["UK3CB_BAF_L85A3", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], ["UK3CB_BAF_LLM_IR_Black", 1, "", 2], _britishRifleOptics, _british556Magazines, [], ""]
 ];
 private _britishCarbines                     = [
     ["UK3CB_BAF_L119A1_CQB", ["", 2, "UK3CB_BAF_Silencer_L85", 1, "UK3CB_BAF_SFFH", 2], "", _britishRifleOptics, _british556Magazines, [], ""],
@@ -1655,7 +1423,7 @@ private _britishSMGs                         = [
 private _britishMachineGuns                  = [
     ["UK3CB_BAF_L110A1", "", "", "", ["UK3CB_BAF_556_200Rnd", "UK3CB_BAF_556_200Rnd_T"], [], ""],
     ["UK3CB_BAF_L110A2", "", "", _britishRifleOptics, ["UK3CB_BAF_556_200Rnd", "UK3CB_BAF_556_200Rnd_T"], [], ""],
-    ["UK3CB_BAF_L110A2RIS", "", ["UK3CB_BAF_LLFM_IR_Black", 1, "", 2], _britishRifleOptics, ["UK3CB_BAF_556_200Rnd", "UK3CB_BAF_556_200Rnd_T"], [], ""]
+    ["UK3CB_BAF_L110A2RIS", "", ["UK3CB_BAF_LLM_IR_Black", 1, "", 2], _britishRifleOptics, ["UK3CB_BAF_556_200Rnd", "UK3CB_BAF_556_200Rnd_T"], [], ""]
 ];
 private _britishMarksmanRifles               = [
     ["UK3CB_BAF_L129A1", ["", 2, "UK3CB_BAF_Silencer_L115A3", 1], ["", 2, "UK3CB_BAF_LLM_IR_Black"], ["UK3CB_BAF_TA31F", "RKSL_optic_LDS"], ["UK3CB_BAF_762_L42A1_20Rnd", "UK3CB_BAF_762_L42A1_20Rnd_T"], [], ["", "UK3CB_underbarrel_acc_fgrip_bipod", "UK3CB_underbarrel_acc_bipod"]]
@@ -1663,7 +1431,7 @@ private _britishMarksmanRifles               = [
 private _britishSniperRifles                 = [
     ["UK3CB_BAF_L115A3", ["", "UK3CB_BAF_Silencer_L115A3"], "", "RKSL_optic_PMII_312_sunshade", ["UK3CB_BAF_338_5Rnd", "UK3CB_BAF_338_5Rnd_Tracer"], [], "UK3CB_underbarrel_acc_bipod"],
     ["UK3CB_BAF_L115A3_Ghillie", ["", "UK3CB_BAF_Silencer_L115A3"], "", "RKSL_optic_PMII_312_sunshade", ["UK3CB_BAF_338_5Rnd", "UK3CB_BAF_338_5Rnd_Tracer"], [], "UK3CB_underbarrel_acc_bipod"],
-    ["UK3CB_BAF_UK3CB_BAF_L118A1_Covert", "", "", "RKSL_optic_PMII_312_sunshade", ["UK3CB_BAF_762_L42A1_10Rnd", "UK3CB_BAF_762_L42A1_10Rnd_T"], [], ""]
+    ["UK3CB_BAF_L118A1_Covert", "", "", "RKSL_optic_PMII_312_sunshade", ["UK3CB_BAF_762_L42A1_10Rnd", "UK3CB_BAF_762_L42A1_10Rnd_T"], [], ""]
 ];
 private _britishSidearms                     = [
     ["UK3CB_BAF_L105A2", "", ["", "UK3CB_BAF_Flashlight_L105A1"], "", ["UK3CB_BAF_9_15Rnd"], [], ""],
@@ -1683,6 +1451,12 @@ private _britishBerets                       = [
     "UK3CB_BAF_H_Beret_Rifles",
     "UK3CB_BAF_H_Beret_RM_Bootneck",
     "UK3CB_BAF_H_Beret_RM_Officer"
+];
+private _britishCrewUniforms                 = [
+    "UK3CB_BAF_U_CrewmanCoveralls_RTR"
+];
+private _britishPilotUniforms                = [
+    "UK3CB_BAF_U_HeliPilotCoveralls_RN"
 ];
 
 
@@ -1712,7 +1486,9 @@ private _italianFacewear                     = [
 ];                                               
 private _italianBackpacks                    = [
 
-];                                               
+];
+//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
+//["", "", "", "", [], [], ""]                          
 private _italianSlRifles                     = [
 
 ];                                               
@@ -1746,61 +1522,157 @@ private _italianNVGs                          = [
 
 
 private _germanUniforms                      = [
-
-];                                           
+    "BWA3_Uniform_Crye_G3_Fleck",
+    "BWA3_Uniform_Fleck"
+];
+private _germanHeliUniforms                  = [
+    "BWA3_Uniform_Helipilot"
+];
+private _germanCrewUniforms                  = [
+    "BWA3_Uniform_Crew_Fleck"
+];
 private _germanVests                         = [
-
+    "BWA3_Vest_JPC_Rifleman_Fleck",
+    "BWA3_Vest_Rifleman_Fleck"
 ];                                           
 private _germanSlVests                       = [
-
+    "BWA3_Vest_JPC_Leader_Fleck",
+    "BWA3_Vest_Leader_Fleck"
 ];                                           
 private _germanMgVests                       = [
-
+    "BWA3_Vest_MachineGunner_Fleck"
 ];                                           
 private _germanMedicVests                    = [
-
+    "BWA3_Vest_Medic_Fleck"
 ];                                               
 private _germanGlVests                       = [
-
-];                                           
+    "BWA3_Vest_Grenadier_Fleck"
+];
+private _germanRadiomanVests                 = [
+    "BWA3_Vest_JPC_Radioman_Fleck"
+];
+private _germanCrewVests                     = [
+    "BWA3_Vest_Fleck"
+]; 
 private _germanHelmets                       = [
-
+    "BWA3_M92_Fleck",
+    "BWA3_OpsCore_FastMT_Fleck",
+    "BWA3_OpsCore_FastMT_Peltor_Fleck",
+    "BWA3_OpsCore_FastMT_SOF_Fleck"
 ];                                           
 private _germanFacewear                      = [
-
+    "Revision_BLK2",
+    "Balaclava_Od",
+    "BWA3_G_Combat_black",
+    "BWA3_G_Combat_clear",
+    "amf_oakley02_od",
+    "amf_balaclava_goggles_od"
 ];                                           
 private _germanBackpacks                     = [
-
-];                                               
+    "BWA3_AssaultPack_Fleck",
+    "BWA3_Carryall_Fleck",
+    "BWA3_FieldPack_Fleck",
+    "BWA3_Kitbag_Fleck",
+    "BWA3_PatrolPack_Fleck",
+    "BWA3_TacticalPack_Fleck"
+];
+private _germanOptics                        = [
+    "BWA3_optic_EOTech_Mag_Off",
+    "BWA3_optic_CompM2",
+    "BWA3_optic_EOTech552",
+    "BWA3_optic_EOTech",
+    "BWA3_optic_RSAS_riser",
+    "BWA3_optic_ZO4x30",
+    "BWA3_optic_ZO4x30_MicroT2",
+    "BWA3_optic_ZO4x30_RSAS",
+    "BWA3_optic_ZO4x30i",
+    "BWA3_optic_ZO4x30i_MicroT2",
+    "BWA3_optic_ZO4x30i_RSAS"
+];
+private _germanRedDots                       = [
+    "BWA3_optic_MicroT2",
+    "BWA3_optic_EOTech552",
+    "BWA3_optic_EOTech",
+    "BWA3_optic_RSAS"
+];
+private _german556Muzzles                    = [
+    "", 2, 
+    "BWA3_muzzle_snds_QDSS", 0.5, 
+    "BWA3_muzzle_snds_Rotex_IIIC", 0.5
+];
+private _german556Magazines                  = [
+    "BWA3_30Rnd_556x45_G36",
+    "BWA3_30Rnd_556x45_G36_Tracer"
+];
+private _germanRiflemanRails                 = [
+    "", 2, 
+    "BWA3_acc_VarioRay_irlaser_black", 1
+];
+private _germanG28Magazines                  = [
+    "BWA3_20Rnd_762x51_G28",
+    "BWA3_20Rnd_762x51_G28_Tracer"
+];
+private _germanSniperOptics                  = [
+    "BWA3_optic_PMII_ShortdotCC",
+    "BWA3_optic_PMII_DMR_MicroT1_rear",
+    "BWA3_optic_M5Xi_MSR_MicroT2"
+];
+//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
+//["", "", "", "", [], [], ""]
 private _germanSlRifles                      = [
-
+    ["BWA3_G27_AG40", "", "BWA3_acc_VarioRay_irlaser_black", _germanOptics, _germanG28Magazines, ["1Rnd_HE_Grenade_shell"], ""],
+    ["BWA3_G36A1_AG40", _german556Muzzles, "BWA3_acc_VarioRay_irlaser_black", "", _german556Magazines, ["1Rnd_HE_Grenade_shell"], ""],
+    ["BWA3_G36A2_AG40", _german556Muzzles, "BWA3_acc_VarioRay_irlaser_black", _germanRedDots, _german556Magazines, ['1Rnd_HE_Grenade_shell'], ""],
+    ["BWA3_G36A3_AG40", _german556Muzzles, "BWA3_acc_VarioRay_irlaser_black", _germanOptics, _german556Magazines, ["1Rnd_HE_Grenade_shell"], ""],
+    ["BWA3_G38_AG40", _german556Muzzles, "BWA3_acc_VarioRay_irlaser_black", _germanOptics, _german556Magazines, ["1Rnd_HE_Grenade_shell"], ""]
 ];                                           
 private _germanRifles                        = [
-
+    ["BWA3_G36A1", _german556Muzzles, _germanRiflemanRails, "", _german556Magazines, [], ""],
+    ["BWA3_G36A2", _german556Muzzles, _germanRiflemanRails, _germanRedDots, _german556Magazines, [], ""],
+    ["BWA3_G36A3", _german556Muzzles, _germanRiflemanRails, _germanOptics, _german556Magazines, [], ""],
+    ["BWA3_G38", _german556Muzzles, _germanRiflemanRails, _germanOptics, _german556Magazines, [], ""]
 ];                                           
 private _germanCarbines                      = [
-
+    ["BWA3_G36KA0", _german556Muzzles, _germanRiflemanRails, "", _german556Magazines, [], ""],
+    ["BWA3_G36KA1", _german556Muzzles, _germanRiflemanRails, "", _german556Magazines, [], ""],
+    ["BWA3_G36KA2", _german556Muzzles, _germanRiflemanRails, _germanRedDots, _german556Magazines, [], ""],
+    ["BWA3_G36KA3", _german556Muzzles, _germanRiflemanRails, _germanOptics, _german556Magazines, [], ""],
+    ["BWA3_G38C", _german556Muzzles, _germanRiflemanRails, _germanOptics, _german556Magazines, [], ""]
 ];                                           
 private _germanGrenadeLaunchers              = [
-
+    ["ASZ_M32", "", "", "", ["6Rnd_HE_Grenade_shell_ASZ"], [], ""]
 ];                                                   
 private _germanSMGs                          = [
-
+    ["BWA3_MP7", ["", 2, "BWA3_muzzle_snds_Rotex_II", 1], _germanRiflemanRails, _germanRedDots, ["BWA3_40Rnd_46x30_MP7"], [], ""] 
 ];                                       
 private _germanMachineGuns                   = [
-
+    ["BWA3_MG3", "", _germanRiflemanRails, _germanRedDots, ["BWA3_120Rnd_762x51_soft", "BWA3_120Rnd_762x51_Tracer_soft"], [], "BWA3_bipod_MG3"],
+    ["BWA3_MG4", _german556Muzzles, _germanRiflemanRails, _germanOptics, ["BWA3_200Rnd_556x45", "BWA3_200Rnd_556x45_Tracer"], [], ""],
+    ["BWA3_MG5", "", _germanRiflemanRails, _germanOptics, ["BWA3_120Rnd_762x51_soft", "BWA3_120Rnd_762x51_Tracer_soft"], [], ""]
 ];                                               
 private _germanMarksmanRifles                = [
+    ["BWA3_G27", "", _germanRiflemanRails, _germanOptics, _germanG28Magazines, [], "BWA3_bipod_Atlas"],
+    ["BWA3_G28", "", _germanRiflemanRails, _germanSniperOptics, _germanG28Magazines, [], "BWA3_bipod_Atlas"]
 
 ];                                                   
 private _germanSniperRifles                  = [
-
+    ["BWA3_G29", ["", 1, "BWA3_muzzle_snds_Rotex_Monoblock", 1], _germanRiflemanRails, _germanSniperOptics, ["BWA3_10Rnd_86x70_G29", "BWA3_10Rnd_86x70_G29_Tracer"], [], "BWA3_bipod_Atlas"]
 ];                                               
 private _germanSidearms                      = [
-
+    ["BWA3_P12", ["", 2, "BWA3_muzzle_snds_Impuls_IIA"], ["", 2, "BWA3_acc_LLMPI_irlaser"], "", ["BWA3_12Rnd_45ACP_P12"], [], ""],
+    ["BWA3_P8", "", ["", 2, "BWA3_muzzle_snds_Impuls_IIA"], "", ["BWA3_15Rnd_9x19_P8"], [], ""]
 ];
 private _germanNVGs                          = [
-    
+    "AMF_BINYX_BLK_NVG"
+];
+private _germanBerets                        = [
+    "BWA3_Beret_HFlieger",
+    "BWA3_Beret_Jaeger",
+    "BWA3_Beret_PzAufkl",
+    "BWA3_Beret_PzGren",
+    "BWA3_Beret_Pz",
+    "BWA3_Beret_Wach_blue",
+    "BWA3_Beret_Wach_green"
 ];
 
 private _spanishUniforms                      = [
@@ -1829,7 +1701,9 @@ private _spanishFacewear                      = [
 ];                                     
 private _spanishBackpacks                     = [
 
-];                                         
+];                    
+//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
+//["", "", "", "", [], [], ""]
 private _spanishSlRifles                      = [
 
 ];                                     
@@ -1861,6 +1735,239 @@ private _spanishNVGs                          = [
     
 ];
 
+private _frenchGhillieSuits = [];
+private _britishGhillieSuits = [];
+private _germanGhillieSuits = [];
+private _italianGhillieSuits = [];
+private _spanishGhillieSuits = [];
+
+if (_hasDAGR) then {
+    _frenchGhillieSuits append [
+        "dgr_ghillie1",
+        "dgr_ghillie2",
+        "dgr_ghillie4",
+        "dgr_ghillie6",
+        "dgr_ghillie10",
+        "dgr_ghillie14",
+        "dgr_ghillie17",
+        "dgr_ghillie18",
+        "dgr_ghillie22"
+    ];
+    _britishGhillieSuits append [
+        "dgr_ghillie1",
+        "dgr_ghillie2",
+        "dgr_ghillie4",
+        "dgr_ghillie6",
+        "dgr_ghillie10",
+        "dgr_ghillie14",
+        "dgr_ghillie17",
+        "dgr_ghillie18",
+        "dgr_ghillie22"
+    ];
+    _germanGhillieSuits append [
+        "dgr_ghillie1",
+        "dgr_ghillie2",
+        "dgr_ghillie4",
+        "dgr_ghillie6",
+        "dgr_ghillie10",
+        "dgr_ghillie14",
+        "dgr_ghillie17",
+        "dgr_ghillie18",
+        "dgr_ghillie22"
+    ];
+    _italianGhillieSuits append [
+        "dgr_ghillie1",
+        "dgr_ghillie2",
+        "dgr_ghillie4",
+        "dgr_ghillie6",
+        "dgr_ghillie10",
+        "dgr_ghillie14",
+        "dgr_ghillie17",
+        "dgr_ghillie18",
+        "dgr_ghillie22"
+    ];
+    _spanishGhillieSuits append [
+        "dgr_ghillie1",
+        "dgr_ghillie2",
+        "dgr_ghillie4",
+        "dgr_ghillie6",
+        "dgr_ghillie10",
+        "dgr_ghillie14",
+        "dgr_ghillie17",
+        "dgr_ghillie18",
+        "dgr_ghillie22"
+    ];
+} else {
+    _frenchGhillieSuits append [
+        "U_I_FullGhillie_lsh"
+    ];
+    _britishGhillieSuits append [
+        "U_I_FullGhillie_lsh"
+    ];
+    _germanGhillieSuits append [
+        "U_I_FullGhillie_lsh"
+    ];
+    _italianGhillieSuits append [
+        "U_I_FullGhillie_lsh"
+    ];
+    _spanishGhillieSuits append [
+        "U_I_FullGhillie_lsh"
+    ];
+};
+
+private _frenchSniperHats = [
+    "H_Booniehat_tan"
+];
+private _britishSniperHats = [
+    "UK3CB_BAF_H_Boonie_MTP",
+    "UK3CB_BAF_H_Boonie_MTP_PRR"
+];
+private _germanSniperHats = [
+    "BWA3_Booniehat_Fleck"
+];
+private _italianSniperHats = [
+    "ASZ_BoonieHat_CBT"
+];
+private _spanishSniperHats = [
+    "ffaa_brilat_chambergo_b"
+];
+
+private _frenchSniperFacewear= [
+    "UK3CB_BAF_G_Tactical_Clear",
+    "UK3CB_BAF_G_Tactical_Grey",
+    "BWA3_G_Combat_clear",
+    "amf_oakley_blk"
+];
+private _britishSniperFacewear = [
+    "UK3CB_BAF_G_Tactical_Clear",
+    "UK3CB_BAF_G_Tactical_Grey",
+    "BWA3_G_Combat_clear",
+    "amf_oakley_blk"
+];
+private _germanSniperFacewear= [
+    "UK3CB_BAF_G_Tactical_Clear",
+    "UK3CB_BAF_G_Tactical_Grey",
+    "BWA3_G_Combat_clear",
+    "amf_oakley_blk"
+];
+private _italianSniperFacewear = [
+    "UK3CB_BAF_G_Tactical_Clear",
+    "UK3CB_BAF_G_Tactical_Grey",
+    "BWA3_G_Combat_clear",
+    "amf_oakley_blk"
+];
+private _spanishSniperFacewear = [
+    "UK3CB_BAF_G_Tactical_Clear",
+    "UK3CB_BAF_G_Tactical_Grey",
+    "BWA3_G_Combat_clear",
+    "amf_oakley_blk"
+];
+
+//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
+//["", "", "", "", [], [], ""]
+
+_loadoutData set ["lightATLaunchers", [
+    ["UK3CB_BAF_AT4_CS_AT_Launcher", "", "", "", [], [], ""],
+    ["AMF_AT4CS_Loaded", "", "", "", [], [], ""],
+    ["BWA3_PzF3_Tandem_Loaded", "", "", "", [], [], ""],
+    ["BWA3_RGW90_Loaded", "", "", "", [], [], ""],
+    ["ffaa_armas_c100", "", "", ["ffaa_optic_vosel", 1, "", 2], [], [], ""],
+    ["ffaa_armas_c90", "", "", "", [], [], ""],
+    ["ASZ_PzF3_Loaded", "", "", "", [], [], ""]
+]];
+_loadoutData set ["lightHELaunchers", [
+    ["UK3CB_BAF_AT4_CS_AP_Launcher", "", "", "", [], [], ""],
+    ["BWA3_CarlGustav", "", "", "BWA3_optic_CarlGustav", ["BWA3_CarlGustav_HE"], [], ""],
+    ["BWA3_CarlGustav", "", "", "BWA3_optic_CarlGustav", ["BWA3_CarlGustav_HEDP"], [], ""],
+    ["BWA3_Bunkerfaust_Loaded", "", "", "", [], [], ""],
+    ["ffaa_armas_c100_biv", "", "", ["ffaa_optic_vosel", 1, "", 2], [], [], ""],
+    ["ffaa_armas_c90_CR_AM", "", "", "", [], [], ""]
+]];
+_loadoutData set ["ATLaunchers", [
+    ["AMF_LRAC89_F", "", "", "", ["AMF_AC89mm_F1"], [], ""],
+    ["BWA3_CarlGustav", "", "", "BWA3_optic_CarlGustav", ["BWA3_CarlGustav_HEAT"], [], ""]
+]];
+_loadoutData set ["missileATLaunchers", [
+    ["UK3CB_BAF_NLAW_Launcher", "", "", "", [], [], ""],
+    ["AMF_Eryx", "", "", "", ["Eryx_HEAT"], [], ""],
+    ["ASZ_SpikeSR_Loaded", "", "", "", [], [], ""]
+]];
+_loadoutData set ["AALaunchers", [
+        ["BWA3_Fliegerfaust", "", "", "", ["BWA3_Fliegerfaust_Mag"], [], ""],
+        ["ASZ_Launch_Stinger", "", "", "", ["ASZ_Stinger_Mag"], [], ""]
+]];
+
+_loadoutData set ["ATMines", [
+    "BWA3_DM31AT_Mag",
+    "ATMine_Range_Mag"
+]];
+_loadoutData set ["APMines", [
+    "APERSMine_Range_Mag",
+    "APERSBoundingMine_Range_Mag"
+]];
+_loadoutData set ["lightExplosives", [
+    "DemoCharge_Remote_Mag"
+]];
+_loadoutData set ["heavyExplosives", [
+    "SatchelCharge_Remote_Mag"
+]];
+
+_loadoutData set ["antiInfantryGrenades", [
+    "ffaa_granada_alhambra",
+    "BWA3_DM51A1",
+    "AMF_GR_DEFF1",
+    "AMF_GR_OFF1"
+]];
+_loadoutData set ["smokeGrenades", [
+    "BWA3_DM25",
+    "AMF_GR_FUMF5",
+    "UK3CB_BAF_SmokeShell"
+]];
+_loadoutData set ["signalsmokeGrenades", [
+    "BWA3_DM32_Blue",
+    "BWA3_DM32_Green",
+    "BWA3_DM32_Orange",
+    "BWA3_DM32_Purple",
+    "BWA3_DM32_Red",
+    "BWA3_DM32_Yellow",
+    "UK3CB_BAF_SmokeShellYellow",
+    "UK3CB_BAF_SmokeShellPurple",
+    "UK3CB_BAF_SmokeShellGreen",
+    "UK3CB_BAF_SmokeShellOrange",
+    "UK3CB_BAF_SmokeShellRed",
+    "UK3CB_BAF_SmokeShellBlue"
+]];
+
+_loadoutData set ["traitorUniforms", []];
+_loadoutData set ["traitorVests", []];
+_loadoutData set ["traitorHats", []];
+
+_loadoutData set ["officerUniforms", []];
+_loadoutData set ["officerVests", []];
+_loadoutData set ["officerHats", []];
+
+//Basic equipment. Shouldn't need touching most of the time.
+//Mods might override this, or certain mods might want items removed (No GPSs in WW2, for example)
+_loadoutData set ["maps", ["ItemMap"]];
+_loadoutData set ["watches", ["ItemWatch"]];
+_loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["radios", ["ItemRadio"]];
+_loadoutData set ["gpses", ["ItemGPS"]];
+_loadoutData set ["binoculars", []];
+
+_loadoutData set ["uniforms", []];
+_loadoutData set ["vests", []];
+_loadoutData set ["SMGs", []];
+_loadoutData set ["sidearms", []];
+_loadoutData set ["helmets", []];
+_loadoutData set ["longRangeRadios", ["AMF_FELIN_BACKPACK_RADIO_TDF"]];
+
+_loadoutData set ["designatedGrenadeLaunchers", [
+    ["ASZ_M32", "", "", "", ["6Rnd_HE_Grenade_shell_ASZ"], [], ""]
+]];
+
+
+
 _loadoutData set ["frenchUniforms", []];
 _loadoutData set ["frenchVests", []];
 _loadoutData set ["frenchSlVests", []];
@@ -1880,11 +1987,15 @@ _loadoutData set ["frenchMarksmanRifles", []];
 _loadoutData set ["frenchSniperRifles", []];
 _loadoutData set ["frenchSidearms", []];
 _loadoutData set ["frenchNVGs", []];
+
 _loadoutData set ["frenchBerets", []];
 _loadoutData set ["frenchGlasses", []];
 _loadoutData set ["frenchGoggles", []];
-
 _loadoutData set ["frenchMilitiaRifles", []];
+
+_loadoutData set ["frenchGhillieSuits", []];
+_loadoutData set ["frenchSniperHats", []];
+_loadoutData set ["frenchSniperFacewear", []];
 
 _loadoutData set ["britishUniforms", []];
 _loadoutData set ["britishVests", []];
@@ -1912,6 +2023,12 @@ _loadoutData set ["britishMedicBackpacks", []];
 _loadoutData set ["britishSlBackpacks", []];
 _loadoutData set ["britishEODBackpacks", []];
 _loadoutData set ["britishBerets", []];
+_loadoutData set ["britishCrewUniforms", []];
+_loadoutData set ["britishPilotUniforms", []];
+
+_loadoutData set ["britishGhillieSuits", []];
+_loadoutData set ["britishSniperHats", []];
+_loadoutData set ["britishSniperFacewear", []];
 
 _loadoutData set ["italianUniforms", []];
 _loadoutData set ["italianVests", []];
@@ -1933,6 +2050,10 @@ _loadoutData set ["italianSniperRifles", []];
 _loadoutData set ["italianSidearms", []];
 _loadoutData set ["italianNVGs", []];
 
+_loadoutData set ["italianGhillieSuits", []];
+_loadoutData set ["italianSniperHats", []];
+_loadoutData set ["italianSniperFacewear", []];
+
 _loadoutData set ["germanUniforms", []];
 _loadoutData set ["germanVests", []];
 _loadoutData set ["germanSlVests", []];
@@ -1952,6 +2073,13 @@ _loadoutData set ["germanMarksmanRifles", []];
 _loadoutData set ["germanSniperRifles", []];
 _loadoutData set ["germanSidearms", []];
 _loadoutData set ["germanNVGs", []];
+
+_loadoutData set ["germanBerets", []];
+_loadoutData set ["germanRadiomanVests", []];
+
+_loadoutData set ["germanGhillieSuits", []];
+_loadoutData set ["germanSniperHats", []];
+_loadoutData set ["germanSniperFacewear", []];
 
 _loadoutData set ["spanishUniforms", []];
 _loadoutData set ["spanishVests", []];
@@ -1976,7 +2104,11 @@ _loadoutData set ["spanishBerets", []];
 _loadoutData set ["spanishGlasses", []];
 _loadoutData set ["spanishGoggles", []];
 
-//TODO - ACE overrides for misc essentials, medical and engineer gear
+_loadoutData set ["spanishGhillieSuits", []];
+_loadoutData set ["spanishSniperHats", []];
+_loadoutData set ["spanishSniperFacewear", []];
+
+//TODO - Small and Large backpacks
 
 ///////////////////////////////////////
 //    Special Forces Loadout Data    //
@@ -1985,12 +2117,203 @@ _loadoutData set ["spanishGoggles", []];
 //["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
 //["", "", "", "", [], [], ""]
 
-
-
-
-
+private _euroUniforms = [
+    "amf_uniform_04_MTP",
+    "amf_uniform_05_MTP"
+];
+private _euroVests = [
+    "AMF_CRY_JPC_V2_MTP",
+    "AMF_WA_DCS_V2_MTC",
+    "AMF_WA_DCS_V6_MTC",
+    "ASZ_JPC_mc",
+    "ASZ_jpc_1_mc",
+    "ASZ_SODADP_vegecam_assaulter"
+];
+private _euroSlVests = [
+    "AMF_CRY_JPC_V1_MTC",
+    "AMF_WA_DCS_V1_MTC",
+    "AMF_WA_DCS_V3_MTC"
+];
+private _euroMgVests = [
+    "AMF_WA_DCS_V4_MG_MTC",
+    "AMF_CRY_JPC_V3_MG_MTC"
+];
+private _euroMedicVests = [
+    "ASZ_MMAC_mc"
+];
+private _euroBackpacks = [
+    "AMF_rush24_MTC",
+    "BackPanel_vegecam"
+];
+private _euroHelmets = [
+    "ASZ_OPSCORE_vegecam_net",
+    "ASZ_mach_2_netting_vegecam"
+];
+private _euroFacewear = [
+    "amf_balaclava_ranger",
+    "amf_oakley02_ranger",
+    "Revision_BLK2"
+];
+private _euroNVGs = [
+    "AMF_BINYX_BLK_NVG"
+];
+private _euroRails = [
+    "AMF_AN_PEQ_15_black",
+    "BWA3_acc_VarioRay_irlaser_black"
+];
+private _euroOptics = [
+    "AMF_exps3_magnifier_side",
+    "AMF_schmidt_benderx4",
+    "AMF_specter",
+    "AMF_exps3"
+];
+private _euro556Magazines = [
+    "AMF_30Rnd_556x45_SS109_PMAG1", 
+    "AMF_30Rnd_556x45_SS109_Tracer_PMAG1"
+];
+private _euroSniperOptics = [
+    "AMF_schmidt_benderx4",
+    "AMF_SB_PM2_P3L",
+    "RKSL_optic_PMII_312_sunshade"
+];
+private _euroRedDots = [
+    "BWA3_optic_EOTech",
+    "BWA3_optic_MicroT2",
+    "BWA3_optic_RSAS_riser"
+];
+//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
+//["", "", "", "", [], [], ""]
+private _euroRifles = [
+    ["AMF_SCAR_H_02_F_BLK", "muzzle_snds_B", _euroRails, _euroOptics, ["AMF_20Rnd_762x51_SCAR_BLK_BO_F3"], [], ""],
+    ["AMF_SCAR_L_02_F", ["BWA3_muzzle_snds_QDSS", "BWA3_muzzle_snds_Rotex_IIIC"], _euroRails, _euroOptics, _euro556Magazines, [], ""],
+    ["AMF_614_short_FS4_BLK", ["BWA3_muzzle_snds_QDSS", "BWA3_muzzle_snds_Rotex_IIIC", "AMF_ROTEX_V"], _euroRails, _euroOptics, _euro556Magazines, [], ""]
+];
+private _euroSlRifles = [
+    ["BWA3_G38_AG40", ["BWA3_muzzle_snds_QDSS", "BWA3_muzzle_snds_Rotex_IIIC"], _euroRails, _euroOptics, "BWA3_30Rnd_556x45_G36_AP", ["1Rnd_HE_Grenade_shell"], ""],
+    ["BWA3_G27_AG40", "muzzle_snds_B", _euroRails, _euroOptics, ["BWA3_20Rnd_762x51_G28_AP"], ["1Rnd_HE_Grenade_shell"], ""]
+];
+private _euroMarksmanRifles = [
+    ["AMF_HK417_F", "muzzle_snds_B", _euroRails, _euroSniperOptics, ["AMF_20Rnd_762x51_HK417_BO_F3"], [], ""],
+    ["AMF_SCAR_H_01_F", "muzzle_snds_B", _euroRails, _euroSniperOptics, ["AMF_20Rnd_762x51_SCAR_BLK_BO_F3"], [], ""],
+    ["BWA3_G28", "muzzle_snds_B", _euroRails, _euroSniperOptics, ["BWA3_20Rnd_762x51_G28_AP"], [], "BWA3_bipod_Atlas"]
+];
+private _euroSniperRifles = [
+    ["BWA3_G29", "BWA3_muzzle_snds_Rotex_Monoblock", _euroRails, _euroSniperOptics, ["BWA3_10Rnd_86x70_G29"], [], "BWA3_bipod_Atlas"],
+    ["UK3CB_BAF_L115A3_Ghillie", "UK3CB_BAF_Silencer_L115A3", "", _euroSniperOptics, ["UK3CB_BAF_338_5Rnd"], [], "UK3CB_underbarrel_acc_bipod"],
+    ["UK3CB_BAF_L118A1_Covert", "", "", _euroSniperOptics, ["UK3CB_BAF_762_L42A1_10Rnd"], [], ""]
+];
+private _euroSMGs = [
+    ["BWA3_MP7", "BWA3_muzzle_snds_Rotex_II", _euroRails, _euroRedDots, ["BWA3_40Rnd_46x30_MP7"], [], ""],
+    ["amf_hk_mp5_02_f", "muzzle_snds_L", _euroRails, _euroRedDots, ["AMF_30Rnd_9x19_MP5_BO_123GR"], [], ""],
+    ["UK3CB_BAF_L92A1", "", "", _euroRedDots, ["UK3CB_BAF_9_30Rnd"], [], ""]
+];
+private _euroMachineGuns = [
+    ["FN_Minimi_MK3", ["BWA3_muzzle_snds_QDSS", "BWA3_muzzle_snds_Rotex_IIIC"], _euroRails, _euroOptics, ["AMF_100Rnd_556x45_Minimi_BO_SS109_OD"], [], "Minimi_Grip_MK2"],
+    ["BWA3_MG5", "muzzle_snds_B", _euroRails, _euroOptics, ["BWA3_120Rnd_762x51_soft"], [], ""]
+];
+private _euroSidearms = [
+    ["BWA3_P12", "BWA3_muzzle_snds_Impuls_IIA", "BWA3_acc_LLMPI_irlaser", "", ["BWA3_12Rnd_45ACP_P12"], [], ""]
+];
+private _euroGrenadeLaunchers = [
+    ["ASZ_M32", "", "", "", ["6Rnd_HE_Grenade_shell_ASZ"], [], ""]
+];
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData;
+
+_sfLoadoutData set ["binoculars", [
+    "UK3CB_BAF_Soflam_Laserdesignator",
+    "AMF_OB72_SOPHIE",
+    "Laserdesignator"
+]];
+
+private _euroSniperHats = [
+    "H_Booniehat_mcamo"
+];
+
+_sfLoadoutData set ["frenchUniforms", _euroUniforms];
+_sfLoadoutData set ["frenchVests", _euroVests];
+_sfLoadoutData set ["frenchSlVests", _euroSlVests];
+_sfLoadoutData set ["frenchMgVests", _euroMgVests];
+_sfLoadoutData set ["frenchGlVests", _euroVests];
+_sfLoadoutData set ["frenchMedicVests", _euroMedicVests];
+_sfLoadoutData set ["frenchBackpacks", _euroBackpacks];
+_sfLoadoutData set ["frenchHelmets", _euroHelmets];
+_sfLoadoutData set ["frenchFacewear", _euroFacewear];
+_sfLoadoutData set ["frenchNVGs", _euroNVGs];
+_sfLoadoutData set ["frenchRifles", _euroRifles];
+_sfLoadoutData set ["frenchSlRifles", _euroSlRifles];
+_sfLoadoutData set ["frenchMarksmanRifles", _euroMarksmanRifles];
+_sfLoadoutData set ["frenchSniperRifles", _euroSniperRifles];
+_sfLoadoutData set ["frenchSMGs", _euroSMGs];
+_sfLoadoutData set ["frenchMachineGuns", _euroMachineGuns];
+_sfLoadoutData set ["frenchSidearms", _euroSidearms];
+_sfLoadoutData set ["frenchCarbines", _euroRifles];
+_sfLoadoutData set ["frenchGrenadeLaunchers", _euroGrenadeLaunchers];
+_sfLoadoutData set ["frenchBerets", _euroHelmets];
+
+_sfLoadoutData set ["frenchGhillieSuits", _frenchGhillieSuits];
+_sfLoadoutData set ["frenchSniperHats", _euroSniperHats];
+_sfLoadoutData set ["frenchSniperFacewear", _frenchSniperFacewear];
+
+_sfLoadoutData set ["britishUniforms", _euroUniforms];
+_sfLoadoutData set ["britishVests", _euroVests];
+_sfLoadoutData set ["britishSlVests", _euroSlVests];
+_sfLoadoutData set ["britishMgVests", _euroMgVests];
+_sfLoadoutData set ["britishGlVests", _euroVests];
+_sfLoadoutData set ["britishMedicVests", _euroMedicVests];
+_sfLoadoutData set ["britishBackpacks", _euroBackpacks];
+_sfLoadoutData set ["britishHelmets", _euroHelmets];
+_sfLoadoutData set ["britishFacewear", _euroFacewear];
+_sfLoadoutData set ["britishNVGs", _euroNVGs];
+_sfLoadoutData set ["britishRifles", _euroRifles];
+_sfLoadoutData set ["britishSlRifles", _euroSlRifles];
+_sfLoadoutData set ["britishMarksmanRifles", _euroMarksmanRifles];
+_sfLoadoutData set ["britishSniperRifles", _euroSniperRifles];
+_sfLoadoutData set ["britishSMGs", _euroSMGs];
+_sfLoadoutData set ["britishMachineGuns", _euroMachineGuns];
+_sfLoadoutData set ["britishSidearms", _euroSidearms];
+_sfLoadoutData set ["britishCarbines", _euroRifles];
+_sfLoadoutData set ["britishGrenadeLaunchers", _euroGrenadeLaunchers];
+
+_sfLoadoutData set ["britishEngineerBackpacks", _euroBackpacks];
+_sfLoadoutData set ["britishRadiomanBackpacks", _euroBackpacks];
+_sfLoadoutData set ["britishMedicBackpacks", _euroBackpacks];
+_sfLoadoutData set ["britishSlBackpacks", _euroBackpacks];
+_sfLoadoutData set ["britishEODBackpacks", _euroBackpacks];
+_sfLoadoutData set ["britishBerets", _euroHelmets];
+
+_sfLoadoutData set ["britishGhillieSuits", _britishGhillieSuits];
+_sfLoadoutData set ["britishSniperHats", _euroSniperHats];
+_sfLoadoutData set ["britishSniperFacewear", _britishSniperFacewear];
+
+_sfLoadoutData set ["germanUniforms", _euroUniforms];
+_sfLoadoutData set ["germanVests", _euroVests];
+_sfLoadoutData set ["germanSlVests", _euroSlVests];
+_sfLoadoutData set ["germanMgVests", _euroMgVests];
+_sfLoadoutData set ["germanGlVests", _euroVests]; 
+_sfLoadoutData set ["germanMedicVests", _euroMedicVests];
+_sfLoadoutData set ["germanBackpacks", _euroBackpacks];
+_sfLoadoutData set ["germanHelmets", _euroHelmets];
+_sfLoadoutData set ["germanFacewear", _euroFacewear];
+_sfLoadoutData set ["germanNVGs", _euroNVGs];
+_sfLoadoutData set ["germanRifles", _euroRifles];
+_sfLoadoutData set ["germanSlRifles", _euroSlRifles];
+_sfLoadoutData set ["germanMarksmanRifles", _euroMarksmanRifles];
+_sfLoadoutData set ["germanSniperRifles", _euroSniperRifles];
+_sfLoadoutData set ["germanSMGs", _euroSMGs];
+_sfLoadoutData set ["germanMachineGuns", _euroMachineGuns];
+_sfLoadoutData set ["germanSidearms", _euroSidearms];
+_sfLoadoutData set ["germanCarbines", _euroRifles];
+_sfLoadoutData set ["germanGrenadeLaunchers", _euroGrenadeLaunchers];
+
+_sfLoadoutData set ["germanBerets", _euroHelmets];
+_sfLoadoutData set ["germanRadiomanVests", _euroVests];
+
+_sfLoadoutData set ["germanGhillieSuits", _germanGhillieSuits];
+_sfLoadoutData set ["germanSniperHats", _euroSniperHats];
+_sfLoadoutData set ["germanSniperFacewear", _germanSniperFacewear];
+
+/*
 _sfLoadoutData set ["NVGs", []]; 
 _sfLoadoutData set ["uniforms", []];
 _sfLoadoutData set ["vests", []];
@@ -2007,6 +2330,7 @@ _sfLoadoutData set ["atBackpacks", []];
 _sfLoadoutData set ["sniperRifles", []];
 _sfLoadoutData set ["sidearms", []];
 _sfLoadoutData set ["slRifles", []];
+*/
 
 //["Weapon", "Muzzle", "Rail", "Sight", [], [], "Bipod"];
 
@@ -2031,6 +2355,7 @@ _sfM4Optics append ["optic_thermal", 0.1]; //this works even if done after the o
 
 */
 
+/*
 _sfLoadoutData set ["rifles", []];
 _sfLoadoutData set ["carbines", []];
 _sfLoadoutData set ["grenadeLaunchers", []];
@@ -2039,41 +2364,128 @@ _sfLoadoutData set ["marksmanRifles", []];
 _sfLoadoutData set ["SMGs", []];
 _sfLoadoutData set ["sniperRifles", []];
 _sfLoadoutData set ["sidearms", []];
+*/
 
 /////////////////////////////////
 //    Elite Loadout Data       //
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_eliteLoadoutData set ["NVGs", []]; 
-_eliteLoadoutData set ["uniforms", []];
-_eliteLoadoutData set ["vests", []];
-_eliteLoadoutData set ["Hvests", []];
-_eliteLoadoutData set ["glVests", []];
-_eliteLoadoutData set ["helmets", []];
-_eliteLoadoutData set ["glasses", []];
-_eliteLoadoutData set ["goggles", []];
-_eliteLoadoutData set ["binoculars", []];
-_eliteLoadoutData set ["backpacks", []];
-_eliteLoadoutData set ["atBackpacks", []];
 
-_eliteLoadoutData set ["sniperRifles", []];
-_eliteLoadoutData set ["sidearms", []];
-_eliteLoadoutData set ["slRifles", []];
-_eliteLoadoutData set ["rifles", []];
-_eliteLoadoutData set ["carbines", []];
-_eliteLoadoutData set ["grenadeLaunchers", []];
-_eliteLoadoutData set ["machineGuns", []];
-_eliteLoadoutData set ["marksmanRifles", []];
-_eliteLoadoutData set ["SMGs", []];
-_eliteLoadoutData set ["sniperRifles", []];
-_eliteLoadoutData set ["sidearms", []];
+_eliteLoadoutData set ["binoculars", [
+    "UK3CB_BAF_Soflam_Laserdesignator",
+    "BWA3_Vector",
+    "ASZ_Vector",
+    "AMF_OB72_SOPHIE",
+    "Rangefinder",
+    "Laserdesignator"
+]];
+
+_eliteLoadoutData set ["frenchUniforms", _euroUniforms];
+_eliteLoadoutData set ["frenchVests", _euroVests];
+_eliteLoadoutData set ["frenchSlVests", _euroSlVests];
+_eliteLoadoutData set ["frenchMgVests", _euroMgVests];
+_eliteLoadoutData set ["frenchGlVests", _euroVests];
+_eliteLoadoutData set ["frenchMedicVests", _euroMedicVests];
+_eliteLoadoutData set ["frenchBackpacks", _euroBackpacks];
+_eliteLoadoutData set ["frenchHelmets", _euroHelmets];
+_eliteLoadoutData set ["frenchFacewear", _euroFacewear];
+_eliteLoadoutData set ["frenchNVGs", _euroNVGs];
+_eliteLoadoutData set ["frenchRifles", _euroRifles];
+_eliteLoadoutData set ["frenchSlRifles", _euroSlRifles];
+_eliteLoadoutData set ["frenchMarksmanRifles", _euroMarksmanRifles];
+_eliteLoadoutData set ["frenchSniperRifles", _euroSniperRifles];
+_eliteLoadoutData set ["frenchSMGs", _euroSMGs];
+_eliteLoadoutData set ["frenchMachineGuns", _euroMachineGuns];
+_eliteLoadoutData set ["frenchSidearms", _euroSidearms];
+_eliteLoadoutData set ["frenchCarbines", _euroRifles];
+_eliteLoadoutData set ["frenchGrenadeLaunchers", _euroGrenadeLaunchers];
+_eliteLoadoutData set ["frenchBerets", _euroHelmets];
+
+_eliteLoadoutData set ["frenchGhillieSuits", _frenchGhillieSuits];
+_eliteLoadoutData set ["frenchSniperHats", _euroSniperHats];
+_eliteLoadoutData set ["frenchSniperFacewear", _frenchSniperFacewear];
+
+_eliteLoadoutData set ["britishUniforms", _euroUniforms];
+_eliteLoadoutData set ["britishVests", _euroVests];
+_eliteLoadoutData set ["britishSlVests", _euroSlVests];
+_eliteLoadoutData set ["britishMgVests", _euroMgVests];
+_eliteLoadoutData set ["britishGlVests", _euroVests];
+_eliteLoadoutData set ["britishMedicVests", _euroMedicVests];
+_eliteLoadoutData set ["britishBackpacks", _euroBackpacks];
+_eliteLoadoutData set ["britishHelmets", _euroHelmets];
+_eliteLoadoutData set ["britishFacewear", _euroFacewear];
+_eliteLoadoutData set ["britishNVGs", _euroNVGs];
+_eliteLoadoutData set ["britishRifles", _euroRifles];
+_eliteLoadoutData set ["britishSlRifles", _euroSlRifles];
+_eliteLoadoutData set ["britishMarksmanRifles", _euroMarksmanRifles];
+_eliteLoadoutData set ["britishSniperRifles", _euroSniperRifles];
+_eliteLoadoutData set ["britishSMGs", _euroSMGs];
+_eliteLoadoutData set ["britishMachineGuns", _euroMachineGuns];
+_eliteLoadoutData set ["britishSidearms", _euroSidearms];
+_eliteLoadoutData set ["britishCarbines", _euroRifles];
+_eliteLoadoutData set ["britishGrenadeLaunchers", _euroGrenadeLaunchers];
+
+_eliteLoadoutData set ["britishEngineerBackpacks", _euroBackpacks];
+_eliteLoadoutData set ["britishRadiomanBackpacks", _euroBackpacks];
+_eliteLoadoutData set ["britishMedicBackpacks", _euroBackpacks];
+_eliteLoadoutData set ["britishSlBackpacks", _euroBackpacks];
+_eliteLoadoutData set ["britishEODBackpacks", _euroBackpacks];
+_eliteLoadoutData set ["britishBerets", _euroHelmets];
+
+_eliteLoadoutData set ["britishGhillieSuits", _britishGhillieSuits];
+_eliteLoadoutData set ["britishSniperHats", _euroSniperHats];
+_eliteLoadoutData set ["britishSniperFacewear", _britishSniperFacewear];
+
+_eliteLoadoutData set ["germanUniforms", _euroUniforms];
+_eliteLoadoutData set ["germanVests", _euroVests];
+_eliteLoadoutData set ["germanSlVests", _euroSlVests];
+_eliteLoadoutData set ["germanMgVests", _euroMgVests];
+_eliteLoadoutData set ["germanGlVests", _euroVests]; 
+_eliteLoadoutData set ["germanMedicVests", _euroMedicVests];
+_eliteLoadoutData set ["germanBackpacks", _euroBackpacks];
+_eliteLoadoutData set ["germanHelmets", _euroHelmets];
+_eliteLoadoutData set ["germanFacewear", _euroFacewear];
+_eliteLoadoutData set ["germanNVGs", _euroNVGs];
+_eliteLoadoutData set ["germanRifles", _euroRifles];
+_eliteLoadoutData set ["germanSlRifles", _euroSlRifles];
+_eliteLoadoutData set ["germanMarksmanRifles", _euroMarksmanRifles];
+_eliteLoadoutData set ["germanSniperRifles", _euroSniperRifles];
+_eliteLoadoutData set ["germanSMGs", _euroSMGs];
+_eliteLoadoutData set ["germanMachineGuns", _euroMachineGuns];
+_eliteLoadoutData set ["germanSidearms", _euroSidearms];
+_eliteLoadoutData set ["germanCarbines", _euroRifles];
+_eliteLoadoutData set ["germanGrenadeLaunchers", _euroGrenadeLaunchers];
+
+_eliteLoadoutData set ["germanBerets", _euroHelmets];
+_eliteLoadoutData set ["germanRadiomanVests", _euroVests];
+
+_eliteLoadoutData set ["germanGhillieSuits", _germanGhillieSuits];
+_eliteLoadoutData set ["germanSniperHats", _euroSniperHats];
+_eliteLoadoutData set ["germanSniperFacewear", _germanSniperFacewear];
 
 /////////////////////////////////
 //    Military Loadout Data    //
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
+
+_militaryLoadoutData set ["binoculars", [
+    "AMF_VectorIV",
+    "BWA3_Vector",
+    "ASZ_Vector",
+    "Rangefinder"
+]];
+
+_militaryLoadoutData set ["britishGhillieSuits", _britishGhillieSuits];
+_militaryLoadoutData set ["britishSniperHats", _britishSniperHats];
+_militaryLoadoutData set ["britishSniperFacewear", _britishSniperFacewear];
+_militaryLoadoutData set ["germanGhillieSuits", _germanGhillieSuits];
+_militaryLoadoutData set ["germanSniperHats", _germanSniperHats];
+_militaryLoadoutData set ["germanSniperFacewear", _germanSniperFacewear];
+_militaryLoadoutData set ["frenchGhillieSuits", _frenchGhillieSuits];
+_militaryLoadoutData set ["frenchSniperHats", _frenchSniperHats];
+_militaryLoadoutData set ["frenchSniperFacewear", _frenchSniperFacewear];
 
 _militaryLoadoutData set ["frenchUniforms", _frenchUniforms];
 _militaryLoadoutData set ["frenchVests", _frenchVests];
@@ -2098,6 +2510,8 @@ _militaryLoadoutData set ["frenchNVGs", _frenchNVGs];
 _militaryLoadoutData set ["frenchBerets", _frenchBerets];
 _militaryLoadoutData set ["frenchGlasses", _frenchGlasses];
 _militaryLoadoutData set ["frenchGoggles", _frenchGoggles];
+_militaryLoadoutData set ["frenchCrewUniforms", _frenchCrewUniforms];
+_militaryLoadoutData set ["frenchPilotUniforms", _frenchPilotUniforms];
 
 _militaryLoadoutData set ["britishUniforms", _britishUniforms];
 _militaryLoadoutData set ["britishVests", _britishVests];
@@ -2125,6 +2539,8 @@ _militaryLoadoutData set ["britishMedicBackpacks", _britishMedicBackpacks];
 _militaryLoadoutData set ["britishSlBackpacks", _britishSlBackpacks];
 _militaryLoadoutData set ["britishEODBackpacks", _britishEODBackpacks];
 _militaryLoadoutData set ["britishBerets", _britishBerets];
+_militaryLoadoutData set ["britishCrewUniforms", _britishCrewUniforms];
+_militaryLoadoutData set ["britishPilotUniforms", _britishPilotUniforms];
 
 _militaryLoadoutData set ["italianUniforms", _italianUniforms];
 _militaryLoadoutData set ["italianVests", _italianVests];
@@ -2165,6 +2581,9 @@ _militaryLoadoutData set ["germanMarksmanRifles", _germanMarksmanRifles];
 _militaryLoadoutData set ["germanSniperRifles", _germanSniperRifles];
 _militaryLoadoutData set ["germanSidearms", _germanSidearms];
 _militaryLoadoutData set ["germanNVGs", _germanNVGs];
+
+_militaryLoadoutData set ["germanBerets", _germanBerets];
+_militaryLoadoutData set ["germanRadiomanVests", _germanRadiomanVests];
 
 _militaryLoadoutData set ["spanishUniforms", _spanishUniforms];
 _militaryLoadoutData set ["spanishVests", _spanishVests];
@@ -2254,12 +2673,38 @@ _militaryLoadoutData set ["sidearms", []];
 
 private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 
-_policeLoadoutData set ["uniforms", []];
-_policeLoadoutData set ["vests", []];
-_policeLoadoutData set ["helmets", []];
+_policeLoadoutData set ["binoculars", [
+    "Binocular",
+    "AMF_APX_M241"
+]];
 
-_policeLoadoutData set ["SMGs", []];
-_policeLoadoutData set ["sidearms", []];
+_policeLoadoutData set ["uniforms", [
+    "ASZ_SOD_DC_CC"
+]];
+_policeLoadoutData set ["vests", [
+    "V_TacVest_blk_POLICE",
+    "amf_Belt"
+]];
+_policeLoadoutData set ["helmets", [
+    "H_Beret_02",
+    "H_Cap_police",
+    "AMF_SPECTRA_FORAD",
+    "ASZ_GIS_UP"
+]];
+//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
+//["", "", "", "", [], [], ""]
+
+private _policeSMGs = [
+    ["UK3CB_BAF_L128A1", "", "", "", ["UK3CB_BAF_12G_Slugs"], [], ""],
+    ["amf_hk_mp5_01_f", "", "", "", ["AMF_30Rnd_9x19_MP5_BO_123GR"], [], ""]
+];
+private _policeSidearms = [
+    ["AMF_Glock_17_Gen4", "", "", "", ["AMF_17Rnd_9x19_Glock"], [], ""],
+    ["AMF_PSA_Glock_17", "", "", "", ["AMF_17Rnd_9x19_Glock"], [], ""]
+];
+
+_policeLoadoutData set ["SMGs", _policeSMGs];
+_policeLoadoutData set ["sidearms", _policeSidearms];
 
 ////////////////////////////////
 //    Militia Loadout Data    //
@@ -2267,9 +2712,24 @@ _policeLoadoutData set ["sidearms", []];
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 
+_militiaLoadoutData set ["binoculars", [
+    "Binocular",
+    "AMF_APX_M241"
+]];
+
 private _frenchMilitiaRifles = [
     ["Famas_F1", ["BAYO_Famas", 1, "", 5], "", _frenchHK416Optic, ["AMF_25Rnd_BO_MEN_SS109", "AMF_25Rnd_BO_BT_MEN_SS109"], ["AMF_RFG_AC58", "AMF_RFG_APAV40"], ""]
 ];
+
+_militiaLoadoutData set ["britishGhillieSuits", _britishGhillieSuits];
+_militiaLoadoutData set ["britishSniperHats", _britishSniperHats];
+_militiaLoadoutData set ["britishSniperFacewear", _britishSniperFacewear];
+_militiaLoadoutData set ["germanGhillieSuits", _germanGhillieSuits];
+_militiaLoadoutData set ["germanSniperHats", _germanSniperHats];
+_militiaLoadoutData set ["germanSniperFacewear", _germanSniperFacewear];
+_militiaLoadoutData set ["frenchGhillieSuits", _frenchGhillieSuits];
+_militiaLoadoutData set ["frenchSniperHats", _frenchSniperHats];
+_militiaLoadoutData set ["frenchSniperFacewear", _frenchSniperFacewear];
 
 _militiaLoadoutData set ["frenchUniforms", _frenchUniforms];
 _militiaLoadoutData set ["frenchVests", _frenchVests];
@@ -2316,7 +2776,6 @@ _militiaLoadoutData set ["britishSidearms", _britishSidearms];
 _militiaLoadoutData set ["britishNVGs", _britishNVGs];
 
 _militiaLoadoutData set ["britishBerets", _britishBerets];
-
 _militiaLoadoutData set ["britishEngineerBackpacks", _britishEngineerBackpacks];
 _militiaLoadoutData set ["britishRadiomanBackpacks", _britishRadiomanBackpacks];
 _militiaLoadoutData set ["britishMedicBackpacks", _britishMedicBackpacks];
@@ -2363,6 +2822,9 @@ _militiaLoadoutData set ["germanSniperRifles", _germanSniperRifles];
 _militiaLoadoutData set ["germanSidearms", _germanSidearms];
 _militiaLoadoutData set ["germanNVGs", _germanNVGs];
 
+_militiaLoadoutData set ["germanBerets", _germanBerets];
+_militiaLoadoutData set ["germanRadiomanVests", _germanRadiomanVests];
+
 _militiaLoadoutData set ["spanishUniforms", _spanishUniforms];
 _militiaLoadoutData set ["spanishVests", _spanishVests];
 _militiaLoadoutData set ["spanishSlVests", _spanishSlVests];
@@ -2402,14 +2864,140 @@ _militiaLoadoutData set ["spanishNVGs", _spanishNVGs];
 //////////////////////////
 
 private _crewLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData;
-_crewLoadoutData set ["uniforms", []];
-_crewLoadoutData set ["vests", []];
-_crewLoadoutData set ["helmets", []];
+
+_crewLoadoutData set ["binoculars", [
+    "Binocular",
+    "AMF_APX_M241"
+]];
+
+_crewLoadoutData set ["frenchUniforms", [
+    "amf_classique_f",
+    "amf_classique_f_NG"
+]];
+_crewLoadoutData set ["frenchVests", [
+    "amf_Belt"
+]];
+_crewLoadoutData set ["frenchHelmets", [
+    "AMF_ELNO_DH_586"
+]];
+_crewLoadoutData set ["frenchSMGs", _frenchSMGs];
+_crewLoadoutData set ["frenchNVGs", _frenchNVGs];
+_crewLoadoutData set ["frenchCarbines", _frenchCarbines];
+_crewLoadoutData set ["frenchSidearms", _frenchSidearms];
+
+_crewLoadoutData set ["britishUniforms", [
+    "UK3CB_BAF_U_CombatUniform_MTP"
+]];
+_crewLoadoutData set ["britishVests", [
+    "UK3CB_BAF_V_Osprey_Lite"
+]];
+_crewLoadoutData set ["britishHelmets", [
+    "UK3CB_BAF_H_CrewHelmet_A",
+    "UK3CB_BAF_H_CrewHelmet_ESS_A"
+]];
+_crewLoadoutData set ["britishSidearms", _britishSidearms];
+_crewLoadoutData set ["britishNVGs", _britishNVGs];
+_crewLoadoutData set ["britishSMGs", _britishSMGs];
+_crewLoadoutData set ["britishCarbines", _britishCarbines];
+
+_crewLoadoutData set ["italianUniforms", []];
+_crewLoadoutData set ["italianVests", []];
+_crewLoadoutData set ["italianHelmets", []];
+_crewLoadoutData set ["italianSidearms", _italianSidearms];
+_crewLoadoutData set ["italianNVGs", _italianNVGs];
+_crewLoadoutData set ["italianSMGs", _italianSMGs];
+_crewLoadoutData set ["italianCarbines", _italianCarbines];
+
+_crewLoadoutData set ["germanUniforms", [
+    "BWA3_Uniform_Crew_Fleck"
+]];
+_crewLoadoutData set ["germanVests", [
+    "BWA3_Vest_Fleck"
+]];
+_crewLoadoutData set ["germanHelmets", [
+    "BWA3_CrewmanKSK_Fleck_Headset"
+]];
+_crewLoadoutData set ["germanSidearms", _germanSidearms];
+_crewLoadoutData set ["germanNVGs", _germanNVGs];
+_crewLoadoutData set ["germanSMGs", _germanSMGs];
+_crewLoadoutData set ["germanCarbines", _germanCarbines];
+
+_crewLoadoutData set ["spanishUniforms", []];
+_crewLoadoutData set ["spanishVests", []];
+_crewLoadoutData set ["spanishHelmets", []];
+_crewLoadoutData set ["spanishSidearms", _spanishSidearms];
+_crewLoadoutData set ["spanishNVGs", _spanishNVGs];
+_crewLoadoutData set ["spanishSMGs", _spanishSMGs];
+_crewLoadoutData set ["spanishCarbines", _spanishCarbines];
 
 private _pilotLoadoutData = _militaryLoadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["uniforms", []];
-_pilotLoadoutData set ["vests", []];
-_pilotLoadoutData set ["helmets", []];
+_pilotLoadoutData set ["binoculars", [
+    "Binocular",
+    "AMF_APX_M241"
+]];
+
+_pilotLoadoutData set ["frenchUniforms", [
+    "amf_pilot_01_f"
+]];
+_pilotLoadoutData set ["frenchVests", [
+    "AMF_G_Suit",
+    "AMF_Pilot_Vest"
+]];
+_pilotLoadoutData set ["frenchHelmets", [
+    "AMF_ALPHA900",
+    "AMF_ALPHA900_02",
+    "AMF_topowl"
+]];
+_pilotLoadoutData set ["frenchSMGs", _frenchSMGs];
+_pilotLoadoutData set ["frenchNVGs", _frenchNVGs];
+_pilotLoadoutData set ["frenchCarbines", _frenchCarbines];
+_pilotLoadoutData set ["frenchSidearms", _frenchSidearms];
+
+_pilotLoadoutData set ["britishUniforms", [
+    "UK3CB_BAF_U_HeliPilotCoveralls_RN"
+]];
+_pilotLoadoutData set ["britishVests", [
+    "UK3CB_BAF_V_Pilot_A"
+]];
+_pilotLoadoutData set ["britishHelmets", [
+    "UK3CB_BAF_H_PilotHelmetHeli_A"
+]];
+_pilotLoadoutData set ["britishSidearms", _britishSidearms];
+_pilotLoadoutData set ["britishNVGs", _britishNVGs];
+_pilotLoadoutData set ["britishSMGs", _britishSMGs];
+_pilotLoadoutData set ["britishCarbines", _britishCarbines];
+
+_pilotLoadoutData set ["italianUniforms", []];
+_pilotLoadoutData set ["italianVests", []];
+_pilotLoadoutData set ["italianHelmets", []];
+_pilotLoadoutData set ["italianSidearms", _italianSidearms];
+_pilotLoadoutData set ["italianNVGs", _italianNVGs];
+_pilotLoadoutData set ["italianSMGs", _italianSMGs];
+_pilotLoadoutData set ["italianCarbines", _italianCarbines];
+
+_pilotLoadoutData set ["germanUniforms", [
+    "BWA3_Uniform_Helipilot"
+]];
+_pilotLoadoutData set ["germanVests", [
+    "BWA3_Vest_Fleck"
+]];
+_pilotLoadoutData set ["germanHelmets", [
+    "BWA3_Knighthelm",
+    "BWA3_TopOwl",
+    "BWA3_TopOwl_nvg"
+]];
+_pilotLoadoutData set ["germanSidearms", _germanSidearms];
+_pilotLoadoutData set ["germanNVGs", _germanNVGs];
+_pilotLoadoutData set ["germanSMGs", _germanSMGs];
+_pilotLoadoutData set ["germanCarbines", _germanCarbines];
+
+_pilotLoadoutData set ["spanishUniforms", []];
+_pilotLoadoutData set ["spanishVests", []];
+_pilotLoadoutData set ["spanishHelmets", []];
+_pilotLoadoutData set ["spanishSidearms", _spanishSidearms];
+_pilotLoadoutData set ["spanishNVGs", _spanishNVGs];
+_pilotLoadoutData set ["spanishSMGs", _spanishSMGs];
+_pilotLoadoutData set ["spanishCarbines", _spanishCarbines];
 
 
 /////////////////////////////////
@@ -2436,7 +3024,8 @@ private _nationList = [
 
 private _nationList = [
     "france",
-    "uk"
+    "uk",
+    "germany"
 ];
 
 if (_hasHELL) then {
@@ -2452,139 +3041,181 @@ if (_hasRHSPlus) then {
     _nationList append ["ukraine"];
 };
 
+//Template for each unit type
+/*
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+
+        };
+        case "germany": {
+
+        };
+        case "uk": {
+
+        };
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+    };
+*/
+
 private _squadLeaderTemplate = {
-  //private _nation = floor random _nationCount;
-  private _nation = selectRandom _nationList;
-  switch (_nation) do {
-    case "france": {
-        if (random 1 < 0.7) then {
-            ["frenchHelmets"] call _fnc_setHelmet;
-            ["frenchNVGs"] call _fnc_addNVGs;
-            [selectRandomWeighted ["frenchGlasses", 1, "frenchGoggles", 2]] call _fnc_setFacewear;
-        } else {
-            ["frenchBerets"] call _fnc_setHelmet;
+    //private _nation = floor random _nationCount;
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            if (random 1 < 0.7) then {
+                ["frenchHelmets"] call _fnc_setHelmet;
+                ["frenchNVGs"] call _fnc_addNVGs;
+                ["frenchFacewear"] call _fnc_setFacewear;
+            } else {
+                ["frenchBerets"] call _fnc_setHelmet;
+            };
+
+            //[selectRandomWeighted [[], 1.5, "frenchGlasses", 0.75, "frenchGoggles", 0.5]] call _fnc_setFacewear;
+            ["frenchSlVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+
+            ["frenchBackpacks"] call _fnc_setBackpack;
+
+            ["frenchSlRifles"] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+            ["primary", 4] call _fnc_addAdditionalMuzzleMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_squadLeader_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 2] call _fnc_addItem;
+            ["signalsmokeGrenades", 2] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+            //["NVGs"] call _fnc_addNVGs;
         };
+        case "germany": {
+            if (random 1 < 0.7) then {
+                ["germanHelmets"] call _fnc_setHelmet;
+                ["germanNVGs"] call _fnc_addNVGs;
+                ["germanFacewear"] call _fnc_setFacewear;
+            } else {
+                ["germanBerets"] call _fnc_setHelmet;
+            };
 
-        //[selectRandomWeighted [[], 1.5, "frenchGlasses", 0.75, "frenchGoggles", 0.5]] call _fnc_setFacewear;
-        ["frenchSlVests"] call _fnc_setVest;
-        ["frenchUniforms"] call _fnc_setUniform;
+            //[selectRandomWeighted [[], 1.5, "germanGlasses", 0.75, "germanGoggles", 0.5]] call _fnc_setFacewear;
+            ["germanSlVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
 
-        ["frenchBackpacks"] call _fnc_setBackpack;
+            ["germanBackpacks"] call _fnc_setBackpack;
 
-        ["frenchSlRifles"] call _fnc_setPrimary;
-        ["primary", 6] call _fnc_addMagazines;
-        ["primary", 4] call _fnc_addAdditionalMuzzleMagazines;
+            ["germanSlRifles"] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+            ["primary", 4] call _fnc_addAdditionalMuzzleMagazines;
 
-        ["frenchSidearms"] call _fnc_setHandgun;
-        ["handgun", 2] call _fnc_addMagazines;
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
 
-        ["items_medical_standard"] call _fnc_addItemSet;
-        ["items_squadLeader_extras"] call _fnc_addItemSet;
-        ["items_miscEssentials"] call _fnc_addItemSet;
-        ["antiInfantryGrenades", 2] call _fnc_addItem;
-        ["signalsmokeGrenades", 2] call _fnc_addItem;
-        ["smokeGrenades", 2] call _fnc_addItem;
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_squadLeader_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 2] call _fnc_addItem;
+            ["signalsmokeGrenades", 2] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
 
-        ["maps"] call _fnc_addMap;
-        ["watches"] call _fnc_addWatch;
-        ["compasses"] call _fnc_addCompass;
-        ["radios"] call _fnc_addRadio;
-        ["gpses"] call _fnc_addGPS;
-        ["binoculars"] call _fnc_addBinoculars;
-        //["NVGs"] call _fnc_addNVGs;
-    };
-    case "germany": {
-        ["germanHelmets"] call _fnc_setHelmet;
-        [selectRandomWeighted [[], 1.5, "germanFacewear", 0.9]] call _fnc_setFacewear;
-        ["germanSlVests"] call _fnc_setVest;
-        ["germanUniforms"] call _fnc_setUniform;
-        ["germanBackpacks"] call _fnc_setBackpack;
-
-        ["germanSlRifles"] call _fnc_setPrimary;
-        ["primary", 6] call _fnc_addMagazines;
-        ["primary", 4] call _fnc_addAdditionalMuzzleMagazines;
-
-        ["germanSidearms"] call _fnc_setHandgun;
-        ["handgun", 2] call _fnc_addMagazines;
-
-        ["items_medical_standard"] call _fnc_addItemSet;
-        ["items_squadLeader_extras"] call _fnc_addItemSet;
-        ["items_miscEssentials"] call _fnc_addItemSet;
-        ["antiInfantryGrenades", 2] call _fnc_addItem;
-        ["signalsmokeGrenades", 2] call _fnc_addItem;
-        ["smokeGrenades", 2] call _fnc_addItem;
-
-        ["maps"] call _fnc_addMap;
-        ["watches"] call _fnc_addWatch;
-        ["compasses"] call _fnc_addCompass;
-        ["radios"] call _fnc_addRadio;
-        ["gpses"] call _fnc_addGPS;
-        ["binoculars"] call _fnc_addBinoculars;
-        ["germanNVGs"] call _fnc_addNVGs;
-    };
-    case "uk": {
-        if (random 1 < 0.7) then {
-            ["britishHelmets"] call _fnc_setHelmet;
-            ["britishNVGs"] call _fnc_addNVGs;
-            [selectRandomWeighted ["frenchGlasses", 1, "frenchGoggles", 2]] call _fnc_setFacewear;
-        } else {
-            ["britishBerets"] call _fnc_setHelmet;
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+            //["NVGs"] call _fnc_addNVGs;
         };
-        ["britishSlVests"] call _fnc_setVest;
-        ["britishUniforms"] call _fnc_setUniform;
-        ["britishSlBackpacks"] call _fnc_setBackpack;
+        case "uk": {
+            if (random 1 < 0.7) then {
+                ["britishHelmets"] call _fnc_setHelmet;
+                ["britishNVGs"] call _fnc_addNVGs;
+                ["britishFacewear"] call _fnc_setFacewear;
+            } else {
+                ["britishBerets"] call _fnc_setHelmet;
+            };
+            ["britishSlVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+            ["britishSlBackpacks"] call _fnc_setBackpack;
 
-        ["britishSlRifles"] call _fnc_setPrimary;
-        ["primary", 6] call _fnc_addMagazines;
-        ["primary", 4] call _fnc_addAdditionalMuzzleMagazines;
+            ["britishSlRifles"] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+            ["primary", 4] call _fnc_addAdditionalMuzzleMagazines;
 
-        ["britishSidearms"] call _fnc_setHandgun;
-        ["handgun", 2] call _fnc_addMagazines;
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
 
-        ["items_medical_standard"] call _fnc_addItemSet;
-        ["items_squadLeader_extras"] call _fnc_addItemSet;
-        ["items_miscEssentials"] call _fnc_addItemSet;
-        ["antiInfantryGrenades", 2] call _fnc_addItem;
-        ["signalsmokeGrenades", 2] call _fnc_addItem;
-        ["smokeGrenades", 2] call _fnc_addItem;
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_squadLeader_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 2] call _fnc_addItem;
+            ["signalsmokeGrenades", 2] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
 
-        ["maps"] call _fnc_addMap;
-        ["watches"] call _fnc_addWatch;
-        ["compasses"] call _fnc_addCompass;
-        ["radios"] call _fnc_addRadio;
-        ["gpses"] call _fnc_addGPS;
-        ["binoculars"] call _fnc_addBinoculars;
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "italy": {
+            ["italianHelmets"] call _fnc_setHelmet;
+            [selectRandomWeighted [[], 1.5, "italianFacewear", 0.9]] call _fnc_setFacewear;
+            ["italianSlVests"] call _fnc_setVest;
+            ["italianUniforms"] call _fnc_setUniform;
+            ["italianBackpacks"] call _fnc_setBackpack;
+
+            ["italianSlRifles"] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+            ["primary", 4] call _fnc_addAdditionalMuzzleMagazines;
+
+            ["italianSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_squadLeader_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 2] call _fnc_addItem;
+            ["signalsmokeGrenades", 2] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["italianNVGs"] call _fnc_addNVGs;
+        };
     };
-    case "italy": {
-        ["italianHelmets"] call _fnc_setHelmet;
-        [selectRandomWeighted [[], 1.5, "italianFacewear", 0.9]] call _fnc_setFacewear;
-        ["italianSlVests"] call _fnc_setVest;
-        ["italianUniforms"] call _fnc_setUniform;
-        ["italianBackpacks"] call _fnc_setBackpack;
-
-        ["italianSlRifles"] call _fnc_setPrimary;
-        ["primary", 6] call _fnc_addMagazines;
-        ["primary", 4] call _fnc_addAdditionalMuzzleMagazines;
-
-        ["italianSidearms"] call _fnc_setHandgun;
-        ["handgun", 2] call _fnc_addMagazines;
-
-        ["items_medical_standard"] call _fnc_addItemSet;
-        ["items_squadLeader_extras"] call _fnc_addItemSet;
-        ["items_miscEssentials"] call _fnc_addItemSet;
-        ["antiInfantryGrenades", 2] call _fnc_addItem;
-        ["signalsmokeGrenades", 2] call _fnc_addItem;
-        ["smokeGrenades", 2] call _fnc_addItem;
-
-        ["maps"] call _fnc_addMap;
-        ["watches"] call _fnc_addWatch;
-        ["compasses"] call _fnc_addCompass;
-        ["radios"] call _fnc_addRadio;
-        ["gpses"] call _fnc_addGPS;
-        ["binoculars"] call _fnc_addBinoculars;
-        ["italianNVGs"] call _fnc_addNVGs;
-    };
-};
 };
 
 
@@ -2594,7 +3225,7 @@ private _squadLeaderTemplate = {
     if (random 1 < 0.7) then {
         ["frenchHelmets"] call _fnc_setHelmet;
         ["frenchNVGs"] call _fnc_addNVGs;
-        [selectRandomWeighted ["frenchGlasses", 1, "frenchGoggles", 2]] call _fnc_setFacewear;
+        ["frenchFacewear"] call _fnc_setFacewear;
     } else {
         ["frenchBerets"] call _fnc_setHelmet;
     };
@@ -2630,6 +3261,114 @@ private _squadLeaderTemplate = {
 */
 
 private _riflemanTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchFacewear"] call _fnc_setFacewear;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+            ["frenchBackpacks"] call _fnc_setBackpack;
+
+            [selectRandom ["frenchRifles", "frenchCarbines"]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_rifleman_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 2] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanFacewear"] call _fnc_setFacewear;
+            ["germanVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+            ["germanBackpacks"] call _fnc_setBackpack;
+
+            [selectRandom ["germanRifles", "germanCarbines"]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_rifleman_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 2] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishFacewear"] call _fnc_setFacewear;
+            ["britishVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+            ["britishBackpacks"] call _fnc_setBackpack;
+
+            [selectRandom ["britishRifles", "britishCarbines"]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_rifleman_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 2] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        /*
+        case "spain": {
+        
+        };
+        case "italy": {
+        
+        };
+        case "greece": {
+        
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+        
+        };
+        case "ukraine": {
+        
+        };
+        */
+    };
+};
+
+/*
+private _riflemanTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
@@ -2653,7 +3392,119 @@ private _riflemanTemplate = {
     ["radios"] call _fnc_addRadio;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
+private _radiomanTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchFacewear"] call _fnc_setFacewear;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+            ["longRangeRadios"] call _fnc_setBackpack;
+
+
+            [selectRandom ["frenchRifles", "frenchCarbines"]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["frenchsidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_rifleman_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 2] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanFacewear"] call _fnc_setFacewear;
+            ["germanVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+            ["longRangeRadios"] call _fnc_setBackpack;
+
+
+            [selectRandom ["germanRifles", "germanCarbines"]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["germansidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_rifleman_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 2] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishFacewear"] call _fnc_setFacewear;
+            ["britishVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+            ["britishRadiomanBackpacks"] call _fnc_setBackpack;
+
+
+            [selectRandom ["britishRifles", "britishCarbines"]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["britishsidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_rifleman_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 2] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
 private _radiomanTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
@@ -2680,7 +3531,116 @@ private _radiomanTemplate = {
     ["radios"] call _fnc_addRadio;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
+private _medicTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchFacewear"] call _fnc_setFacewear;
+            ["frenchMedicVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+            ["frenchBackpacks"] call _fnc_setBackpack;
+
+            [selectRandomWeighted ["frenchCarbines", 0.4, "frenchSMGs", 0.6]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_medic"] call _fnc_addItemSet;
+            ["items_medic_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanFacewear"] call _fnc_setFacewear;
+            ["germanMedicVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+            ["germanBackpacks"] call _fnc_setBackpack;
+            
+            [selectRandomWeighted ["germanCarbines", 0.4, "germanSMGs", 0.6]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_medic"] call _fnc_addItemSet;
+            ["items_medic_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishFacewear"] call _fnc_setFacewear;
+            ["britishMedicVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+            ["britishMedicBackpacks"] call _fnc_setBackpack;
+            
+            [selectRandomWeighted ["britishCarbines", 0.4, "britishSMGs", 0.6]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_medic"] call _fnc_addItemSet;
+            ["items_medic_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
 private _medicTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
@@ -2705,7 +3665,134 @@ private _medicTemplate = {
     ["radios"] call _fnc_addRadio;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
+private _grenadierTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchFacewear"] call _fnc_setFacewear;
+            ["frenchGlVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+            ["frenchBackpacks"] call _fnc_setBackpack;
+
+            if (random 1 < 0.3) then {
+                ["designatedGrenadeLaunchers"] call _fnc_setPrimary;
+            } else {
+                ["frenchSlRifles"] call _fnc_setPrimary;
+            };
+            ["primary", 6] call _fnc_addMagazines;
+            ["primary", 10] call _fnc_addAdditionalMuzzleMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            if (random 1 > 0.5) then {["lightExplosives", 1] call _fnc_addItem;};
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_grenadier_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 4] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanFacewear"] call _fnc_setFacewear;
+            ["germanGlVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+            ["germanBackpacks"] call _fnc_setBackpack;
+
+            if (random 1 < 0.3) then {
+                ["designatedGrenadeLaunchers"] call _fnc_setPrimary;
+            } else {
+                ["germanSlRifles"] call _fnc_setPrimary;
+            };
+            ["primary", 6] call _fnc_addMagazines;
+            ["primary", 10] call _fnc_addAdditionalMuzzleMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            if (random 1 > 0.5) then {["lightExplosives", 1] call _fnc_addItem;};
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_grenadier_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 4] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishFacewear"] call _fnc_setFacewear;
+            ["britishGlVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+            ["britishBackpacks"] call _fnc_setBackpack;
+
+            if (random 1 < 0.3) then {
+                ["designatedGrenadeLaunchers"] call _fnc_setPrimary;
+            } else {
+                ["britishSlRifles"] call _fnc_setPrimary;
+            };
+            ["primary", 6] call _fnc_addMagazines;
+            ["primary", 10] call _fnc_addAdditionalMuzzleMagazines;
+
+            if (random 1 > 0.5) then {["lightExplosives", 1] call _fnc_addItem;};
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_grenadier_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 4] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
 private _grenadierTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 1.25]] call _fnc_setFacewear;
@@ -2737,7 +3824,137 @@ private _grenadierTemplate = {
     ["radios"] call _fnc_addRadio;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
+private _explosivesExpertTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchFacewear"] call _fnc_setFacewear;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+            ["frenchBackpacks"] call _fnc_setBackpack;
+
+            [selectRandom ["frenchRifles", "frenchCarbines"]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_explosivesExpert_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+
+            ["lightExplosives", 2] call _fnc_addItem;
+            if (random 1 > 0.5) then {["heavyExplosives", 1] call _fnc_addItem;};
+            if (random 1 > 0.5) then {["ATMines", 1] call _fnc_addItem;};
+            if (random 1 > 0.5) then {["APMines", 1] call _fnc_addItem;};
+
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 1] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanFacewear"] call _fnc_setFacewear;
+            ["germanVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+            ["germanBackpacks"] call _fnc_setBackpack;
+
+            [selectRandom ["germanRifles", "germanCarbines"]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_explosivesExpert_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+
+            ["lightExplosives", 2] call _fnc_addItem;
+            if (random 1 > 0.5) then {["heavyExplosives", 1] call _fnc_addItem;};
+            if (random 1 > 0.5) then {["ATMines", 1] call _fnc_addItem;};
+            if (random 1 > 0.5) then {["APMines", 1] call _fnc_addItem;};
+
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 1] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishFacewear"] call _fnc_setFacewear;
+            ["britishVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+            ["britishEODBackpacks"] call _fnc_setBackpack;
+
+            [selectRandom ["britishRifles", "britishCarbines"]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_explosivesExpert_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+
+            ["lightExplosives", 2] call _fnc_addItem;
+            if (random 1 > 0.5) then {["heavyExplosives", 1] call _fnc_addItem;};
+            if (random 1 > 0.5) then {["ATMines", 1] call _fnc_addItem;};
+            if (random 1 > 0.5) then {["APMines", 1] call _fnc_addItem;};
+
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 1] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
 private _explosivesExpertTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
@@ -2770,7 +3987,125 @@ private _explosivesExpertTemplate = {
     ["radios"] call _fnc_addRadio;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
+private _engineerTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchFacewear"] call _fnc_setFacewear;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+            ["frenchBackpacks"] call _fnc_setBackpack;
+
+            [selectRandomWeighted ["frenchCarbines", 0.4, "frenchSMGs", 0.6]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_engineer_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+
+            if (random 1 > 0.5) then {["lightExplosives", 1] call _fnc_addItem;};
+
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanFacewear"] call _fnc_setFacewear;
+            ["germanVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+            ["germanBackpacks"] call _fnc_setBackpack;
+
+            [selectRandomWeighted ["germanCarbines", 0.4, "germanSMGs", 0.6]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_engineer_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+
+            if (random 1 > 0.5) then {["lightExplosives", 1] call _fnc_addItem;};
+
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishFacewear"] call _fnc_setFacewear;
+            ["britishVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+            ["britishEngineerBackpacks"] call _fnc_setBackpack;
+
+            [selectRandomWeighted ["britishCarbines", 0.4, "britishSMGs", 0.6]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_engineer_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+
+            if (random 1 > 0.5) then {["lightExplosives", 1] call _fnc_addItem;};
+
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
 private _engineerTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
@@ -2799,7 +4134,128 @@ private _engineerTemplate = {
     ["radios"] call _fnc_addRadio;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
+private _latTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchFacewear"] call _fnc_setFacewear;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+            ["frenchBackpacks"] call _fnc_setBackpack;
+        
+            [selectRandomWeighted ["frenchRifles", 0.2, "frenchCarbines", 0.5, "frenchSMGs", 0.3]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+        
+            ["lightATLaunchers"] call _fnc_setLauncher;
+            //TODO - Add a check if it's disposable.
+            ["launcher", 1] call _fnc_addMagazines;
+        
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+        
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_lat_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 1] call _fnc_addItem;
+        
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanFacewear"] call _fnc_setFacewear;
+            ["germanVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+            ["germanBackpacks"] call _fnc_setBackpack;
+        
+            [selectRandomWeighted ["germanRifles", 0.2, "germanCarbines", 0.5, "germanSMGs", 0.3]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+        
+            ["lightATLaunchers"] call _fnc_setLauncher;
+            //TODO - Add a check if it's disposable.
+            ["launcher", 1] call _fnc_addMagazines;
+        
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+        
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_lat_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 1] call _fnc_addItem;
+        
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishFacewear"] call _fnc_setFacewear;
+            ["britishVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+            ["britishBackpacks"] call _fnc_setBackpack;
+        
+            [selectRandomWeighted ["britishRifles", 0.2, "britishCarbines", 0.5, "britishSMGs", 0.3]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+        
+            ["lightATLaunchers"] call _fnc_setLauncher;
+            //TODO - Add a check if it's disposable.
+            ["launcher", 1] call _fnc_addMagazines;
+        
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+        
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_lat_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 1] call _fnc_addItem;
+        
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
 private _latTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 1]] call _fnc_setFacewear;
@@ -2829,7 +4285,128 @@ private _latTemplate = {
     ["radios"] call _fnc_addRadio;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
+private _atTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchFacewear"] call _fnc_setFacewear;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+            ["frenchBackpacks"] call _fnc_setBackpack;
+
+            [selectRandomWeighted ["frenchRifles", 0.2, "frenchCarbines", 0.5, "frenchSMGs", 0.3]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            [selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
+            //TODO - Add a check if it's disposable.
+            ["launcher", 3] call _fnc_addMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_at_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 1] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanFacewear"] call _fnc_setFacewear;
+            ["germanVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+            ["germanBackpacks"] call _fnc_setBackpack;
+
+            [selectRandomWeighted ["germanRifles", 0.2, "germanCarbines", 0.5, "germanSMGs", 0.3]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            [selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
+            //TODO - Add a check if it's disposable.
+            ["launcher", 3] call _fnc_addMagazines;
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_at_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 1] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishFacewear"] call _fnc_setFacewear;
+            ["britishVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+            ["britishBackpacks"] call _fnc_setBackpack;
+
+            [selectRandomWeighted ["britishRifles", 0.2, "britishCarbines", 0.5, "britishSMGs", 0.3]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            [selectRandom ["ATLaunchers", "missileATLaunchers"]] call _fnc_setLauncher;
+            //TODO - Add a check if it's disposable.
+            ["launcher", 3] call _fnc_addMagazines;
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_at_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 1] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
 private _atTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 1]] call _fnc_setFacewear;
@@ -2859,7 +4436,128 @@ private _atTemplate = {
     ["radios"] call _fnc_addRadio;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
+private _aaTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchFacewear"] call _fnc_setFacewear;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+            ["frenchBackpacks"] call _fnc_setBackpack;
+
+            [selectRandomWeighted ["frenchRifles", 0.2, "renchCarbines", 0.5, "frenchSMGs", 0.3]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["AALaunchers"] call _fnc_setLauncher;
+            //TODO - Add a check if it's disposable.
+            ["launcher", 3] call _fnc_addMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_aa_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanFacewear"] call _fnc_setFacewear;
+            ["germanVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+            ["germanBackpacks"] call _fnc_setBackpack;
+
+            [selectRandomWeighted ["germanRifles", 0.2, "germanCarbines", 0.5, "germanSMGs", 0.3]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["AALaunchers"] call _fnc_setLauncher;
+            //TODO - Add a check if it's disposable.
+            ["launcher", 3] call _fnc_addMagazines;
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_aa_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishFacewear"] call _fnc_setFacewear;
+            ["britishVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+            ["britishBackpacks"] call _fnc_setBackpack;
+
+            [selectRandomWeighted ["britishRifles", 0.2, "britishCarbines", 0.5, "britishSMGs", 0.3]] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["AALaunchers"] call _fnc_setLauncher;
+            //TODO - Add a check if it's disposable.
+            ["launcher", 3] call _fnc_addMagazines;
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_aa_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
 private _aaTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
@@ -2889,7 +4587,116 @@ private _aaTemplate = {
     ["radios"] call _fnc_addRadio;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
+private _machineGunnerTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchFacewear"] call _fnc_setFacewear;
+            ["frenchMgVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+            ["frenchBackpacks"] call _fnc_setBackpack;
+
+            ["frenchMachineGuns"] call _fnc_setPrimary;
+            ["primary", 4] call _fnc_addMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_machineGunner_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanFacewear"] call _fnc_setFacewear;
+            ["germanMgVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+            ["germanBackpacks"] call _fnc_setBackpack;
+
+            ["germanMachineGuns"] call _fnc_setPrimary;
+            ["primary", 4] call _fnc_addMagazines;
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_machineGunner_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishFacewear"] call _fnc_setFacewear;
+            ["britishMgVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+            ["britishBackpacks"] call _fnc_setBackpack;
+
+            ["britishMachineGuns"] call _fnc_setPrimary;
+            ["primary", 4] call _fnc_addMagazines;
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_machineGunner_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
 private _machineGunnerTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
@@ -2915,7 +4722,113 @@ private _machineGunnerTemplate = {
     ["radios"] call _fnc_addRadio;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
+private _marksmanTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchFacewear"] call _fnc_setFacewear;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+
+            ["frenchMarksmanRifles"] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_marksman_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanFacewear"] call _fnc_setFacewear;
+            ["germanVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+
+            ["germanMarksmanRifles"] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_marksman_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishFacewear"] call _fnc_setFacewear;
+            ["britishVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+
+            ["britishMarksmanRifles"] call _fnc_setPrimary;
+            ["primary", 6] call _fnc_addMagazines;
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_marksman_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
 private _marksmanTemplate = {
     [selectRandomWeighted ["helmets", 2, "sniHats", 1]] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
@@ -2941,7 +4854,113 @@ private _marksmanTemplate = {
     ["rangefinders"] call _fnc_addBinoculars;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
+private _sniperTemplate = {
+        private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchSniperHats"] call _fnc_setHelmet;
+            ["frenchSniperFacewear"] call _fnc_setFacewear;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+
+            ["frenchSniperRifles"] call _fnc_setPrimary;
+            ["primary", 7] call _fnc_addMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_sniper_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        case "germany": {
+            ["germanSniperHats"] call _fnc_setHelmet;
+            ["germanSniperFacewear"] call _fnc_setFacewear;
+            ["germanVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+
+            ["germanSniperRifles"] call _fnc_setPrimary;
+            ["primary", 7] call _fnc_addMagazines;
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_sniper_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        case "uk": {
+            ["britishSniperHats"] call _fnc_setHelmet;
+            ["britishSniperFacewear"] call _fnc_setFacewear;
+            ["britishVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+
+            ["britishSniperRifles"] call _fnc_setPrimary;
+            ["primary", 7] call _fnc_addMagazines;
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_sniper_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
 private _sniperTemplate = {
     ["sniHats"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
@@ -2967,6 +4986,7 @@ private _sniperTemplate = {
     ["rangefinders"] call _fnc_addBinoculars;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
 private _policeTemplate = {
     ["helmets"] call _fnc_setHelmet;
@@ -2991,6 +5011,105 @@ private _policeTemplate = {
 };
 
 private _crewTemplate = {
+    private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchHelmets"] call _fnc_setHelmet;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchUniforms"] call _fnc_setUniform;
+
+            [selectRandomWeighted ["frenchCarbines", 0.4, "frenchSMGs", 0.6]] call _fnc_setPrimary;
+            ["primary", 3] call _fnc_addMagazines;
+
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_basic"] call _fnc_addItemSet;
+            ["items_crew_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["gpses"] call _fnc_addGPS;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "germany": {
+            ["germanHelmets"] call _fnc_setHelmet;
+            ["germanVests"] call _fnc_setVest;
+            ["germanUniforms"] call _fnc_setUniform;
+
+            [selectRandomWeighted ["germanCarbines", 0.4, "germanSMGs", 0.6]] call _fnc_setPrimary;
+            ["primary", 3] call _fnc_addMagazines;
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_basic"] call _fnc_addItemSet;
+            ["items_crew_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["gpses"] call _fnc_addGPS;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        case "uk": {
+            ["britishHelmets"] call _fnc_setHelmet;
+            ["britishVests"] call _fnc_setVest;
+            ["britishUniforms"] call _fnc_setUniform;
+
+            [selectRandomWeighted ["britishCarbines", 0.4, "britishSMGs", 0.6]] call _fnc_setPrimary;
+            ["primary", 3] call _fnc_addMagazines;
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_basic"] call _fnc_addItemSet;
+            ["items_crew_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["gpses"] call _fnc_addGPS;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["binoculars"] call _fnc_addBinoculars;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
+};
+
+/*
+private _crewTemplate = {
     ["helmets"] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "glasses", 0.75, "goggles", 0.5]] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
@@ -3014,6 +5133,7 @@ private _crewTemplate = {
     ["gpses"] call _fnc_addGPS;
     ["NVGs"] call _fnc_addNVGs;
 };
+*/
 
 private _unarmedTemplate = {
     ["vests"] call _fnc_setVest;
@@ -3069,54 +5189,211 @@ private _officerTemplate = {
     ["radios"] call _fnc_addRadio;
 };
 private _patrolSniperTemplate = {
-    ["sniHats"] call _fnc_setHelmet;
-    ["cloakGlasses"] call _fnc_setFacewear;
-    [["cloakVests","vests"] call _fnc_fallback] call _fnc_setVest;
-    [selectRandomWeighted ["cloakUniforms", 1, "ghillieSuits", 2]] call _fnc_setUniform;
+        private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchSniperHats"] call _fnc_setHelmet;
+            ["frenchSniperFacewear"] call _fnc_setFacewear;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchGhillieSuits"] call _fnc_setUniform;
 
-    ["cloakRifles"] call _fnc_setPrimary;
-    ["primary", 6] call _fnc_addMagazines;
+            ["frenchSniperRifles"] call _fnc_setPrimary;
+            ["primary", 7] call _fnc_addMagazines;
 
-    ["cloakSidearms"] call _fnc_setHandgun;
-    ["handgun", 2] call _fnc_addMagazines;
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
 
-    ["items_medical_standard"] call _fnc_addItemSet;
-    ["items_sniper_extras"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
-    ["antiInfantryGrenades", 1] call _fnc_addItem;
-    ["smokeGrenades", 2] call _fnc_addItem;
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_sniper_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
 
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
-    ["radios"] call _fnc_addRadio;
-    ["NVGs"] call _fnc_addNVGs;
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        case "germany": {
+            ["germanSniperHats"] call _fnc_setHelmet;
+            ["germanSniperFacewear"] call _fnc_setFacewear;
+            ["germanVests"] call _fnc_setVest;
+            ["germanGhillieSuits"] call _fnc_setUniform;
+
+            ["frenchSniperRifles"] call _fnc_setPrimary;
+            ["primary", 7] call _fnc_addMagazines;
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_sniper_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        case "uk": {
+            ["britishSniperHats"] call _fnc_setHelmet;
+            ["britishSniperFacewear"] call _fnc_setFacewear;
+            ["britishVests"] call _fnc_setVest;
+            ["britishGhillieSuits"] call _fnc_setUniform;
+
+            ["britishSniperRifles"] call _fnc_setPrimary;
+            ["primary", 7] call _fnc_addMagazines;
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_sniper_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
 };
 
 private _patrolSpotterTemplate = {
-    ["sniHats"] call _fnc_setHelmet;
-    ["cloakGlasses"] call _fnc_setFacewear;
-    [["cloakVests","vests"] call _fnc_fallback] call _fnc_setVest;
-    [selectRandomWeighted ["cloakUniforms", 1, "ghillieSuits", 2]] call _fnc_setUniform;
+        private _nation = selectRandom _nationList;
+    switch (_nation) do {
+        case "france": {
+            ["frenchSniperHats"] call _fnc_setHelmet;
+            ["frenchSniperFacewear"] call _fnc_setFacewear;
+            ["frenchVests"] call _fnc_setVest;
+            ["frenchGhillieSuits"] call _fnc_setUniform;
 
-    ["cloakCarbines"] call _fnc_setPrimary;
-    ["primary", 6] call _fnc_addMagazines;
+            [selectRandom["frenchMarksmanRifles", "frenchRifles"]] call _fnc_setPrimary;
+            ["primary", 7] call _fnc_addMagazines;
 
-    ["cloakSidearms"] call _fnc_setHandgun;
-    ["handgun", 2] call _fnc_addMagazines;
+            ["frenchSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
 
-    ["items_medical_standard"] call _fnc_addItemSet;
-    ["items_sniper_extras"] call _fnc_addItemSet;
-    ["items_miscEssentials"] call _fnc_addItemSet;
-    ["antiInfantryGrenades", 1] call _fnc_addItem;
-    ["smokeGrenades", 2] call _fnc_addItem;
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_sniper_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
 
-    ["maps"] call _fnc_addMap;
-    ["watches"] call _fnc_addWatch;
-    ["compasses"] call _fnc_addCompass;
-    ["radios"] call _fnc_addRadio;
-    ["rangefinders"] call _fnc_addBinoculars;
-    ["NVGs"] call _fnc_addNVGs;
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["frenchNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        case "germany": {
+            ["germanSniperHats"] call _fnc_setHelmet;
+            ["germanSniperFacewear"] call _fnc_setFacewear;
+            ["germanVests"] call _fnc_setVest;
+            ["germanGhillieSuits"] call _fnc_setUniform;
+
+            [selectRandom["germanMarksmanRifles", "germanRifles"]] call _fnc_setPrimary;
+            ["primary", 7] call _fnc_addMagazines;
+
+            ["germanSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_sniper_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["germanNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        case "uk": {
+            ["britishSniperHats"] call _fnc_setHelmet;
+            ["britishSniperFacewear"] call _fnc_setFacewear;
+            ["britishVests"] call _fnc_setVest;
+            ["britishGhillieSuits"] call _fnc_setUniform;
+
+            [selectRandom["britishMarksmanRifles", "britishRifles"]] call _fnc_setPrimary;
+            ["primary", 7] call _fnc_addMagazines;
+
+            ["britishSidearms"] call _fnc_setHandgun;
+            ["handgun", 2] call _fnc_addMagazines;
+
+            ["items_medical_standard"] call _fnc_addItemSet;
+            ["items_sniper_extras"] call _fnc_addItemSet;
+            ["items_miscEssentials"] call _fnc_addItemSet;
+            ["antiInfantryGrenades", 1] call _fnc_addItem;
+            ["smokeGrenades", 2] call _fnc_addItem;
+
+            ["maps"] call _fnc_addMap;
+            ["watches"] call _fnc_addWatch;
+            ["compasses"] call _fnc_addCompass;
+            ["radios"] call _fnc_addRadio;
+            ["binoculars"] call _fnc_addBinoculars;
+            ["britishNVGs"] call _fnc_addNVGs;
+            ["gpses"] call _fnc_addGPS;
+        };
+        /*
+        case "spain": {
+
+        };
+        case "italy": {
+
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
+        };
+        */
+    };
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////
