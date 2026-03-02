@@ -51,9 +51,23 @@ private _hasF18 = isClass (configFile >> "CfgVehicles" >> "FIR_F18C_MALS11");
 //private _hasProjectMSnipers = isClass ("allan please add details");
 //private _hasProjectMHandguns = isClass ("allan please add details");
 //private _hasProjectMPistols = isClass ("allan please add details");
-private _hasDAGR = isClass (configFile >> 'CfgWeapons' >> 'dgr_ghillie2');
+private _hasDAGR = isClass (configFile >> "CfgWeapons" >> "dgr_ghillie2");
 //private _hasJCA = isClass ("allan please add details");
 //private _hasTFLEquipment = isClass ("allan please add details");
+private _hasRedd = isClass (configFile >> "CfgVehicles" >> "Redd_Tank_Gepard_1A2_Flecktarn");
+private _hasJCALandSystems = isClass (configFile >> "CfgVehicles" >> "Ger_Wiesel_Radar");
+
+/*
+TODO: Project M
+TODO: KT Weapons Pack
+TODO: JSA 
+TODO: SMA 
+TODO: SPS 
+TODO: NIArms 
+TODO: RHS Plus 
+TODO: 
+*/
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -64,8 +78,8 @@ private _hasDAGR = isClass (configFile >> 'CfgWeapons' >> 'dgr_ghillie2');
 ["spawnMarkerName", "USE Support Corridor"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_AAF_F"] call _fnc_saveToTemplate;
-["flagTexture", QPATHTOFOLDER(Pictures\YULAK_ypg_flag.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "flag_YULAK_YPG"] call _fnc_saveToTemplate;
+["flagTexture", QPATHTOFOLDER(Pictures\USE_Flag.paa)] call _fnc_saveToTemplate;
+["flagMarkerType", "flag_US_EU_A3UE_EU"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
@@ -255,8 +269,6 @@ private _tanks                     = [
     "BWA3_Leopard2_Fleck",
     "B_AMF_TANK_01",
     "B_AMF_TANK_CE_02_F",
-    "ASZ_Ariete_camo",
-    "ASZ_Ariete_camo_plus",
     "ffaa_et_leopardo"
 ];
 
@@ -465,12 +477,10 @@ private _howitzers                 = [
     "RHS_M119_MD"
 ];
 
-private _radar                     = [
-    "B_Radar_System_01_F"
-];
+private _radar                     = [];
 
 private _sam                       = [
-    "B_SAM_System_03_F"
+    "ffaa_lanzador_nasams"
 ];
 
 if (_hasSOAR) then {
@@ -588,7 +598,7 @@ if (_hasFFP) then {
         "ffp_susi_sa420_fuel"
     ];
     _portableUAVs append [
-        "ffp_oribter"
+        "ffp_orbiter"
     ];
     _lightHelicopters append [
         "ffp_md500"
@@ -833,76 +843,71 @@ if (_hasUAF) then {
     ];
 };
 
-if (_hasGM) then {
-    _basicVehicles append [
-        "gm_ge_army_iltis_cargo"
-    ];
+if (_hasRedd) then  {
     _armedLightVehicles append [
-        "gm_ge_army_iltis_mg3"
-    ];
-    _transportTrucks append [
-        "gm_ge_army_kat1_451_cargo"
-    ];
-    _cargoTrucks append [
-        "gm_ge_army_kat1_454_cargo",
-        "gm_ge_army_kat1_451_container"
-    ];
-    _ammoTrucks append [
-        "gm_ge_army_kat1_454_reammo",
-        "gm_ge_army_kat1_451_reammo"
-    ];
-    _repairTrucks append [
-        "gm_ge_army_u1300l_repair"
-    ];
-    _fuelTrucks append [
-        "gm_ge_army_kat1_451_refuel"
+        "Redd_Tank_Wiesel_1A2_TOW_Flecktarn",
+        "Redd_Tank_Wiesel_1A4_MK20_Flecktarn"
     ];
     _medicalTrucks append [
-        "gm_ge_army_u1300l_medic",
-        "gm_ge_army_m113a1g_medic_noinsignia"
-    ];
-    _lightAPCs append [
-        "gm_ge_army_fuchsa0_engineer",
-        "gm_ge_army_fuchsa0_reconniassance",
-        "gm_dk_army_m113a2dk_noinsignia"
-    ];
-    _IFVs append [
-        "gm_ge_army_marder1a2_noinsignia"
-    ];
-    _tanks append [
-        "gm_ge_army_Leopard1a5_noinsignia",
-        "gm_dk_army_Leopard1a5dk1_dozer"
-    ];
-    _lightTanks append [
-        "gm_ge_army_luchsa2"
+        "Redd_Tank_Fuchs_1A4_San_Flecktarn",
+        "Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_San"
     ];
     _SPAA append [
-        "gm_ge_army_gepard1a1"
+        "Redd_Tank_Gepard_1A2_Flecktarn"
     ];
-    _lightHelicopters append [
-        "gm_ge_army_bo105p1m_vbh_swooper"
+    _lightAPCs append [
+        "Redd_Tank_Fuchs_1A4_Jg_Milan_Flecktarn",
+        "Redd_Tank_Fuchs_1A4_Pi_Flecktarn",
+        "Redd_Tank_Fuchs_1A4_Jg_Flecktarn"
     ];
-    _transportHelicopters append [
-        "gm_ge_army_ch53gs"
+    _basicVehicles append [
+        "Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu"
     ];
-    _SPGs append [
-        "gm_ge_army_kat1_463_mlrs"
+    _policeVehicles append [
+        "Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FJg"
     ];
-    _transportMilitiaTrucks append [
-        "gm_ge_army_kat1_451_cargo"
+    _IFVs append [
+        "Redd_Marder_1A5_Flecktarn"
     ];
-    _unarmedMilitiaCars append [
-        "gm_ge_army_iltis_cargo"
+    _lightTanks append [
+        "rnt_sppz_2a2_luchs_flecktarn"
     ];
-    _militiaAPCs append [
-        "gm_ge_army_m113a1g_apc_noinsignia"
+    _transportTrucks append [
+        "rnt_lkw_5t_mil_gl_kat_i_transport_fleck",
+        "rnt_lkw_7t_mil_gl_kat_i_transport_fleck"
     ];
-    _staticMGs append [
-        "gm_ge_army_mg3_aatripod"
+    _ammoTrucks append [
+        "rnt_lkw_7t_mil_gl_kat_i_mun_fleck"
     ];
-    _mortars append [
-        "gm_ge_army_m120"
+    _repairTrucks append [
+        "rnt_lkw_10t_mil_gl_kat_i_repair_fleck"
     ];
+    _fuelTrucks append [
+        "rnt_lkw_5t_mil_gl_kat_i_fuel_fleck"
+    ];
+};
+
+if (_hasJCALandSystems) then {
+    _sam append [
+        "E22_B_JC_W_SAM_system_01_F",
+        "E22_B_JC_W_AAA_System_01_F"
+    ];
+    _radar append [
+        "E22_B_JC_W_Radar_system_01_F"
+    ];
+} else {
+    if (_hasRedd) then {
+        _sam append [
+            "rnt_mantis_base"
+        ];
+        _radar append [
+            "rnt_mantis_radar"
+        ];
+} else {
+        _radar append [
+            "B_Radar_System_01_F"
+        ];
+    };
 };
 
 // vehicles can be placed in more than one category if they fit between both. Cost will be derived by the higher category
@@ -1073,7 +1078,7 @@ if(A3A_hasACE) then {
     _loadoutData set ["items_medical_standard", ["ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_tourniquet", "ACE_tourniquet"]                                                                                                                                                                                                                                                                                                                                                                                                                                             call A3A_fnc_itemset_medicalSupplies];
     _loadoutData set ["items_medical_leader",   ["ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint"]                                                                                                                                                                                                                                                                                                                                                                     call A3A_fnc_itemset_medicalSupplies];
     _loadoutData set ["items_medical_medic",    ["ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_packingBandage", "ACE_quikclot", "ACE_quikclot", "ACE_quikclot", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_epinephrine", "ACE_epinephrine", "ACE_personalAidKit", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_painkillers", "ACE_painkillers", "ACE_painkillers", "ACE_painkillers", "ACE_painkillers"] call A3A_fnc_itemset_medicalSupplies];
-    _loadoutData set ["items_miscEssentials",   ["ACE_IR_Strobe_Item", "ACE_EntrenchingTool", "ACE_Flashlight_XL50", "ACE_EarPlugs", "ACE_EHP", "ACE_CableTie"]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                call A3A_fnc_itemset_miscEssentials ];
+    _loadoutData set ["items_miscEssentials",   ["ACE_IR_Strobe_Item", "ACE_EntrenchingTool", "ACE_Flashlight_XL50", "ACE_EarPlugs", "ACE_EHP", "ACE_CableTie"]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                call A3A_fnc_itemset_miscEssentials ];
 } else {
     /*
     Basic Medical:      1 FAK
@@ -1224,10 +1229,7 @@ private _frenchRifles                        = [
 private _frenchCarbines                      = [
     ["AMF_614_short_FS_BLK", "", _frenchHK416Rail, _frenchHK416Optic, ["AMF_30Rnd_556x45_SS109_PMAG1", "AMF_30Rnd_556x45_SS109_Tracer_PMAG1"], [], _frenchHK416Bipod],
     ["AMF_614_short_FS4_BLK", "", _frenchHK416Rail, _frenchHK416Optic, ["AMF_30Rnd_556x45_SS109_PMAG1", "AMF_30Rnd_556x45_SS109_Tracer_PMAG1"], [], _frenchHK416Bipod]
-];                                           
-private _frenchGrenadeLaunchers              = [
-    ["ASZ_M32", "", "", "", ["6Rnd_HE_Grenade_shell_ASZ"], [], ""]
-];                                                   
+];                                                  
 private _frenchSMGs                          = [
     ["amf_hk_mp5_02_f", ["muzzle_snds_L", 1, "", 3], _frenchHK416Rail, ["AMF_AIMPOINT_MICRO_T2", "AMF_exps3", "AMF_Red_Dot_Sight"], ["AMF_30Rnd_9x19_MP5_BO_123GR"], [], _frenchHK416Bipod]
 ];                                       
@@ -1270,12 +1272,6 @@ private _frenchGlasses                      = [
 private _frenchGoggles                      = [
     "amf_balaclava_goggles_od",
     "amf_balaclava_od"
-];
-private _frenchCrewUniforms                 = [
-    "amf_classique_f"
-];
-private _frenchPilotUniforms                 =[
-    "amf_pilot_01_f"
 ];
 
 
@@ -1329,9 +1325,6 @@ private _britishHelmets                      = [
     "UK3CB_BAF_H_Mk7_Scrim_D",
     "UK3CB_BAF_H_Mk7_Scrim_E",
     "UK3CB_BAF_H_Mk7_Scrim_F"
-];
-private _britishCrewHelmets                  = [
-    "UK3CB_BAF_H_CrewHelmet_A"
 ];
 private _britishFacewear                     = [
     "UK3CB_BAF_G_Tactical_Black",
@@ -1414,9 +1407,6 @@ private _britishCarbines                     = [
     ["UK3CB_BAF_L22", ["", 2, "UK3CB_BAF_SFFH", 2], "", _britishRifleOptics, _british556Magazines, [], ""],
     ["UK3CB_BAF_L22A2", ["", 2, "UK3CB_BAF_SFFH", 2], "", _britishRifleOptics, _british556Magazines, [], ""]
 ];
-private _britishGrenadeLaunchers             = [
-    ["ASZ_M32", "", "", "", ["6Rnd_HE_Grenade_shell_ASZ"], [], ""]
-];
 private _britishSMGs                         = [
     ["UK3CB_BAF_L91A1", ["UK3CB_BAF_Silencer_L91A1", ""], "", ["RKSL_optic_RMR_MS19", "RKSL_optic_RMR_RM33"], ["UK3CB_BAF_9_30Rnd"], [], ""]
 ];
@@ -1497,10 +1487,7 @@ private _italianRifles                       = [
 ];                                           
 private _italianCarbines                     = [
 
-];                                               
-private _italianGrenadeLaunchers             = [
-
-];                                                       
+];                                                      
 private _italianSMGs                         = [
 
 ];                                           
@@ -1525,12 +1512,6 @@ private _germanUniforms                      = [
     "BWA3_Uniform_Crye_G3_Fleck",
     "BWA3_Uniform_Fleck"
 ];
-private _germanHeliUniforms                  = [
-    "BWA3_Uniform_Helipilot"
-];
-private _germanCrewUniforms                  = [
-    "BWA3_Uniform_Crew_Fleck"
-];
 private _germanVests                         = [
     "BWA3_Vest_JPC_Rifleman_Fleck",
     "BWA3_Vest_Rifleman_Fleck"
@@ -1551,9 +1532,6 @@ private _germanGlVests                       = [
 private _germanRadiomanVests                 = [
     "BWA3_Vest_JPC_Radioman_Fleck"
 ];
-private _germanCrewVests                     = [
-    "BWA3_Vest_Fleck"
-]; 
 private _germanHelmets                       = [
     "BWA3_M92_Fleck",
     "BWA3_OpsCore_FastMT_Fleck",
@@ -1638,10 +1616,7 @@ private _germanCarbines                      = [
     ["BWA3_G36KA2", _german556Muzzles, _germanRiflemanRails, _germanRedDots, _german556Magazines, [], ""],
     ["BWA3_G36KA3", _german556Muzzles, _germanRiflemanRails, _germanOptics, _german556Magazines, [], ""],
     ["BWA3_G38C", _german556Muzzles, _germanRiflemanRails, _germanOptics, _german556Magazines, [], ""]
-];                                           
-private _germanGrenadeLaunchers              = [
-    ["ASZ_M32", "", "", "", ["6Rnd_HE_Grenade_shell_ASZ"], [], ""]
-];                                                   
+];                                                  
 private _germanSMGs                          = [
     ["BWA3_MP7", ["", 2, "BWA3_muzzle_snds_Rotex_II", 1], _germanRiflemanRails, _germanRedDots, ["BWA3_40Rnd_46x30_MP7"], [], ""] 
 ];                                       
@@ -1660,7 +1635,7 @@ private _germanSniperRifles                  = [
 ];                                               
 private _germanSidearms                      = [
     ["BWA3_P12", ["", 2, "BWA3_muzzle_snds_Impuls_IIA"], ["", 2, "BWA3_acc_LLMPI_irlaser"], "", ["BWA3_12Rnd_45ACP_P12"], [], ""],
-    ["BWA3_P8", "", ["", 2, "BWA3_muzzle_snds_Impuls_IIA"], "", ["BWA3_15Rnd_9x19_P8"], [], ""]
+    ["BWA3_P8", ["", 2, "BWA3_muzzle_snds_Impuls_IIA"], "", "", ["BWA3_15Rnd_9x19_P8"], [], ""]
 ];
 private _germanNVGs                          = [
     "AMF_BINYX_BLK_NVG"
@@ -1712,10 +1687,7 @@ private _spanishRifles                        = [
 ];                                     
 private _spanishCarbines                      = [
 
-];                                     
-private _spanishGrenadeLaunchers              = [
-
-];                                             
+];                                            
 private _spanishSMGs                          = [
 
 ];                                 
@@ -1735,58 +1707,10 @@ private _spanishNVGs                          = [
     
 ];
 
-private _frenchGhillieSuits = [];
-private _britishGhillieSuits = [];
-private _germanGhillieSuits = [];
-private _italianGhillieSuits = [];
-private _spanishGhillieSuits = [];
+private _ghillieSuits = [];
 
 if (_hasDAGR) then {
-    _frenchGhillieSuits append [
-        "dgr_ghillie1",
-        "dgr_ghillie2",
-        "dgr_ghillie4",
-        "dgr_ghillie6",
-        "dgr_ghillie10",
-        "dgr_ghillie14",
-        "dgr_ghillie17",
-        "dgr_ghillie18",
-        "dgr_ghillie22"
-    ];
-    _britishGhillieSuits append [
-        "dgr_ghillie1",
-        "dgr_ghillie2",
-        "dgr_ghillie4",
-        "dgr_ghillie6",
-        "dgr_ghillie10",
-        "dgr_ghillie14",
-        "dgr_ghillie17",
-        "dgr_ghillie18",
-        "dgr_ghillie22"
-    ];
-    _germanGhillieSuits append [
-        "dgr_ghillie1",
-        "dgr_ghillie2",
-        "dgr_ghillie4",
-        "dgr_ghillie6",
-        "dgr_ghillie10",
-        "dgr_ghillie14",
-        "dgr_ghillie17",
-        "dgr_ghillie18",
-        "dgr_ghillie22"
-    ];
-    _italianGhillieSuits append [
-        "dgr_ghillie1",
-        "dgr_ghillie2",
-        "dgr_ghillie4",
-        "dgr_ghillie6",
-        "dgr_ghillie10",
-        "dgr_ghillie14",
-        "dgr_ghillie17",
-        "dgr_ghillie18",
-        "dgr_ghillie22"
-    ];
-    _spanishGhillieSuits append [
+    _ghillieSuits append [
         "dgr_ghillie1",
         "dgr_ghillie2",
         "dgr_ghillie4",
@@ -1798,19 +1722,7 @@ if (_hasDAGR) then {
         "dgr_ghillie22"
     ];
 } else {
-    _frenchGhillieSuits append [
-        "U_I_FullGhillie_lsh"
-    ];
-    _britishGhillieSuits append [
-        "U_I_FullGhillie_lsh"
-    ];
-    _germanGhillieSuits append [
-        "U_I_FullGhillie_lsh"
-    ];
-    _italianGhillieSuits append [
-        "U_I_FullGhillie_lsh"
-    ];
-    _spanishGhillieSuits append [
+    _ghillieSuits append [
         "U_I_FullGhillie_lsh"
     ];
 };
@@ -1966,7 +1878,7 @@ _loadoutData set ["designatedGrenadeLaunchers", [
     ["ASZ_M32", "", "", "", ["6Rnd_HE_Grenade_shell_ASZ"], [], ""]
 ]];
 
-
+_loadoutData set ["ghillieSuits", _ghillieSuits];
 
 _loadoutData set ["frenchUniforms", []];
 _loadoutData set ["frenchVests", []];
@@ -1980,7 +1892,6 @@ _loadoutData set ["frenchBackpacks", []];
 _loadoutData set ["frenchSlRifles", []];
 _loadoutData set ["frenchRifles", []];
 _loadoutData set ["frenchCarbines", []];
-_loadoutData set ["frenchGrenadeLaunchers", []];
 _loadoutData set ["frenchSMGs", []];
 _loadoutData set ["frenchMachineGuns", []];
 _loadoutData set ["frenchMarksmanRifles", []];
@@ -1993,7 +1904,6 @@ _loadoutData set ["frenchGlasses", []];
 _loadoutData set ["frenchGoggles", []];
 _loadoutData set ["frenchMilitiaRifles", []];
 
-_loadoutData set ["frenchGhillieSuits", []];
 _loadoutData set ["frenchSniperHats", []];
 _loadoutData set ["frenchSniperFacewear", []];
 
@@ -2009,7 +1919,6 @@ _loadoutData set ["britishBackpacks", []];
 _loadoutData set ["britishSlRifles", []];
 _loadoutData set ["britishRifles", []];
 _loadoutData set ["britishCarbines", []];
-_loadoutData set ["britishGrenadeLaunchers", []];
 _loadoutData set ["britishSMGs", []];
 _loadoutData set ["britishMachineGuns", []];
 _loadoutData set ["britishMarksmanRifles", []];
@@ -2026,7 +1935,6 @@ _loadoutData set ["britishBerets", []];
 _loadoutData set ["britishCrewUniforms", []];
 _loadoutData set ["britishPilotUniforms", []];
 
-_loadoutData set ["britishGhillieSuits", []];
 _loadoutData set ["britishSniperHats", []];
 _loadoutData set ["britishSniperFacewear", []];
 
@@ -2042,7 +1950,6 @@ _loadoutData set ["italianBackpacks", []];
 _loadoutData set ["italianSlRifles", []];
 _loadoutData set ["italianRifles", []];
 _loadoutData set ["italianCarbines", []];
-_loadoutData set ["italianGrenadeLaunchers", []];
 _loadoutData set ["italianSMGs", []];
 _loadoutData set ["italianMachineGuns", []];
 _loadoutData set ["italianMarksmanRifles", []];
@@ -2050,7 +1957,6 @@ _loadoutData set ["italianSniperRifles", []];
 _loadoutData set ["italianSidearms", []];
 _loadoutData set ["italianNVGs", []];
 
-_loadoutData set ["italianGhillieSuits", []];
 _loadoutData set ["italianSniperHats", []];
 _loadoutData set ["italianSniperFacewear", []];
 
@@ -2066,7 +1972,6 @@ _loadoutData set ["germanBackpacks", []];
 _loadoutData set ["germanSlRifles", []];
 _loadoutData set ["germanRifles", []];
 _loadoutData set ["germanCarbines", []];
-_loadoutData set ["germanGrenadeLaunchers", []];
 _loadoutData set ["germanSMGs", []];
 _loadoutData set ["germanMachineGuns", []];
 _loadoutData set ["germanMarksmanRifles", []];
@@ -2077,7 +1982,6 @@ _loadoutData set ["germanNVGs", []];
 _loadoutData set ["germanBerets", []];
 _loadoutData set ["germanRadiomanVests", []];
 
-_loadoutData set ["germanGhillieSuits", []];
 _loadoutData set ["germanSniperHats", []];
 _loadoutData set ["germanSniperFacewear", []];
 
@@ -2093,7 +1997,6 @@ _loadoutData set ["spanishBackpacks", []];
 _loadoutData set ["spanishSlRifles", []];
 _loadoutData set ["spanishRifles", []];
 _loadoutData set ["spanishCarbines", []];
-_loadoutData set ["spanishGrenadeLaunchers", []];
 _loadoutData set ["spanishSMGs", []];
 _loadoutData set ["spanishMachineGuns", []];
 _loadoutData set ["spanishMarksmanRifles", []];
@@ -2104,7 +2007,6 @@ _loadoutData set ["spanishBerets", []];
 _loadoutData set ["spanishGlasses", []];
 _loadoutData set ["spanishGoggles", []];
 
-_loadoutData set ["spanishGhillieSuits", []];
 _loadoutData set ["spanishSniperHats", []];
 _loadoutData set ["spanishSniperFacewear", []];
 
@@ -2189,7 +2091,7 @@ private _euroRifles = [
     ["AMF_614_short_FS4_BLK", ["BWA3_muzzle_snds_QDSS", "BWA3_muzzle_snds_Rotex_IIIC", "AMF_ROTEX_V"], _euroRails, _euroOptics, _euro556Magazines, [], ""]
 ];
 private _euroSlRifles = [
-    ["BWA3_G38_AG40", ["BWA3_muzzle_snds_QDSS", "BWA3_muzzle_snds_Rotex_IIIC"], _euroRails, _euroOptics, "BWA3_30Rnd_556x45_G36_AP", ["1Rnd_HE_Grenade_shell"], ""],
+    ["BWA3_G38_AG40", ["BWA3_muzzle_snds_QDSS", "BWA3_muzzle_snds_Rotex_IIIC"], _euroRails, _euroOptics, ["BWA3_30Rnd_556x45_G36_AP"], ["1Rnd_HE_Grenade_shell"], ""],
     ["BWA3_G27_AG40", "muzzle_snds_B", _euroRails, _euroOptics, ["BWA3_20Rnd_762x51_G28_AP"], ["1Rnd_HE_Grenade_shell"], ""]
 ];
 private _euroMarksmanRifles = [
@@ -2213,9 +2115,6 @@ private _euroMachineGuns = [
 ];
 private _euroSidearms = [
     ["BWA3_P12", "BWA3_muzzle_snds_Impuls_IIA", "BWA3_acc_LLMPI_irlaser", "", ["BWA3_12Rnd_45ACP_P12"], [], ""]
-];
-private _euroGrenadeLaunchers = [
-    ["ASZ_M32", "", "", "", ["6Rnd_HE_Grenade_shell_ASZ"], [], ""]
 ];
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData;
@@ -2248,10 +2147,8 @@ _sfLoadoutData set ["frenchSMGs", _euroSMGs];
 _sfLoadoutData set ["frenchMachineGuns", _euroMachineGuns];
 _sfLoadoutData set ["frenchSidearms", _euroSidearms];
 _sfLoadoutData set ["frenchCarbines", _euroRifles];
-_sfLoadoutData set ["frenchGrenadeLaunchers", _euroGrenadeLaunchers];
 _sfLoadoutData set ["frenchBerets", _euroHelmets];
 
-_sfLoadoutData set ["frenchGhillieSuits", _frenchGhillieSuits];
 _sfLoadoutData set ["frenchSniperHats", _euroSniperHats];
 _sfLoadoutData set ["frenchSniperFacewear", _frenchSniperFacewear];
 
@@ -2273,7 +2170,6 @@ _sfLoadoutData set ["britishSMGs", _euroSMGs];
 _sfLoadoutData set ["britishMachineGuns", _euroMachineGuns];
 _sfLoadoutData set ["britishSidearms", _euroSidearms];
 _sfLoadoutData set ["britishCarbines", _euroRifles];
-_sfLoadoutData set ["britishGrenadeLaunchers", _euroGrenadeLaunchers];
 
 _sfLoadoutData set ["britishEngineerBackpacks", _euroBackpacks];
 _sfLoadoutData set ["britishRadiomanBackpacks", _euroBackpacks];
@@ -2282,7 +2178,6 @@ _sfLoadoutData set ["britishSlBackpacks", _euroBackpacks];
 _sfLoadoutData set ["britishEODBackpacks", _euroBackpacks];
 _sfLoadoutData set ["britishBerets", _euroHelmets];
 
-_sfLoadoutData set ["britishGhillieSuits", _britishGhillieSuits];
 _sfLoadoutData set ["britishSniperHats", _euroSniperHats];
 _sfLoadoutData set ["britishSniperFacewear", _britishSniperFacewear];
 
@@ -2304,12 +2199,10 @@ _sfLoadoutData set ["germanSMGs", _euroSMGs];
 _sfLoadoutData set ["germanMachineGuns", _euroMachineGuns];
 _sfLoadoutData set ["germanSidearms", _euroSidearms];
 _sfLoadoutData set ["germanCarbines", _euroRifles];
-_sfLoadoutData set ["germanGrenadeLaunchers", _euroGrenadeLaunchers];
 
 _sfLoadoutData set ["germanBerets", _euroHelmets];
 _sfLoadoutData set ["germanRadiomanVests", _euroVests];
 
-_sfLoadoutData set ["germanGhillieSuits", _germanGhillieSuits];
 _sfLoadoutData set ["germanSniperHats", _euroSniperHats];
 _sfLoadoutData set ["germanSniperFacewear", _germanSniperFacewear];
 
@@ -2399,10 +2292,8 @@ _eliteLoadoutData set ["frenchSMGs", _euroSMGs];
 _eliteLoadoutData set ["frenchMachineGuns", _euroMachineGuns];
 _eliteLoadoutData set ["frenchSidearms", _euroSidearms];
 _eliteLoadoutData set ["frenchCarbines", _euroRifles];
-_eliteLoadoutData set ["frenchGrenadeLaunchers", _euroGrenadeLaunchers];
 _eliteLoadoutData set ["frenchBerets", _euroHelmets];
 
-_eliteLoadoutData set ["frenchGhillieSuits", _frenchGhillieSuits];
 _eliteLoadoutData set ["frenchSniperHats", _euroSniperHats];
 _eliteLoadoutData set ["frenchSniperFacewear", _frenchSniperFacewear];
 
@@ -2424,7 +2315,6 @@ _eliteLoadoutData set ["britishSMGs", _euroSMGs];
 _eliteLoadoutData set ["britishMachineGuns", _euroMachineGuns];
 _eliteLoadoutData set ["britishSidearms", _euroSidearms];
 _eliteLoadoutData set ["britishCarbines", _euroRifles];
-_eliteLoadoutData set ["britishGrenadeLaunchers", _euroGrenadeLaunchers];
 
 _eliteLoadoutData set ["britishEngineerBackpacks", _euroBackpacks];
 _eliteLoadoutData set ["britishRadiomanBackpacks", _euroBackpacks];
@@ -2433,7 +2323,6 @@ _eliteLoadoutData set ["britishSlBackpacks", _euroBackpacks];
 _eliteLoadoutData set ["britishEODBackpacks", _euroBackpacks];
 _eliteLoadoutData set ["britishBerets", _euroHelmets];
 
-_eliteLoadoutData set ["britishGhillieSuits", _britishGhillieSuits];
 _eliteLoadoutData set ["britishSniperHats", _euroSniperHats];
 _eliteLoadoutData set ["britishSniperFacewear", _britishSniperFacewear];
 
@@ -2455,12 +2344,9 @@ _eliteLoadoutData set ["germanSMGs", _euroSMGs];
 _eliteLoadoutData set ["germanMachineGuns", _euroMachineGuns];
 _eliteLoadoutData set ["germanSidearms", _euroSidearms];
 _eliteLoadoutData set ["germanCarbines", _euroRifles];
-_eliteLoadoutData set ["germanGrenadeLaunchers", _euroGrenadeLaunchers];
 
 _eliteLoadoutData set ["germanBerets", _euroHelmets];
 _eliteLoadoutData set ["germanRadiomanVests", _euroVests];
-
-_eliteLoadoutData set ["germanGhillieSuits", _germanGhillieSuits];
 _eliteLoadoutData set ["germanSniperHats", _euroSniperHats];
 _eliteLoadoutData set ["germanSniperFacewear", _germanSniperFacewear];
 
@@ -2477,13 +2363,10 @@ _militaryLoadoutData set ["binoculars", [
     "Rangefinder"
 ]];
 
-_militaryLoadoutData set ["britishGhillieSuits", _britishGhillieSuits];
 _militaryLoadoutData set ["britishSniperHats", _britishSniperHats];
 _militaryLoadoutData set ["britishSniperFacewear", _britishSniperFacewear];
-_militaryLoadoutData set ["germanGhillieSuits", _germanGhillieSuits];
 _militaryLoadoutData set ["germanSniperHats", _germanSniperHats];
 _militaryLoadoutData set ["germanSniperFacewear", _germanSniperFacewear];
-_militaryLoadoutData set ["frenchGhillieSuits", _frenchGhillieSuits];
 _militaryLoadoutData set ["frenchSniperHats", _frenchSniperHats];
 _militaryLoadoutData set ["frenchSniperFacewear", _frenchSniperFacewear];
 
@@ -2499,7 +2382,6 @@ _militaryLoadoutData set ["frenchBackpacks", _frenchBackpacks];
 _militaryLoadoutData set ["frenchSlRifles", _frenchSlRifles];
 _militaryLoadoutData set ["frenchRifles", _frenchRifles];
 _militaryLoadoutData set ["frenchCarbines", _frenchCarbines];
-_militaryLoadoutData set ["frenchGrenadeLaunchers", _frenchGrenadeLaunchers];
 _militaryLoadoutData set ["frenchSMGs", _frenchSMGs];
 _militaryLoadoutData set ["frenchMachineGuns", _frenchMachineGuns];
 _militaryLoadoutData set ["frenchMarksmanRifles", _frenchMarksmanRifles];
@@ -2525,7 +2407,6 @@ _militaryLoadoutData set ["britishBackpacks", _britishBackpacks];
 _militaryLoadoutData set ["britishSlRifles", _britishSlRifles];
 _militaryLoadoutData set ["britishRifles", _britishRifles];
 _militaryLoadoutData set ["britishCarbines", _britishCarbines];
-_militaryLoadoutData set ["britishGrenadeLaunchers", _britishGrenadeLaunchers];
 _militaryLoadoutData set ["britishSMGs", _britishSMGs];
 _militaryLoadoutData set ["britishMachineGuns", _britishMachineGuns];
 _militaryLoadoutData set ["britishMarksmanRifles", _britishMarksmanRifles];
@@ -2554,7 +2435,6 @@ _militaryLoadoutData set ["italianBackpacks", _italianBackpacks];
 _militaryLoadoutData set ["italianSlRifles", _italianSlRifles];
 _militaryLoadoutData set ["italianRifles", _italianRifles];
 _militaryLoadoutData set ["italianCarbines", _italianCarbines];
-_militaryLoadoutData set ["italianGrenadeLaunchers", _italianGrenadeLaunchers];
 _militaryLoadoutData set ["italianSMGs", _italianSMGs];
 _militaryLoadoutData set ["italianMachineGuns", _italianMachineGuns];
 _militaryLoadoutData set ["italianMarksmanRifles", _italianMarksmanRifles];
@@ -2574,7 +2454,6 @@ _militaryLoadoutData set ["germanBackpacks", _germanBackpacks];
 _militaryLoadoutData set ["germanSlRifles", _germanSlRifles];
 _militaryLoadoutData set ["germanRifles", _germanRifles];
 _militaryLoadoutData set ["germanCarbines", _germanCarbines];
-_militaryLoadoutData set ["germanGrenadeLaunchers", _germanGrenadeLaunchers];
 _militaryLoadoutData set ["germanSMGs", _germanSMGs];
 _militaryLoadoutData set ["germanMachineGuns", _germanMachineGuns];
 _militaryLoadoutData set ["germanMarksmanRifles", _germanMarksmanRifles];
@@ -2597,7 +2476,6 @@ _militaryLoadoutData set ["spanishBackpacks", _spanishBackpacks];
 _militaryLoadoutData set ["spanishSlRifles", _spanishSlRifles];
 _militaryLoadoutData set ["spanishRifles", _spanishRifles];
 _militaryLoadoutData set ["spanishCarbines", _spanishCarbines];
-_militaryLoadoutData set ["spanishGrenadeLaunchers", _spanishGrenadeLaunchers];
 _militaryLoadoutData set ["spanishSMGs", _spanishSMGs];
 _militaryLoadoutData set ["spanishMachineGuns", _spanishMachineGuns];
 _militaryLoadoutData set ["spanishMarksmanRifles", _spanishMarksmanRifles];
@@ -2721,13 +2599,10 @@ private _frenchMilitiaRifles = [
     ["Famas_F1", ["BAYO_Famas", 1, "", 5], "", _frenchHK416Optic, ["AMF_25Rnd_BO_MEN_SS109", "AMF_25Rnd_BO_BT_MEN_SS109"], ["AMF_RFG_AC58", "AMF_RFG_APAV40"], ""]
 ];
 
-_militiaLoadoutData set ["britishGhillieSuits", _britishGhillieSuits];
 _militiaLoadoutData set ["britishSniperHats", _britishSniperHats];
 _militiaLoadoutData set ["britishSniperFacewear", _britishSniperFacewear];
-_militiaLoadoutData set ["germanGhillieSuits", _germanGhillieSuits];
 _militiaLoadoutData set ["germanSniperHats", _germanSniperHats];
 _militiaLoadoutData set ["germanSniperFacewear", _germanSniperFacewear];
-_militiaLoadoutData set ["frenchGhillieSuits", _frenchGhillieSuits];
 _militiaLoadoutData set ["frenchSniperHats", _frenchSniperHats];
 _militiaLoadoutData set ["frenchSniperFacewear", _frenchSniperFacewear];
 
@@ -2743,7 +2618,6 @@ _militiaLoadoutData set ["frenchBackpacks", _frenchBackpacks];
 _militiaLoadoutData set ["frenchSlRifles", _frenchSlRifles];
 _militiaLoadoutData set ["frenchRifles", _frenchMilitiaRifles];
 _militiaLoadoutData set ["frenchCarbines", _frenchCarbines];
-_militiaLoadoutData set ["frenchGrenadeLaunchers", _frenchGrenadeLaunchers];
 _militiaLoadoutData set ["frenchSMGs", _frenchSMGs];
 _militiaLoadoutData set ["frenchMachineGuns", _frenchMachineGuns];
 _militiaLoadoutData set ["frenchMarksmanRifles", _frenchMarksmanRifles];
@@ -2767,7 +2641,6 @@ _militiaLoadoutData set ["britishBackpacks", _britishBackpacks];
 _militiaLoadoutData set ["britishSlRifles", _britishSlRifles];
 _militiaLoadoutData set ["britishRifles", _britishRifles];
 _militiaLoadoutData set ["britishCarbines", _britishCarbines];
-_militiaLoadoutData set ["britishGrenadeLaunchers", _britishGrenadeLaunchers];
 _militiaLoadoutData set ["britishSMGs", _britishSMGs];
 _militiaLoadoutData set ["britishMachineGuns", _britishMachineGuns];
 _militiaLoadoutData set ["britishMarksmanRifles", _britishMarksmanRifles];
@@ -2794,7 +2667,6 @@ _militiaLoadoutData set ["italianBackpacks", _italianBackpacks];
 _militiaLoadoutData set ["italianSlRifles", _italianSlRifles];
 _militiaLoadoutData set ["italianRifles", _italianRifles];
 _militiaLoadoutData set ["italianCarbines", _italianCarbines];
-_militiaLoadoutData set ["italianGrenadeLaunchers", _italianGrenadeLaunchers];
 _militiaLoadoutData set ["italianSMGs", _italianSMGs];
 _militiaLoadoutData set ["italianMachineGuns", _italianMachineGuns];
 _militiaLoadoutData set ["italianMarksmanRifles", _italianMarksmanRifles];
@@ -2814,7 +2686,6 @@ _militiaLoadoutData set ["germanBackpacks", _germanBackpacks];
 _militiaLoadoutData set ["germanSlRifles", _germanSlRifles];
 _militiaLoadoutData set ["germanRifles", _germanRifles];
 _militiaLoadoutData set ["germanCarbines", _germanCarbines];
-_militiaLoadoutData set ["germanGrenadeLaunchers", _germanGrenadeLaunchers];
 _militiaLoadoutData set ["germanSMGs", _germanSMGs];
 _militiaLoadoutData set ["germanMachineGuns", _germanMachineGuns];
 _militiaLoadoutData set ["germanMarksmanRifles", _germanMarksmanRifles];
@@ -2837,7 +2708,6 @@ _militiaLoadoutData set ["spanishBackpacks", _spanishBackpacks];
 _militiaLoadoutData set ["spanishSlRifles", _spanishSlRifles];
 _militiaLoadoutData set ["spanishRifles", _spanishRifles];
 _militiaLoadoutData set ["spanishCarbines", _spanishCarbines];
-_militiaLoadoutData set ["spanishGrenadeLaunchers", _spanishGrenadeLaunchers];
 _militiaLoadoutData set ["spanishSMGs", _spanishSMGs];
 _militiaLoadoutData set ["spanishMachineGuns", _spanishMachineGuns];
 _militiaLoadoutData set ["spanishMarksmanRifles", _spanishMarksmanRifles];
@@ -3029,7 +2899,7 @@ private _nationList = [
 ];
 
 if (_hasHELL) then {
-    _nationList append ["greece"]
+    _nationList append ["greece"];
 };
 if (_hasSFP) then {
     _nationList append ["sweden"];
@@ -3214,6 +3084,18 @@ private _squadLeaderTemplate = {
             ["gpses"] call _fnc_addGPS;
             ["binoculars"] call _fnc_addBinoculars;
             ["italianNVGs"] call _fnc_addNVGs;
+        };
+        case "greece": {
+
+        };
+        case "sweden": {
+
+        };
+        case "finland": {
+
+        };
+        case "ukraine": {
+
         };
     };
 };
@@ -3408,7 +3290,7 @@ private _radiomanTemplate = {
             [selectRandom ["frenchRifles", "frenchCarbines"]] call _fnc_setPrimary;
             ["primary", 6] call _fnc_addMagazines;
 
-            ["frenchsidearms"] call _fnc_setHandgun;
+            ["frenchSidearms"] call _fnc_setHandgun;
             ["handgun", 2] call _fnc_addMagazines;
 
             ["items_medical_standard"] call _fnc_addItemSet;
@@ -3436,7 +3318,7 @@ private _radiomanTemplate = {
             [selectRandom ["germanRifles", "germanCarbines"]] call _fnc_setPrimary;
             ["primary", 6] call _fnc_addMagazines;
 
-            ["germansidearms"] call _fnc_setHandgun;
+            ["germanSidearms"] call _fnc_setHandgun;
             ["handgun", 2] call _fnc_addMagazines;
 
             ["items_medical_standard"] call _fnc_addItemSet;
@@ -3464,7 +3346,7 @@ private _radiomanTemplate = {
             [selectRandom ["britishRifles", "britishCarbines"]] call _fnc_setPrimary;
             ["primary", 6] call _fnc_addMagazines;
 
-            ["britishsidearms"] call _fnc_setHandgun;
+            ["britishSidearms"] call _fnc_setHandgun;
             ["handgun", 2] call _fnc_addMagazines;
 
             ["items_medical_standard"] call _fnc_addItemSet;
@@ -3718,7 +3600,7 @@ private _grenadierTemplate = {
             ["primary", 6] call _fnc_addMagazines;
             ["primary", 10] call _fnc_addAdditionalMuzzleMagazines;
 
-            ["frenchSidearms"] call _fnc_setHandgun;
+            ["germanSidearms"] call _fnc_setHandgun;
             ["handgun", 2] call _fnc_addMagazines;
 
             if (random 1 > 0.5) then {["lightExplosives", 1] call _fnc_addItem;};
@@ -4448,7 +4330,7 @@ private _aaTemplate = {
             ["frenchUniforms"] call _fnc_setUniform;
             ["frenchBackpacks"] call _fnc_setBackpack;
 
-            [selectRandomWeighted ["frenchRifles", 0.2, "renchCarbines", 0.5, "frenchSMGs", 0.3]] call _fnc_setPrimary;
+            [selectRandomWeighted ["frenchRifles", 0.2, "frenchCarbines", 0.5, "frenchSMGs", 0.3]] call _fnc_setPrimary;
             ["primary", 6] call _fnc_addMagazines;
 
             ["AALaunchers"] call _fnc_setLauncher;
@@ -5195,7 +5077,7 @@ private _patrolSniperTemplate = {
             ["frenchSniperHats"] call _fnc_setHelmet;
             ["frenchSniperFacewear"] call _fnc_setFacewear;
             ["frenchVests"] call _fnc_setVest;
-            ["frenchGhillieSuits"] call _fnc_setUniform;
+            ["ghillieSuits"] call _fnc_setUniform;
 
             ["frenchSniperRifles"] call _fnc_setPrimary;
             ["primary", 7] call _fnc_addMagazines;
@@ -5221,9 +5103,9 @@ private _patrolSniperTemplate = {
             ["germanSniperHats"] call _fnc_setHelmet;
             ["germanSniperFacewear"] call _fnc_setFacewear;
             ["germanVests"] call _fnc_setVest;
-            ["germanGhillieSuits"] call _fnc_setUniform;
+            ["ghillieSuits"] call _fnc_setUniform;
 
-            ["frenchSniperRifles"] call _fnc_setPrimary;
+            ["germanSniperRifles"] call _fnc_setPrimary;
             ["primary", 7] call _fnc_addMagazines;
 
             ["germanSidearms"] call _fnc_setHandgun;
@@ -5247,7 +5129,7 @@ private _patrolSniperTemplate = {
             ["britishSniperHats"] call _fnc_setHelmet;
             ["britishSniperFacewear"] call _fnc_setFacewear;
             ["britishVests"] call _fnc_setVest;
-            ["britishGhillieSuits"] call _fnc_setUniform;
+            ["ghillieSuits"] call _fnc_setUniform;
 
             ["britishSniperRifles"] call _fnc_setPrimary;
             ["primary", 7] call _fnc_addMagazines;
@@ -5299,9 +5181,9 @@ private _patrolSpotterTemplate = {
             ["frenchSniperHats"] call _fnc_setHelmet;
             ["frenchSniperFacewear"] call _fnc_setFacewear;
             ["frenchVests"] call _fnc_setVest;
-            ["frenchGhillieSuits"] call _fnc_setUniform;
+            ["ghillieSuits"] call _fnc_setUniform;
 
-            [selectRandom["frenchMarksmanRifles", "frenchRifles"]] call _fnc_setPrimary;
+            [selectRandom ["frenchMarksmanRifles", "frenchRifles"]] call _fnc_setPrimary;
             ["primary", 7] call _fnc_addMagazines;
 
             ["frenchSidearms"] call _fnc_setHandgun;
@@ -5325,9 +5207,9 @@ private _patrolSpotterTemplate = {
             ["germanSniperHats"] call _fnc_setHelmet;
             ["germanSniperFacewear"] call _fnc_setFacewear;
             ["germanVests"] call _fnc_setVest;
-            ["germanGhillieSuits"] call _fnc_setUniform;
+            ["ghillieSuits"] call _fnc_setUniform;
 
-            [selectRandom["germanMarksmanRifles", "germanRifles"]] call _fnc_setPrimary;
+            [selectRandom ["germanMarksmanRifles", "germanRifles"]] call _fnc_setPrimary;
             ["primary", 7] call _fnc_addMagazines;
 
             ["germanSidearms"] call _fnc_setHandgun;
@@ -5351,9 +5233,9 @@ private _patrolSpotterTemplate = {
             ["britishSniperHats"] call _fnc_setHelmet;
             ["britishSniperFacewear"] call _fnc_setFacewear;
             ["britishVests"] call _fnc_setVest;
-            ["britishGhillieSuits"] call _fnc_setUniform;
+            ["ghillieSuits"] call _fnc_setUniform;
 
-            [selectRandom["britishMarksmanRifles", "britishRifles"]] call _fnc_setPrimary;
+            [selectRandom ["britishMarksmanRifles", "britishRifles"]] call _fnc_setPrimary;
             ["primary", 7] call _fnc_addMagazines;
 
             ["britishSidearms"] call _fnc_setHandgun;
@@ -5527,4 +5409,4 @@ private _unitTypes = [
 //The following lines are determining the loadout for the AI used in the "kill the traitor" mission
 ["other", [["Traitor", _traitorTemplate, [], ["other"]]], _militiaLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
 //The following lines are determining the loadout for the AI used in the "Invader Punishment" mission
-["other", [["Unarmed", _UnarmedTemplate, [], ["other"]]], _militaryLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
+["other", [["Unarmed", _unarmedTemplate, [], ["other"]]], _militaryLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;

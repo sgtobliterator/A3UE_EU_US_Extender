@@ -2,11 +2,11 @@ class CfgVehicles
 {
     class FlagCarrier;  // base class used by Arma flagpoles
 
-    class YPG_FlagPole : FlagCarrier
+    class USE_FlagPole : FlagCarrier
     {
         scope = 2;            // Eden
         scopeCurator = 2;     // Zeus
-        displayName = "Flag (YPG)";
+        displayName = "Flag (USE)";
         author = AUTHOR;
 
         // Optional, but nice in Eden
@@ -18,7 +18,7 @@ class CfgVehicles
 
         class EventHandlers
         {
-            init = "(_this select 0) setFlagTexture '\x\A3UE\addons\templates\Pictures\YULAK_ypg_flag.paa';";
+            init = "(_this select 0) setFlagTexture '\x\A3UE\addons\templates\Pictures\USE_Flag.paa';";
         };
     };
 

@@ -16,7 +16,7 @@ class Templates
     class US_EU_A3UE_EU : US_EU_A3UE_Base
     {                                                 // The path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
         side = "Occ";                                                                                   // Inv, Occ, Reb, Riv, Civ
-        flagTexture = QPATHTOFOLDER(Pictures\YULAK_ypg_flag.paa);                                 // Path to an icon to be displayed in the select menu.
+        flagTexture = QPATHTOFOLDER(Pictures\USE_Flag.paa);                                 // Path to an icon to be displayed in the select menu.
         name = "USE";                                                                                   // Name shown in the select menu.
         file = "US_EU_A3UE_EU";                                                 // The template file name - .sqf, that gets appended automatically.
         description = "The United States of Europe";                                // If this isn't included, no description will show (unless inherited from the base class.)
