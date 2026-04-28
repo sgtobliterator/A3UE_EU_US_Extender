@@ -955,7 +955,7 @@ if (_hasJCALandSystems) then {
 //["", [""]]
 ["magazines", createHashMapFromArray [
     ["ffaa_ar_m109", ["32Rnd_155mm_Mo_shells"]],
-    ["ffaa_et_m109", ["32Rnd_155mm_Mo_shels"]],
+    ["ffaa_et_m109", ["32Rnd_155mm_Mo_shells"]],
     ["ffaa_et_vamtac_cardom", ["8Rnd_82mm_Mo_shells"]],
     ["BWA3_Panzerhaubitze2000_Fleck", ["BWA3_32Rnd_155mm_Mo_shells"]],
     ["sfp_grkpbv90120", ["sfp_2Rnd_120mm_Mo_shells"]],
@@ -1253,7 +1253,7 @@ private _frenchRifles                        = [
     ["AMF_614_short_01_F", "", _frenchHK416Rail, _frenchHK416Optic, ["AMF_30Rnd_556x45_SS109_PMAG1", "AMF_30Rnd_556x45_SS109_Tracer_PMAG1"], [], _frenchHK416Bipod]
 ];                                           
 private _frenchCarbines                      = [
-    ["AMF_614_short_FS_BLK", "", _frenchHK416Rail, _frenchHK416Optic, ["AMF_30Rnd_556x45_SS109_PMAG1", "AMF_30Rnd_556x45_SS109_Tracer_PMAG1"], [], _frenchHK416Bipod],
+    ["AMF_614_short_FS_BLK", "", _frenchHK416Rail, _frenchHK416Optic, ["AMF_30Rnd_556x45_SS109_PMAG1", "AMF_30Rnd_556x45_SS109_Tracer_PMAG1"], [], ["", "amf_acc_614_grip5", "amf_acc_614_grip4"]],
     ["AMF_614_short_FS4_BLK", "", _frenchHK416Rail, _frenchHK416Optic, ["AMF_30Rnd_556x45_SS109_PMAG1", "AMF_30Rnd_556x45_SS109_Tracer_PMAG1"], [], _frenchHK416Bipod]
 ];                                                  
 private _frenchSMGs                          = [
@@ -1591,7 +1591,7 @@ private _italianMachineGuns                  = [
     ["ASZ_M249mk1_base", "", "", "ASZ_Eotech_blk", ["200Rnd_M249mag"], [], "ASZ_Bipod_M249"]
 ];                                               
 private _italianMarksmanRifles               = [
-    ["APD_ARX200", ["", 4, "ASZ_Silencer_762_blk", 1], _italianMilitaryRails, ["ASZ_Acog", "ASZ_Leupold_MK4_CQT", "ASZ_Tasco_Pronghorn", "ASZ_Leupold_VRX_Patrol"], ["ASZ_20Rnd_762x51_Mag", "ASZ_20Rnd_762x51_Mag_Tracer"], [], ""]
+    ["APD_ARX200", ["", 4, "ASZ_Silencer_762_blk", 1], _italianMilitaryRails, ["ASZ_Acog", "ASZ_Leupold_MK4_CQT", "ASZ_Tasco_Pronghorn", "ASZ_Leupold_VXR_Patrol"], ["ASZ_20Rnd_762x51_Mag", "ASZ_20Rnd_762x51_Mag_Tracer"], [], ""]
 ];                                                   
 private _italianSniperRifles                 = [
     ["ASZ_M40A3_Green", "", "", _italianSniperOptics, ["5Rnd_762x51_Mag_ASZ"], [], "ASZ_Bipod_M40A3"],
@@ -1811,7 +1811,7 @@ private _spanishBerets = [
     "ffaa_moe_boina",
     "ffaa_ume_boina"
 ];
-private _spanishMiltaryMuzzles = [
+private _spanishMilitaryMuzzles = [
     "ffaa_snds_GT_556", 1,
     "", 4
 ];
@@ -1868,6 +1868,176 @@ private _spanishNVGs                          = [
     "ffaa_nvgoggles"
 ];
 
+private _swedishUniforms                        = [
+    "sfp_m90w_uniform_fs18",
+    "sfp_m90w_uniform_long_m08",
+    "sfp_m90w_uniform_folded",
+    "sfp_m90w_uniform_tucked_m08",
+    "sfp_m90w_uniform_tshirt",
+    "sfp_m90p_uniform",
+    "sfp_m90p_m90fj_uniform",
+    "sfp_m90w_uniform",
+    "sfp_m90w_uniform_ksk90_modern",
+    "sfp_m90w_uniform_ksk90",
+    "sfp_m90w_uniform_boots_m08",
+    "sfp_m90w_uniform_m08",
+    "sfp_m90w_uniform_modern",
+    "sfp_m90w_uniform_dirty"
+];
+private _swedishVests                           = [
+    "sfp_kroppsskydd12",
+    "sfp_kroppsskydd12_holster",
+    "sfp_kroppsskydd94",
+    "sfp_kroppskydd94_rifle1"
+];
+private _swedishSlVests                         = [
+    "sfp_kroppsskydd12_tl"
+];
+private _swedishMgVests                         = [
+    "sfp_kroppsskydd12_mg"
+];
+private _swedishMedicVests                      = [
+    "sfp_kroppsskydd12_medic"
+];
+private _swedishGlVests                         = [
+    "sfp_kroppsskydd12_gl"
+];
+private _swedishHelmets                         = [
+    "sfp_m90green_helmet_clean",
+    "sfp_m90green_helmet_clean_headset_nvg_velcro",
+    "sfp_m90green_helmet_clean_peltor_nomic",
+    "sfp_m90green_helmet_clean_peltor_nvg_velcro",
+    "sfp_m90green_helmet_clean_nvg",
+    "sfp_m90w_helmet",
+    "sfp_m90w_helmet_headset_nvg",
+    "sfp_m90w_helmet_headset",
+    "sfp_m90w_helmet_nvg",
+    "sfp_m90w_helmet_peltor_nomic",
+    "sfp_m90w_helmet_peltor"
+];
+private _swedishFacewear                        = [
+    "amf_oakley_blk",
+    "amf_oakley02_od",
+    "amf_balaclava_od",
+    "amf_balaclava_goggles_od",
+    "UK3CB_BAF_G_Tactical_Black",
+    "UK3CB_BAF_G_Tactical_Clear",
+    "UK3CB_BAF_G_Tactical_Grey"
+];
+private _swedishBackpacks                       = [
+    "sfp_backpack_stridssack08",
+    "ASZ_BackPack_40lt_Green",
+    "ASZ_BackPack_50lt_Green",
+    "ASZ_BackPack_75lt_Green"
+];
+private _swedishOptics = [
+    "sfp_optic_aimpoint",
+    "sfp_optic_3x_aimpoint",
+    "sfp_optic_susat_4x"
+];
+//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
+//["", "", "", "", [], [], ""]
+private _swedishSlRifles                        = [
+    ["sfp_ak4b_m203", "", "", "", ["sfp_20Rnd_762x51_ak4", "sfp_20Rnd_762x51_ak4_tracer"], ["1Rnd_HE_Grenade_shell"], ""],
+    ["sfp_ak5_m203", "", "", "", ["sfp_30Rnd_556x45_Stanag_plastic", "sfp_30Rnd_556x45_Stanag_tracer_plastic"], ["1Rnd_HE_Grenade_shell"], ""],
+    ["sfp_ak5c_m203", "", "", _swedishOptics, ["sfp_30Rnd_556x45_Stanag_plastic", "sfp_30Rnd_556x45_Stanag_tracer_plastic"], [], ""]
+];
+private _swedishRifles                          = [
+    ["sfp_ak4d", "", "", _swedishOptics, ["sfp_20Rnd_762x51_ak4", "sfp_20Rnd_762x51_ak4_tracer"], [], ""],
+    ["sfp_ak5", "", "", "", ["sfp_30Rnd_556x45_Stanag_plastic", "sfp_30Rnd_556x45_Stanag_tracer_plastic"], [], ""],
+    ["sfp_ak5c", "", "", _swedishOptics, ["sfp_30Rnd_556x45_Stanag_plastic", "sfp_30Rnd_556x45_Stanag_tracer_plastic"], [], ""],
+    ["sfp_g36c", "", "", _swedishOptics, ["sfp_30Rnd_556x45_Stanag_g36"], [], ""]
+];
+private _swedishCarbines                        = [
+    ["sfp_ak5dmk2", "", "", _swedishOptics, ["sfp_30Rnd_556x45_Stanag_plastic", "sfp_30Rnd_556x45_Stanag_tracer_plastic"], [], ""]
+];
+private _swedishSMGs                            = [
+    ["sfp_cbj_ms", "", "", "sfp_optic_aimpoint_t1", ["sfp_30Rnd_650x25mag"], [], ""],
+    ["sfp_mp5_rail", "", "", ["sfp_optic_aimpoint", "sfp_optic_aimpoint_t1"], ["sfp_30Rnd_9mm_mp5"], [], ""]
+];
+private _swedishMachineGuns                     = [
+    ["sfp_ksp58f", "", "", _swedishOptics, ["sfp_50Rnd_762x51_ksp58"], [], ""],
+    ["sfp_ksp90b", "", "", _swedishOptics, ["sfp_200Rnd_556x45_ksp90"], [], ""],
+    ["sfp_ksp90c", "", "", _swedishOptics, ["sfp_200Rnd_556x45_ksp90"], [], ""]
+];
+private _swedishMarksmanRifles                  = [
+    ["sfp_ak4d", "", "", "sfp_optic_kikarsikte09_4x", ["sfp_20Rnd_762x51_ak4_ap"], [], "BWA3_bipod_Atlas"]
+];
+private _swedishSniperRifles                    = [
+    ["sfp_psg90_base", ["", 4, "muzzle_snds_B", 1], "", "sfp_optic_kikarsikte90b_10x", ["sfp_9Rnd_762x51_psg90_tracer"], [], ""],
+    ["sfp_psg90_camo", ["", 4, "muzzle_snds_B", 1], "", "sfp_optic_kikarsikte90b_10x", ["sfp_9Rnd_762x51_psg90_tracer"], [], ""]
+];
+private _swedishSidearms                        = [
+    ["sfp_p226", "", "sfp_tlr2", "", ["sfp_15Rnd_9x19_Mag"], [], ""],
+    ["sfp_p88", "", "sfp_tlr2", "", ["sfp_17Rnd_9x19_Mag"], [], ""]
+];
+private _swedishNVGs                            = [
+    "mum_WP"
+];
+
+private _finnishUniforms                        = [];
+private _finnishVests                           = [];
+private _finnishSlVests                         = [];
+private _finnishMgVests                         = [];
+private _finnishMedicVests                      = [];
+private _finnishGlVests                         = [];
+private _finnishHelmets                         = [];
+private _finnishFacewear                        = [];
+private _finnishBackpacks                       = [];
+//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
+//["", "", "", "", [], [], ""]
+private _finnishSlRifles                        = [];
+private _finnishRifles                          = [];
+private _finnishCarbines                        = [];
+private _finnishSMGs                            = [];
+private _finnishMachineGuns                     = [];
+private _finnishMarksmanRifles                  = [];
+private _finnishSniperRifles                    = [];
+private _finnishSidearms                        = [];
+private _finnishNVGs                            = [];
+
+private _greekUniforms                          = [];
+private _greekVests                             = [];
+private _greekSlVests                           = [];
+private _greekMgVests                           = [];
+private _greekMedicVests                        = [];
+private _greekGlVests                           = [];
+private _greekHelmets                           = [];
+private _greekFacewear                          = [];
+private _greekBackpacks                         = [];
+//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
+//["", "", "", "", [], [], ""]
+private _greekSlRifles                          = [];
+private _greekRifles                            = [];
+private _greekCarbines                          = [];
+private _greekSMGs                              = [];
+private _greekMachineGuns                       = [];
+private _greekMarksmanRifles                    = [];
+private _greekSniperRifles                      = [];
+private _greekSidearms                          = [];
+private _greekNVGs                              = [];
+
+private _ukrainianUniforms                      = [];
+private _ukrainianVests                         = [];
+private _ukrainianSlVests                       = [];
+private _ukrainianMgVests                       = [];
+private _ukrainianMedicVests                    = [];
+private _ukrainianGlVests                       = [];
+private _ukrainianHelmets                       = [];
+private _ukrainianFacewear                      = [];
+private _ukrainianBackpacks                     = [];
+//["Weapon", "Muzzle", "Rail", "Sight", [""], [], "Bipod"];
+//["", "", "", "", [], [], ""]
+private _ukrainianSlRifles                      = [];
+private _ukrainianRifles                        = [];
+private _ukrainianCarbines                      = [];
+private _ukrainianSMGs                          = [];
+private _ukrainianMachineGuns                   = [];
+private _ukrainianMarksmanRifles                = [];
+private _ukrainianSniperRifles                  = [];
+private _ukrainianSidearms                      = [];
+private _ukrainianNVGs                          = [];
+
 private _ghillieSuits = [];
 
 if (_hasDAGR) then {
@@ -1904,12 +2074,13 @@ private _italianSniperHats = [
 private _spanishSniperHats = [
     "ffaa_brilat_chambergo_b"
 ];
-private _italianSniperHats = [
-    "ASZ_BoonieHat_CBT"
+//OPTIONAL NATIONS
+private _swedishSniperHats = [
+    "sfp_m90w_booniehat"
 ];
-private _spanishSniperHats = [
-    "ffaa_brilat_chambergo_b"
-];
+private _finnishSniperHats = [];
+private _greekSniperHats = [];
+private _ukrainianSniperHats = [];
 
 private _frenchSniperFacewear= [
     "UK3CB_BAF_G_Tactical_Clear",
@@ -1936,6 +2107,31 @@ private _italianSniperFacewear = [
     "amf_oakley_blk"
 ];
 private _spanishSniperFacewear = [
+    "UK3CB_BAF_G_Tactical_Clear",
+    "UK3CB_BAF_G_Tactical_Grey",
+    "BWA3_G_Combat_clear",
+    "amf_oakley_blk"
+];
+//OPTIONAL NATIONS
+private _swedishSniperFacewear = [
+    "UK3CB_BAF_G_Tactical_Clear",
+    "UK3CB_BAF_G_Tactical_Grey",
+    "BWA3_G_Combat_clear",
+    "amf_oakley_blk"
+];
+private _finnishSniperFacewear = [
+    "UK3CB_BAF_G_Tactical_Clear",
+    "UK3CB_BAF_G_Tactical_Grey",
+    "BWA3_G_Combat_clear",
+    "amf_oakley_blk"
+];
+private _greekSniperFacewear = [
+    "UK3CB_BAF_G_Tactical_Clear",
+    "UK3CB_BAF_G_Tactical_Grey",
+    "BWA3_G_Combat_clear",
+    "amf_oakley_blk"
+];
+private _ukrainianSniperFacewear = [
     "UK3CB_BAF_G_Tactical_Clear",
     "UK3CB_BAF_G_Tactical_Grey",
     "BWA3_G_Combat_clear",
@@ -2410,128 +2606,128 @@ private _euroSniperFacewear = [
 ];
 
 
-_sfLoadoutData set ["frenchUniforms", _euroUniforms];
-_sfLoadoutData set ["frenchVests", _euroVests];
-_sfLoadoutData set ["frenchSlVests", _euroSlVests];
-_sfLoadoutData set ["frenchMgVests", _euroMgVests];
-_sfLoadoutData set ["frenchGlVests", _euroVests];
-_sfLoadoutData set ["frenchMedicVests", _euroMedicVests];
-_sfLoadoutData set ["frenchBackpacks", _euroBackpacks];
-_sfLoadoutData set ["frenchHelmets", _euroHelmets];
-_sfLoadoutData set ["frenchFacewear", _euroFacewear];
-_sfLoadoutData set ["frenchNVGs", _euroNVGs];
-_sfLoadoutData set ["frenchRifles", _euroRifles];
-_sfLoadoutData set ["frenchSlRifles", _euroSlRifles];
-_sfLoadoutData set ["frenchMarksmanRifles", _euroMarksmanRifles];
-_sfLoadoutData set ["frenchSniperRifles", _euroSniperRifles];
-_sfLoadoutData set ["frenchSMGs", _euroSMGs];
-_sfLoadoutData set ["frenchMachineGuns", _euroMachineGuns];
-_sfLoadoutData set ["frenchSidearms", _euroSidearms];
-_sfLoadoutData set ["frenchCarbines", _euroRifles];
-_sfLoadoutData set ["frenchBerets", _euroHelmets];
+_sfLoadoutData set ["frenchUniforms",           _euroUniforms];
+_sfLoadoutData set ["frenchVests",              _euroVests];
+_sfLoadoutData set ["frenchSlVests",            _euroSlVests];
+_sfLoadoutData set ["frenchMgVests",            _euroMgVests];
+_sfLoadoutData set ["frenchGlVests",            _euroVests];
+_sfLoadoutData set ["frenchMedicVests",         _euroMedicVests];
+_sfLoadoutData set ["frenchBackpacks",          _euroBackpacks];
+_sfLoadoutData set ["frenchHelmets",            _euroHelmets];
+_sfLoadoutData set ["frenchFacewear",           _euroFacewear];
+_sfLoadoutData set ["frenchNVGs",               _euroNVGs];
+_sfLoadoutData set ["frenchRifles",             _euroRifles];
+_sfLoadoutData set ["frenchSlRifles",           _euroSlRifles];
+_sfLoadoutData set ["frenchMarksmanRifles",     _euroMarksmanRifles];
+_sfLoadoutData set ["frenchSniperRifles",       _euroSniperRifles];
+_sfLoadoutData set ["frenchSMGs",               _euroSMGs];
+_sfLoadoutData set ["frenchMachineGuns",        _euroMachineGuns];
+_sfLoadoutData set ["frenchSidearms",           _euroSidearms];
+_sfLoadoutData set ["frenchCarbines",           _euroRifles];
+_sfLoadoutData set ["frenchBerets",             _euroHelmets];
 
-_sfLoadoutData set ["frenchSniperHats", _euroSniperHats];
-_sfLoadoutData set ["frenchSniperFacewear", _euroSniperFacewear];
+_sfLoadoutData set ["frenchSniperHats",         _euroSniperHats];
+_sfLoadoutData set ["frenchSniperFacewear",     _euroSniperFacewear];
 
-_sfLoadoutData set ["britishUniforms", _euroUniforms];
-_sfLoadoutData set ["britishVests", _euroVests];
-_sfLoadoutData set ["britishSlVests", _euroSlVests];
-_sfLoadoutData set ["britishMgVests", _euroMgVests];
-_sfLoadoutData set ["britishGlVests", _euroVests];
-_sfLoadoutData set ["britishMedicVests", _euroMedicVests];
-_sfLoadoutData set ["britishBackpacks", _euroBackpacks];
-_sfLoadoutData set ["britishHelmets", _euroHelmets];
-_sfLoadoutData set ["britishFacewear", _euroFacewear];
-_sfLoadoutData set ["britishNVGs", _euroNVGs];
-_sfLoadoutData set ["britishRifles", _euroRifles];
-_sfLoadoutData set ["britishSlRifles", _euroSlRifles];
-_sfLoadoutData set ["britishMarksmanRifles", _euroMarksmanRifles];
-_sfLoadoutData set ["britishSniperRifles", _euroSniperRifles];
-_sfLoadoutData set ["britishSMGs", _euroSMGs];
-_sfLoadoutData set ["britishMachineGuns", _euroMachineGuns];
-_sfLoadoutData set ["britishSidearms", _euroSidearms];
-_sfLoadoutData set ["britishCarbines", _euroRifles];
+_sfLoadoutData set ["britishUniforms",          _euroUniforms];
+_sfLoadoutData set ["britishVests",             _euroVests];
+_sfLoadoutData set ["britishSlVests",           _euroSlVests];
+_sfLoadoutData set ["britishMgVests",           _euroMgVests];
+_sfLoadoutData set ["britishGlVests",           _euroVests];
+_sfLoadoutData set ["britishMedicVests",        _euroMedicVests];
+_sfLoadoutData set ["britishBackpacks",         _euroBackpacks];
+_sfLoadoutData set ["britishHelmets",           _euroHelmets];
+_sfLoadoutData set ["britishFacewear",          _euroFacewear];
+_sfLoadoutData set ["britishNVGs",              _euroNVGs];
+_sfLoadoutData set ["britishRifles",            _euroRifles];
+_sfLoadoutData set ["britishSlRifles",          _euroSlRifles];
+_sfLoadoutData set ["britishMarksmanRifles",    _euroMarksmanRifles];
+_sfLoadoutData set ["britishSniperRifles",      _euroSniperRifles];
+_sfLoadoutData set ["britishSMGs",              _euroSMGs];
+_sfLoadoutData set ["britishMachineGuns",       _euroMachineGuns];
+_sfLoadoutData set ["britishSidearms",          _euroSidearms];
+_sfLoadoutData set ["britishCarbines",          _euroRifles];
 
 _sfLoadoutData set ["britishEngineerBackpacks", _euroBackpacks];
 _sfLoadoutData set ["britishRadiomanBackpacks", _euroBackpacks];
-_sfLoadoutData set ["britishMedicBackpacks", _euroBackpacks];
-_sfLoadoutData set ["britishSlBackpacks", _euroBackpacks];
-_sfLoadoutData set ["britishEODBackpacks", _euroBackpacks];
-_sfLoadoutData set ["britishBerets", _euroHelmets];
+_sfLoadoutData set ["britishMedicBackpacks",    _euroBackpacks];
+_sfLoadoutData set ["britishSlBackpacks",       _euroBackpacks];
+_sfLoadoutData set ["britishEODBackpacks",      _euroBackpacks];
+_sfLoadoutData set ["britishBerets",            _euroHelmets];
 
-_sfLoadoutData set ["britishSniperHats", _euroSniperHats];
-_sfLoadoutData set ["britishSniperFacewear", _euroSniperFacewear];
+_sfLoadoutData set ["britishSniperHats",        _euroSniperHats];
+_sfLoadoutData set ["britishSniperFacewear",    _euroSniperFacewear];
 
-_sfLoadoutData set ["germanUniforms", _euroUniforms];
-_sfLoadoutData set ["germanVests", _euroVests];
-_sfLoadoutData set ["germanSlVests", _euroSlVests];
-_sfLoadoutData set ["germanMgVests", _euroMgVests];
-_sfLoadoutData set ["germanGlVests", _euroVests]; 
-_sfLoadoutData set ["germanMedicVests", _euroMedicVests];
-_sfLoadoutData set ["germanBackpacks", _euroBackpacks];
-_sfLoadoutData set ["germanHelmets", _euroHelmets];
-_sfLoadoutData set ["germanFacewear", _euroFacewear];
-_sfLoadoutData set ["germanNVGs", _euroNVGs];
-_sfLoadoutData set ["germanRifles", _euroRifles];
-_sfLoadoutData set ["germanSlRifles", _euroSlRifles];
-_sfLoadoutData set ["germanMarksmanRifles", _euroMarksmanRifles];
-_sfLoadoutData set ["germanSniperRifles", _euroSniperRifles];
-_sfLoadoutData set ["germanSMGs", _euroSMGs];
-_sfLoadoutData set ["germanMachineGuns", _euroMachineGuns];
-_sfLoadoutData set ["germanSidearms", _euroSidearms];
-_sfLoadoutData set ["germanCarbines", _euroRifles];
+_sfLoadoutData set ["germanUniforms",           _euroUniforms];
+_sfLoadoutData set ["germanVests",              _euroVests];
+_sfLoadoutData set ["germanSlVests",            _euroSlVests];
+_sfLoadoutData set ["germanMgVests",            _euroMgVests];
+_sfLoadoutData set ["germanGlVests",            _euroVests]; 
+_sfLoadoutData set ["germanMedicVests",         _euroMedicVests];
+_sfLoadoutData set ["germanBackpacks",          _euroBackpacks];
+_sfLoadoutData set ["germanHelmets",            _euroHelmets];
+_sfLoadoutData set ["germanFacewear",           _euroFacewear];
+_sfLoadoutData set ["germanNVGs",               _euroNVGs];
+_sfLoadoutData set ["germanRifles",             _euroRifles];
+_sfLoadoutData set ["germanSlRifles",           _euroSlRifles];
+_sfLoadoutData set ["germanMarksmanRifles",     _euroMarksmanRifles];
+_sfLoadoutData set ["germanSniperRifles",       _euroSniperRifles];
+_sfLoadoutData set ["germanSMGs",               _euroSMGs];
+_sfLoadoutData set ["germanMachineGuns",        _euroMachineGuns];
+_sfLoadoutData set ["germanSidearms",           _euroSidearms];
+_sfLoadoutData set ["germanCarbines",           _euroRifles];
 
-_sfLoadoutData set ["germanBerets", _euroHelmets];
-_sfLoadoutData set ["germanRadiomanVests", _euroVests];
+_sfLoadoutData set ["germanBerets",             _euroHelmets];
+_sfLoadoutData set ["germanRadiomanVests",      _euroVests];
 
-_sfLoadoutData set ["germanSniperHats", _euroSniperHats];
-_sfLoadoutData set ["germanSniperFacewear", _euroSniperFacewear];
+_sfLoadoutData set ["germanSniperHats",         _euroSniperHats];
+_sfLoadoutData set ["germanSniperFacewear",     _euroSniperFacewear];
 
-_sfLoadoutData set ["italianUniforms", _euroUniforms];
-_sfLoadoutData set ["italianVests", _euroVests];
-_sfLoadoutData set ["italianSlVests", _euroSlVests];
-_sfLoadoutData set ["italianMgVests", _euroMgVests];
-_sfLoadoutData set ["italianMedicVests", _euroMedicVests];
-_sfLoadoutData set ["italianGlVests", _euroVests];
-_sfLoadoutData set ["italianHelmets", _euroHelmets];
-_sfLoadoutData set ["italianFacewear", _euroFacewear];
-_sfLoadoutData set ["italianBackpacks", _euroBackpacks];
-_sfLoadoutData set ["italianSlRifles", _euroSlRifles];
-_sfLoadoutData set ["italianRifles", _euroRifles];
-_sfLoadoutData set ["italianCarbines", _euroCarbines];
-_sfLoadoutData set ["italianSMGs", _euroSMGs];
-_sfLoadoutData set ["italianMachineGuns", _euroMachineGuns];
-_sfLoadoutData set ["italianMarksmanRifles", _euroMarksmanRifles];
-_sfLoadoutData set ["italianSniperRifles", _euroSniperRifles];
-_sfLoadoutData set ["italianSidearms", _euroSidearms];
-_sfLoadoutData set ["italianNVGs", _euroNVGs];
+_sfLoadoutData set ["italianUniforms",          _euroUniforms];
+_sfLoadoutData set ["italianVests",             _euroVests];
+_sfLoadoutData set ["italianSlVests",           _euroSlVests];
+_sfLoadoutData set ["italianMgVests",           _euroMgVests];
+_sfLoadoutData set ["italianMedicVests",        _euroMedicVests];
+_sfLoadoutData set ["italianGlVests",           _euroVests];
+_sfLoadoutData set ["italianHelmets",           _euroHelmets];
+_sfLoadoutData set ["italianFacewear",          _euroFacewear];
+_sfLoadoutData set ["italianBackpacks",         _euroBackpacks];
+_sfLoadoutData set ["italianSlRifles",          _euroSlRifles];
+_sfLoadoutData set ["italianRifles",            _euroRifles];
+_sfLoadoutData set ["italianCarbines",          _euroRifles];
+_sfLoadoutData set ["italianSMGs",              _euroSMGs];
+_sfLoadoutData set ["italianMachineGuns",       _euroMachineGuns];
+_sfLoadoutData set ["italianMarksmanRifles",    _euroMarksmanRifles];
+_sfLoadoutData set ["italianSniperRifles",      _euroSniperRifles];
+_sfLoadoutData set ["italianSidearms",          _euroSidearms];
+_sfLoadoutData set ["italianNVGs",              _euroNVGs];
 
 _sfLoadoutData set ["italianRadiomanBackpacks", _euroBackpacks];
 
-_sfLoadoutData set ["italianSniperHats", _euroSniperHats];
-_sfLoadoutData set ["italianSniperFacewear", _euroSniperFacewear];
+_sfLoadoutData set ["italianSniperHats",        _euroSniperHats];
+_sfLoadoutData set ["italianSniperFacewear",    _euroSniperFacewear];
 
-_sfLoadoutData set ["spanishUniforms", _euroUniforms];
-_sfLoadoutData set ["spanishVests", _euroVests];
-_sfLoadoutData set ["spanishSlVests", _euroSlVests];
-_sfLoadoutData set ["spanishMgVests", _euroMgVests];
-_sfLoadoutData set ["spanishMedicVests", _euroMedicVests];
-_sfLoadoutData set ["spanishGlVests", _euroVests];
-_sfLoadoutData set ["spanishHelmets", _euroHelmets];
-_sfLoadoutData set ["spanishFacewear", _euroFacewear];
-_sfLoadoutData set ["spanishBackpacks", _euroBackpacks];
-_sfLoadoutData set ["spanishSlRifles", _euroSlRifles];
-_sfLoadoutData set ["spanishRifles", _euroRifles];
-_sfLoadoutData set ["spanishCarbines", _euroCarbines];
-_sfLoadoutData set ["spanishSMGs", _euroSMGs];
-_sfLoadoutData set ["spanishMachineGuns", _euroMachineGuns];
-_sfLoadoutData set ["spanishMarksmanRifles", _euroMarksmanRifles];
-_sfLoadoutData set ["spanishSniperRifles", _euroSniperRifles];
-_sfLoadoutData set ["spanishSidearms", _euroSidearms];
-_sfLoadoutData set ["spanishNVGs", _euroNVGs];
+_sfLoadoutData set ["spanishUniforms",          _euroUniforms];
+_sfLoadoutData set ["spanishVests",             _euroVests];
+_sfLoadoutData set ["spanishSlVests",           _euroSlVests];
+_sfLoadoutData set ["spanishMgVests",           _euroMgVests];
+_sfLoadoutData set ["spanishMedicVests",        _euroMedicVests];
+_sfLoadoutData set ["spanishGlVests",           _euroVests];
+_sfLoadoutData set ["spanishHelmets",           _euroHelmets];
+_sfLoadoutData set ["spanishFacewear",          _euroFacewear];
+_sfLoadoutData set ["spanishBackpacks",         _euroBackpacks];
+_sfLoadoutData set ["spanishSlRifles",          _euroSlRifles];
+_sfLoadoutData set ["spanishRifles",            _euroRifles];
+_sfLoadoutData set ["spanishCarbines",          _euroRifles];
+_sfLoadoutData set ["spanishSMGs",              _euroSMGs];
+_sfLoadoutData set ["spanishMachineGuns",       _euroMachineGuns];
+_sfLoadoutData set ["spanishMarksmanRifles",    _euroMarksmanRifles];
+_sfLoadoutData set ["spanishSniperRifles",      _euroSniperRifles];
+_sfLoadoutData set ["spanishSidearms",          _euroSidearms];
+_sfLoadoutData set ["spanishNVGs",              _euroNVGs];
 
-_sfLoadoutData set ["spanishSniperHats", _euroSniperHats];
-_sfLoadoutData set ["spanishSniperFacewear", _euroSniperFacewear];
+_sfLoadoutData set ["spanishSniperHats",        _euroSniperHats];
+_sfLoadoutData set ["spanishSniperFacewear",    _euroSniperFacewear];
 
 
 //OPTIONAL NATIONS
@@ -2549,13 +2745,13 @@ _sfLoadoutData set ["swedishVests", 			_euroVests];
 _sfLoadoutData set ["swedishSlVests", 			_euroSlVests];
 _sfLoadoutData set ["swedishMgVests", 			_euroMgVests];
 _sfLoadoutData set ["swedishMedicVests",		_euroMedicVests];
-_sfLoadoutData set ["swedishGlVests", 			_euroGlVests];
+_sfLoadoutData set ["swedishGlVests", 			_euroVests];
 _sfLoadoutData set ["swedishHelmets", 			_euroHelmets];
 _sfLoadoutData set ["swedishFacewear", 		    _euroFacewear];
 _sfLoadoutData set ["swedishBackpacks",		    _euroBackpacks];
 _sfLoadoutData set ["swedishSlRifles", 		    _euroSlRifles];
 _sfLoadoutData set ["swedishRifles", 			_euroRifles];
-_sfLoadoutData set ["swedishCarbines", 		    _euroCarbines];
+_sfLoadoutData set ["swedishCarbines", 		    _euroRifles];
 _sfLoadoutData set ["swedishSMGs", 			    _euroSMGs];
 _sfLoadoutData set ["swedishMachineGuns", 		_euroMachineGuns];
 _sfLoadoutData set ["swedishMarksmanRifles", 	_euroMarksmanRifles];
@@ -2569,13 +2765,13 @@ _sfLoadoutData set ["finnishVests", 			_euroVests];
 _sfLoadoutData set ["finnishSlVests", 			_euroSlVests];
 _sfLoadoutData set ["finnishMgVests", 			_euroMgVests];
 _sfLoadoutData set ["finnishMedicVests",		_euroMedicVests];
-_sfLoadoutData set ["finnishGlVests", 			_euroGlVests];
+_sfLoadoutData set ["finnishGlVests", 			_euroVests];
 _sfLoadoutData set ["finnishHelmets", 			_euroHelmets];
 _sfLoadoutData set ["finnishFacewear", 		    _euroFacewear];
 _sfLoadoutData set ["finnishBackpacks",		    _euroBackpacks];
 _sfLoadoutData set ["finnishSlRifles", 		    _euroSlRifles];
 _sfLoadoutData set ["finnishRifles", 			_euroRifles];
-_sfLoadoutData set ["finnishCarbines", 		    _euroCarbines];
+_sfLoadoutData set ["finnishCarbines", 		    _euroRifles];
 _sfLoadoutData set ["finnishSMGs", 			    _euroSMGs];
 _sfLoadoutData set ["finnishMachineGuns", 		_euroMachineGuns];
 _sfLoadoutData set ["finnishMarksmanRifles", 	_euroMarksmanRifles];
@@ -2589,13 +2785,13 @@ _sfLoadoutData set ["greekVests", 			    _euroVests];
 _sfLoadoutData set ["greekSlVests", 		    _euroSlVests];
 _sfLoadoutData set ["greekMgVests", 		    _euroMgVests];
 _sfLoadoutData set ["greekMedicVests",		    _euroMedicVests];
-_sfLoadoutData set ["greekGlVests", 		    _euroGlVests];
+_sfLoadoutData set ["greekGlVests", 		    _euroVests];
 _sfLoadoutData set ["greekHelmets", 		    _euroHelmets];
 _sfLoadoutData set ["greekFacewear", 		    _euroFacewear];
 _sfLoadoutData set ["greekBackpacks",		    _euroBackpacks];
 _sfLoadoutData set ["greekSlRifles", 		    _euroSlRifles];
 _sfLoadoutData set ["greekRifles", 		        _euroRifles];
-_sfLoadoutData set ["greekCarbines", 		    _euroCarbines];
+_sfLoadoutData set ["greekCarbines", 		    _euroRifles];
 _sfLoadoutData set ["greekSMGs", 			    _euroSMGs];
 _sfLoadoutData set ["greekMachineGuns", 	    _euroMachineGuns];
 _sfLoadoutData set ["greekMarksmanRifles",      _euroMarksmanRifles];
@@ -2609,13 +2805,13 @@ _sfLoadoutData set ["ukrainianVests", 			_euroVests];
 _sfLoadoutData set ["ukrainianSlVests", 		_euroSlVests];
 _sfLoadoutData set ["ukrainianMgVests", 		_euroMgVests];
 _sfLoadoutData set ["ukrainianMedicVests",		_euroMedicVests];
-_sfLoadoutData set ["ukrainianGlVests", 		_euroGlVests];
+_sfLoadoutData set ["ukrainianGlVests", 		_euroVests];
 _sfLoadoutData set ["ukrainianHelmets", 		_euroHelmets];
 _sfLoadoutData set ["ukrainianFacewear", 		_euroFacewear];
 _sfLoadoutData set ["ukrainianBackpacks",		_euroBackpacks];
 _sfLoadoutData set ["ukrainianSlRifles", 		_euroSlRifles];
 _sfLoadoutData set ["ukrainianRifles", 		    _euroRifles];
-_sfLoadoutData set ["ukrainianCarbines", 		_euroCarbines];
+_sfLoadoutData set ["ukrainianCarbines", 		_euroRifles];
 _sfLoadoutData set ["ukrainianSMGs", 			_euroSMGs];
 _sfLoadoutData set ["ukrainianMachineGuns", 	_euroMachineGuns];
 _sfLoadoutData set ["ukrainianMarksmanRifles",  _euroMarksmanRifles];
@@ -2751,13 +2947,13 @@ _eliteLoadoutData set ["italianVests", _euroVests];
 _eliteLoadoutData set ["italianSlVests", _euroSlVests];
 _eliteLoadoutData set ["italianMgVests", _euroMgVests];
 _eliteLoadoutData set ["italianMedicVests", _euroMedicVests];
-_eliteLoadoutData set ["italianGlVests", _euroGlVests];
+_eliteLoadoutData set ["italianGlVests", _euroVests];
 _eliteLoadoutData set ["italianHelmets", _euroHelmets];
 _eliteLoadoutData set ["italianFacewear", _euroFacewear];
 _eliteLoadoutData set ["italianBackpacks", _euroBackpacks];
 _eliteLoadoutData set ["italianSlRifles", _euroSlRifles];
 _eliteLoadoutData set ["italianRifles", _euroRifles];
-_eliteLoadoutData set ["italianCarbines", _euroCarbines];
+_eliteLoadoutData set ["italianCarbines", _euroRifles];
 _eliteLoadoutData set ["italianSMGs", _euroSMGs];
 _eliteLoadoutData set ["italianMachineGuns", _euroMachineGuns];
 _eliteLoadoutData set ["italianMarksmanRifles", _euroMarksmanRifles];
@@ -2781,7 +2977,7 @@ _eliteLoadoutData set ["spanishFacewear", _euroFacewear];
 _eliteLoadoutData set ["spanishBackpacks", _euroBackpacks];
 _eliteLoadoutData set ["spanishSlRifles", _euroSlRifles];
 _eliteLoadoutData set ["spanishRifles", _euroRifles];
-_eliteLoadoutData set ["spanishCarbines", _euroCarbines];
+_eliteLoadoutData set ["spanishCarbines", _euroRifles];
 _eliteLoadoutData set ["spanishSMGs", _euroSMGs];
 _eliteLoadoutData set ["spanishMachineGuns", _euroMachineGuns];
 _eliteLoadoutData set ["spanishMarksmanRifles", _euroMarksmanRifles];
@@ -2808,13 +3004,13 @@ _eliteLoadoutData set ["swedishVests", 			    _euroVests];
 _eliteLoadoutData set ["swedishSlVests", 			_euroSlVests];
 _eliteLoadoutData set ["swedishMgVests", 			_euroMgVests];
 _eliteLoadoutData set ["swedishMedicVests",		    _euroMedicVests];
-_eliteLoadoutData set ["swedishGlVests", 			_euroGlVests];
+_eliteLoadoutData set ["swedishGlVests", 			_euroVests];
 _eliteLoadoutData set ["swedishHelmets", 			_euroHelmets];
 _eliteLoadoutData set ["swedishFacewear", 		    _euroFacewear];
 _eliteLoadoutData set ["swedishBackpacks",		    _euroBackpacks];
 _eliteLoadoutData set ["swedishSlRifles", 		    _euroSlRifles];
 _eliteLoadoutData set ["swedishRifles", 			_euroRifles];
-_eliteLoadoutData set ["swedishCarbines", 		    _euroCarbines];
+_eliteLoadoutData set ["swedishCarbines", 		    _euroRifles];
 _eliteLoadoutData set ["swedishSMGs", 			    _euroSMGs];
 _eliteLoadoutData set ["swedishMachineGuns", 		_euroMachineGuns];
 _eliteLoadoutData set ["swedishMarksmanRifles", 	_euroMarksmanRifles];
@@ -2828,13 +3024,13 @@ _eliteLoadoutData set ["finnishVests", 			    _euroVests];
 _eliteLoadoutData set ["finnishSlVests", 		    _euroSlVests];
 _eliteLoadoutData set ["finnishMgVests", 		    _euroMgVests];
 _eliteLoadoutData set ["finnishMedicVests",		    _euroMedicVests];
-_eliteLoadoutData set ["finnishGlVests", 		    _euroGlVests];
+_eliteLoadoutData set ["finnishGlVests", 		    _euroVests];
 _eliteLoadoutData set ["finnishHelmets", 		    _euroHelmets];
 _eliteLoadoutData set ["finnishFacewear", 		    _euroFacewear];
 _eliteLoadoutData set ["finnishBackpacks",		    _euroBackpacks];
 _eliteLoadoutData set ["finnishSlRifles", 		    _euroSlRifles];
 _eliteLoadoutData set ["finnishRifles", 		    _euroRifles];
-_eliteLoadoutData set ["finnishCarbines", 		    _euroCarbines];
+_eliteLoadoutData set ["finnishCarbines", 		    _euroRifles];
 _eliteLoadoutData set ["finnishSMGs", 			    _euroSMGs];
 _eliteLoadoutData set ["finnishMachineGuns", 	    _euroMachineGuns];
 _eliteLoadoutData set ["finnishMarksmanRifles",     _euroMarksmanRifles];
@@ -2848,13 +3044,13 @@ _eliteLoadoutData set ["greekVests", 		        _euroVests];
 _eliteLoadoutData set ["greekSlVests", 		        _euroSlVests];
 _eliteLoadoutData set ["greekMgVests", 		        _euroMgVests];
 _eliteLoadoutData set ["greekMedicVests",	        _euroMedicVests];
-_eliteLoadoutData set ["greekGlVests", 		        _euroGlVests];
+_eliteLoadoutData set ["greekGlVests", 		        _euroVests];
 _eliteLoadoutData set ["greekHelmets", 		        _euroHelmets];
 _eliteLoadoutData set ["greekFacewear", 	        _euroFacewear];
 _eliteLoadoutData set ["greekBackpacks",	        _euroBackpacks];
 _eliteLoadoutData set ["greekSlRifles", 	        _euroSlRifles];
 _eliteLoadoutData set ["greekRifles", 		        _euroRifles];
-_eliteLoadoutData set ["greekCarbines", 	        _euroCarbines];
+_eliteLoadoutData set ["greekCarbines", 	        _euroRifles];
 _eliteLoadoutData set ["greekSMGs", 		        _euroSMGs];
 _eliteLoadoutData set ["greekMachineGuns", 	        _euroMachineGuns];
 _eliteLoadoutData set ["greekMarksmanRifles",       _euroMarksmanRifles];
@@ -2868,13 +3064,13 @@ _eliteLoadoutData set ["ukrainianVests", 		    _euroVests];
 _eliteLoadoutData set ["ukrainianSlVests", 		    _euroSlVests];
 _eliteLoadoutData set ["ukrainianMgVests", 		    _euroMgVests];
 _eliteLoadoutData set ["ukrainianMedicVests",	    _euroMedicVests];
-_eliteLoadoutData set ["ukrainianGlVests", 		    _euroGlVests];
+_eliteLoadoutData set ["ukrainianGlVests", 		    _euroVests];
 _eliteLoadoutData set ["ukrainianHelmets", 		    _euroHelmets];
 _eliteLoadoutData set ["ukrainianFacewear", 	    _euroFacewear];
 _eliteLoadoutData set ["ukrainianBackpacks",	    _euroBackpacks];
 _eliteLoadoutData set ["ukrainianSlRifles", 	    _euroSlRifles];
 _eliteLoadoutData set ["ukrainianRifles", 		    _euroRifles];
-_eliteLoadoutData set ["ukrainianCarbines", 	    _euroCarbines];
+_eliteLoadoutData set ["ukrainianCarbines", 	    _euroRifles];
 _eliteLoadoutData set ["ukrainianSMGs", 		    _euroSMGs];
 _eliteLoadoutData set ["ukrainianMachineGuns", 	    _euroMachineGuns];
 _eliteLoadoutData set ["ukrainianMarksmanRifles",   _euroMarksmanRifles];
